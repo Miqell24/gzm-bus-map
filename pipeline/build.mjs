@@ -26,6 +26,9 @@ const GAP_MIN = 300;
 
 const TROLLEY_GREEN = '#149a3f';
 const TROLLEY_DARK = '#0a5121';
+// GZM metrolinie (M-branded trunk bus network) — Metropolis-brand fuchsia
+const MLINE_PINK = '#d6006e';
+const MLINE_DARK = '#730044';
 
 const t0 = Date.now();
 const log = (m) => console.log(`[${((Date.now() - t0) / 1000).toFixed(1)}s] ${m}`);
@@ -151,6 +154,14 @@ async function processMode(cfg) {
       cfg.lineColors = {}; cfg.lineColorsDark = {};
       for (const L of cfg.trolleySet) { cfg.lineColors[L] = TROLLEY_GREEN; cfg.lineColorsDark[L] = TROLLEY_DARK; }
       log(`trolleybus lines (${cfg.trolleySet.size}): ${[...cfg.trolleySet].sort(numSort).join(', ')}`);
+    }
+    // metrolinie: the M-numbered trunk lines get the Metropolis fuchsia so
+    // they stand out from regular navy buses and can be toggled separately
+    cfg.mlineSet = new Set(routes.filter((r) => /^M\d+$/.test(r.route_short_name)).map((r) => r.route_short_name));
+    if (cfg.mlineSet.size) {
+      cfg.lineColors = cfg.lineColors || {}; cfg.lineColorsDark = cfg.lineColorsDark || {};
+      for (const L of cfg.mlineSet) { cfg.lineColors[L] = MLINE_PINK; cfg.lineColorsDark[L] = MLINE_DARK; }
+      log(`metrolines (${cfg.mlineSet.size}): ${[...cfg.mlineSet].sort(numSort).join(', ')}`);
     }
   }
   let LINES = cfg.all
@@ -499,6 +510,11 @@ async function processMode(cfg) {
       else if (n > 0) flags.trolley = 'mix';
     }
     if (cfg.mode === 'tram' && arr.every((l) => l.startsWith('M'))) flags.metro = 1;
+    if (cfg.mlineSet && cfg.mlineSet.size) {
+      const n = arr.filter((l) => cfg.mlineSet.has(l)).length;
+      if (n === arr.length) flags.mline = 'all';
+      else if (n > 0) flags.mline = 'mix';
+    }
     return flags;
   };
   const mergedRuns = mergeRuns(runs);
@@ -874,12 +890,15 @@ const BADGE_BANDS = [[13, 13.6], [13.6, 14.4], [14.4, 15.5], [15.5, 16.8], [16.8
       // (Bałtyk at Kaponiera) — and a nameless loop is a hard error on a
       // printed map, so from z13 these rows replace it.
       const modes = [...new Set(lines.map((l) => l.mode))].join(',');
+      // a complex where EVERY terminating line is a metrolinia follows the
+      // metrolines toggle (its boxes are filtered per-box by color)
+      const mall = lines.every((l) => l.color === MLINE_PINK) ? 1 : 0;
       let yOff = NAME_BASE;
       for (const nm of [...c.names].sort((a, b) => b.localeCompare(a))) {
         badgeFeatures.push({
           type: 'Feature',
           geometry: { type: 'Point', coordinates: [round6(lon), round6(lat)] },
-          properties: { name: nm, band, modes, arr: lines.map((l) => l.line), off: [0, -Math.round(yOff * 100) / 100] },
+          properties: { name: nm, band, modes, arr: lines.map((l) => l.line), off: [0, -Math.round(yOff * 100) / 100], ...(mall ? { mall: 1 } : {}) },
         });
         yOff += nameRows(nm) * NAME_LH;
       }

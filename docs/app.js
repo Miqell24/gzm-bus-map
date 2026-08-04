@@ -112,7 +112,8 @@ async function init() {
   // Panel (English, minimal): legend + mode toggles + expandable clickable line list.
   const nBus = meta.lines.filter((l) => l.mode === 'bus').length;
   const nTram = meta.lines.filter((l) => l.mode === 'tram').length;
-  document.getElementById('count').textContent = `(${nBus} bus/trolleybus · ${nTram} tram)`;
+  const nM = meta.lines.filter((l) => l.mode === 'bus' && /^M\d+$/.test(l.line)).length;
+  document.getElementById('count').textContent = `(${nBus - nM} bus/trolleybus · ${nM} metroline · ${nTram} tram)`;
   document.getElementById('stamp').textContent = new Date(meta.generatedAt).toLocaleDateString('en-GB');
   document.getElementById('chips').innerHTML = meta.lines
     .map((l) => `<button class="chip" data-line="${esc(l.line)}" style="background:${esc(l.color)}">${esc(l.line)}</button>`)
@@ -224,8 +225,9 @@ async function init() {
   // Stops as HALF-DISCS: flat edge lying on the line, bulge pointing to the
   // pole's side of the street (angle from the pipeline). Canvas-drawn icon per
   // color pair — regular: white fill + colored rim; terminus: filled + dark rim.
+  const MLINE_PINK = '#d6006e';
   const PALETTE = [
-    [KMK, KMK_DARK], [TROLLEY_GREEN, '#0a5121'],
+    [KMK, KMK_DARK], [TROLLEY_GREEN, '#0a5121'], [MLINE_PINK, '#730044'],
     ['#009550', '#00512b'], ['#e30613', '#7c060e'], ['#1e9cd7', '#0d567a'],
     ['#7d2b8b', '#45164e'], ['#d6212b', '#7c1116'],
   ];
@@ -439,7 +441,7 @@ async function init() {
 
   // Mode filters (bus/tram) + line selection: clicking a chip shows only that
   // line's route with all of its stops (properties.arr carry the line lists).
-  const state = { bus: true, tram: true, selected: null };
+  const state = { bus: true, tram: true, mline: true, selected: null };
   const busOnlyNumbers = ['case', ['has', 'busLines'],
     ['format', ['get', 'busLines'], { 'text-color': KMK }],
     ['format', ['get', 'lines'], {}]];
@@ -448,18 +450,23 @@ async function init() {
     const modes = [state.bus ? 'bus' : null, state.tram ? 'tram' : null].filter(Boolean);
     const modeC = ['in', ['get', 'mode'], ['literal', modes]];
     const selC = state.selected ? ['in', state.selected, ['get', 'arr']] : true;
-    map.setFilter('route-casing', ['all', modeC, selC]);
-    map.setFilter('route-line', ['all', modeC, selC]);
+    // metrolines toggle = sub-filter of the bus mode: hides runs made ONLY of
+    // M lines, plus their boxes/stops/labels (all carry the fuchsia color)
+    const mlC = state.mline ? true : ['!=', ['get', 'mline'], 'all'];
+    const mlColorC = state.mline ? true : ['!=', ['get', 'color'], MLINE_PINK];
+    const mlNameC = state.mline ? true : ['!=', ['get', 'mall'], 1];
+    map.setFilter('route-casing', ['all', modeC, selC, mlC]);
+    map.setFilter('route-line', ['all', modeC, selC, mlC]);
     map.setFilter('route-trolley-dash', ['all', ['==', ['get', 'trolley'], 'mix'], modeC, selC]);
-    map.setFilter('stops-dots', ['all', modeC, selC]);
+    map.setFilter('stops-dots', ['all', modeC, selC, mlColorC]);
     // with a line selected, names of ALL its stops (no label clustering)
     const lblC = state.selected ? true : ['==', ['get', 'label'], 1];
-    map.setFilter('stops-names', ['all', ['!=', ['get', 'terminus'], 1], ['!=', ['get', 'metro'], 1], modeC, selC, lblC]);
-    map.setFilter('stops-terminus-names', ['all', ['==', ['get', 'terminus'], 1], ['!=', ['get', 'metro'], 1], modeC, selC, lblC]);
+    map.setFilter('stops-names', ['all', ['!=', ['get', 'terminus'], 1], ['!=', ['get', 'metro'], 1], modeC, selC, lblC, mlColorC]);
+    map.setFilter('stops-terminus-names', ['all', ['==', ['get', 'terminus'], 1], ['!=', ['get', 'metro'], 1], modeC, selC, lblC, mlColorC]);
     map.setFilter('stops-metro-names', ['all', ['==', ['get', 'metro'], 1], modeC, selC, lblC]);
     // with a line selected only ITS badge stays at the loop
     BADGE_LAYERS.forEach((id, b) => {
-      map.setFilter(id, ['all', bandC(b), ['has', 'line'], modeC,
+      map.setFilter(id, ['all', bandC(b), ['has', 'line'], modeC, mlColorC,
         state.selected ? ['==', ['get', 'line'], state.selected] : true]);
     });
     // complex name rows follow: shown while any of the complex's modes is on
@@ -469,17 +476,17 @@ async function init() {
       state.bus ? ['in', 'bus', ['get', 'modes']] : false,
       state.tram ? ['in', 'tram', ['get', 'modes']] : false];
     BADGE_NAME_LAYERS.forEach((id, b) => {
-      map.setFilter(id, ['all', bandC(b), ['has', 'name'], nameModeC,
+      map.setFilter(id, ['all', bandC(b), ['has', 'name'], nameModeC, mlNameC,
         state.selected ? ['in', state.selected, ['get', 'arr']] : true]);
     });
     let numC, numField;
     if (state.bus && !state.tram) {
       // trams hidden: shared corridor labels (mode=tram with busLines) must stay,
       // but they show only the bus part
-      numC = ['all', ['any', ['==', ['get', 'mode'], 'bus'], ['has', 'busLines']], selC];
+      numC = ['all', ['any', ['==', ['get', 'mode'], 'bus'], ['has', 'busLines']], selC, mlColorC];
       numField = busOnlyNumbers;
     } else {
-      numC = ['all', modeC, selC];
+      numC = ['all', modeC, selC, mlColorC];
       numField = state.tram && !state.bus ? tramOnlyNumbers : numberField;
     }
     for (const d of NUM_LAYERS) {
@@ -494,7 +501,7 @@ async function init() {
     document.querySelectorAll('#chips .chip').forEach((c) => c.classList.toggle('active', c.dataset.line === state.selected));
     applyFilters();
   });
-  for (const [id, key] of [['toggle-bus', 'bus'], ['toggle-tram', 'tram']]) {
+  for (const [id, key] of [['toggle-bus', 'bus'], ['toggle-tram', 'tram'], ['toggle-mline', 'mline']]) {
     document.getElementById(id).addEventListener('change', (e) => { state[key] = e.target.checked; applyFilters(); });
   }
   applyFilters();
