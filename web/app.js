@@ -3,6 +3,7 @@
 const KMK = '#0059a9';
 const KMK_DARK = '#00294f';
 const TROLLEY_GREEN = '#149a3f';
+const MLINE_YELLOW = '#e8a000';
 // Narrow label face. Arial Narrow itself cannot be used: MapLibre text comes from
 // pre-rendered glyph PBFs on a font server, and no server hosts that licensed
 // font — Roboto Condensed is the hosted narrow equivalent (with Greek coverage).
@@ -166,6 +167,19 @@ async function init() {
     },
   }, firstSymbol);
 
+  // Shared metroline+bus roadways: amber dashes over the navy stroke —
+  // same convention as the trolleybus overlay above.
+  map.addLayer({
+    id: 'route-mline-dash', type: 'line', source: 'streets',
+    filter: ['==', ['get', 'mline'], 'mix'],
+    layout: { 'line-join': 'round', 'line-cap': 'butt' },
+    paint: {
+      'line-color': MLINE_YELLOW,
+      'line-width': ['interpolate', ['linear'], ['zoom'], 10, 1.1, 14, 2.3, 17, 4.5],
+      'line-dasharray': [1.6, 2.2],
+    },
+  }, firstSymbol);
+
   // Line numbers: pipeline points carry the street bearing (angle) — the text is
   // rotated PARALLEL to the road and offset sideways in text space (anchor bottom
   // + offset), so it stands BESIDE the roadway along its course, never on the stroke.
@@ -225,9 +239,8 @@ async function init() {
   // Stops as HALF-DISCS: flat edge lying on the line, bulge pointing to the
   // pole's side of the street (angle from the pipeline). Canvas-drawn icon per
   // color pair — regular: white fill + colored rim; terminus: filled + dark rim.
-  const MLINE_PINK = '#d6006e';
   const PALETTE = [
-    [KMK, KMK_DARK], [TROLLEY_GREEN, '#0a5121'], [MLINE_PINK, '#730044'],
+    [KMK, KMK_DARK], [TROLLEY_GREEN, '#0a5121'], [MLINE_YELLOW, '#7d5600'],
     ['#009550', '#00512b'], ['#e30613', '#7c060e'], ['#1e9cd7', '#0d567a'],
     ['#7d2b8b', '#45164e'], ['#d6212b', '#7c1116'],
   ];
@@ -450,48 +463,91 @@ async function init() {
     const modes = [state.bus ? 'bus' : null, state.tram ? 'tram' : null].filter(Boolean);
     const modeC = ['in', ['get', 'mode'], ['literal', modes]];
     const selC = state.selected ? ['in', state.selected, ['get', 'arr']] : true;
-    // metrolines toggle = sub-filter of the bus mode: hides runs made ONLY of
-    // M lines, plus their boxes/stops/labels (all carry the fuchsia color)
-    const mlC = state.mline ? true : ['!=', ['get', 'mline'], 'all'];
-    const mlColorC = state.mline ? true : ['!=', ['get', 'color'], MLINE_PINK];
-    const mlNameC = state.mline ? true : ['!=', ['get', 'mall'], 1];
-    map.setFilter('route-casing', ['all', modeC, selC, mlC]);
-    map.setFilter('route-line', ['all', modeC, selC, mlC]);
-    map.setFilter('route-trolley-dash', ['all', ['==', ['get', 'trolley'], 'mix'], modeC, selC]);
-    map.setFilter('stops-dots', ['all', modeC, selC, mlColorC]);
+    // metrolines are an INDEPENDENT category: three bus sub-worlds — plain
+    // buses (no mline flag), pure metroline runs (mline=all) and shared
+    // corridors (mline=mix, part of BOTH networks, so either toggle keeps them)
+    const B = state.bus, M = state.mline;
+    const busRunC = ['any',
+      B ? ['!', ['has', 'mline']] : false,
+      M ? ['==', ['get', 'mline'], 'all'] : false,
+      (B || M) ? ['==', ['get', 'mline'], 'mix'] : false];
+    const runModeC = ['any',
+      ['all', ['==', ['get', 'mode'], 'bus'], busRunC],
+      state.tram ? ['==', ['get', 'mode'], 'tram'] : false];
+    const stopSubC = ['any',
+      B ? ['!', ['has', 'mstop']] : false,
+      M ? ['==', ['get', 'mstop'], 'all'] : false,
+      (B || M) ? ['==', ['get', 'mstop'], 'mix'] : false];
+    const stopModeC = ['any',
+      ['all', ['==', ['get', 'mode'], 'bus'], stopSubC],
+      state.tram ? ['==', ['get', 'mode'], 'tram'] : false];
+    const boxSubC = ['any',
+      B ? ['!=', ['get', 'color'], MLINE_YELLOW] : false,
+      M ? ['==', ['get', 'color'], MLINE_YELLOW] : false];
+    const boxModeC = ['any',
+      ['all', ['==', ['get', 'mode'], 'bus'], boxSubC],
+      state.tram ? ['==', ['get', 'mode'], 'tram'] : false];
+    const busLblC = ['any',
+      B ? ['!=', ['get', 'color'], MLINE_YELLOW] : false,
+      M ? ['any', ['==', ['get', 'color'], MLINE_YELLOW], ['has', 'mLines']] : false];
+    // metroline-only view paints shared corridors and their trimmed number
+    // rows amber, so the network reads as one continuous system
+    map.setPaintProperty('route-line', 'line-color', M && !B
+      ? ['case', ['==', ['get', 'mline'], 'mix'], MLINE_YELLOW, ['coalesce', ['get', 'color'], KMK]]
+      : ['coalesce', ['get', 'color'], KMK]);
+    map.setFilter('route-casing', ['all', runModeC, selC]);
+    map.setFilter('route-line', ['all', runModeC, selC]);
+    map.setFilter('route-trolley-dash', ['all', ['==', ['get', 'trolley'], 'mix'], runModeC, selC]);
+    map.setFilter('route-mline-dash', M && B
+      ? ['all', ['==', ['get', 'mline'], 'mix'], selC]
+      : ['==', ['get', 'mline'], 'never']);
+    map.setFilter('stops-dots', ['all', stopModeC, selC]);
     // with a line selected, names of ALL its stops (no label clustering)
     const lblC = state.selected ? true : ['==', ['get', 'label'], 1];
-    map.setFilter('stops-names', ['all', ['!=', ['get', 'terminus'], 1], ['!=', ['get', 'metro'], 1], modeC, selC, lblC, mlColorC]);
-    map.setFilter('stops-terminus-names', ['all', ['==', ['get', 'terminus'], 1], ['!=', ['get', 'metro'], 1], modeC, selC, lblC, mlColorC]);
-    map.setFilter('stops-metro-names', ['all', ['==', ['get', 'metro'], 1], modeC, selC, lblC]);
+    map.setFilter('stops-names', ['all', ['!=', ['get', 'terminus'], 1], ['!=', ['get', 'metro'], 1], stopModeC, selC, lblC]);
+    map.setFilter('stops-terminus-names', ['all', ['==', ['get', 'terminus'], 1], ['!=', ['get', 'metro'], 1], stopModeC, selC, lblC]);
+    map.setFilter('stops-metro-names', ['all', ['==', ['get', 'metro'], 1], stopModeC, selC, lblC]);
     // with a line selected only ITS badge stays at the loop
     BADGE_LAYERS.forEach((id, b) => {
-      map.setFilter(id, ['all', bandC(b), ['has', 'line'], modeC, mlColorC,
+      map.setFilter(id, ['all', bandC(b), ['has', 'line'], boxModeC,
         state.selected ? ['==', ['get', 'line'], state.selected] : true]);
     });
     // complex name rows follow: shown while any of the complex's modes is on
     // ('in' does substring search on the "bus,tram" string), and with a line
     // selected only complexes where that line terminates keep their name
     const nameModeC = ['any',
-      state.bus ? ['in', 'bus', ['get', 'modes']] : false,
-      state.tram ? ['in', 'tram', ['get', 'modes']] : false];
+      state.tram ? ['in', 'tram', ['get', 'modes']] : false,
+      ['all', ['in', 'bus', ['get', 'modes']], ['any',
+        B ? ['!', ['has', 'msome']] : false,
+        M ? ['==', ['get', 'mall'], 1] : false,
+        (B || M) ? ['all', ['==', ['get', 'msome'], 1], ['!=', ['get', 'mall'], 1]] : false]]];
     BADGE_NAME_LAYERS.forEach((id, b) => {
-      map.setFilter(id, ['all', bandC(b), ['has', 'name'], nameModeC, mlNameC,
+      map.setFilter(id, ['all', bandC(b), ['has', 'name'], nameModeC,
         state.selected ? ['in', state.selected, ['get', 'arr']] : true]);
     });
     let numC, numField;
-    if (state.bus && !state.tram) {
+    const lblModeC = ['any',
+      ['all', ['==', ['get', 'mode'], 'bus'], busLblC],
+      state.tram ? ['==', ['get', 'mode'], 'tram'] : false];
+    if ((B || M) && !state.tram) {
       // trams hidden: shared corridor labels (mode=tram with busLines) must stay,
       // but they show only the bus part
-      numC = ['all', ['any', ['==', ['get', 'mode'], 'bus'], ['has', 'busLines']], selC, mlColorC];
+      numC = ['all', ['any', ['all', ['==', ['get', 'mode'], 'bus'], busLblC], ['has', 'busLines']], selC];
       numField = busOnlyNumbers;
     } else {
-      numC = ['all', modeC, selC, mlColorC];
-      numField = state.tram && !state.bus ? tramOnlyNumbers : numberField;
+      numC = ['all', lblModeC, selC];
+      numField = state.tram && !(B || M) ? tramOnlyNumbers : numberField;
     }
+    // with only one bus network on, mixed rows shrink to their relevant half
+    if (B && !M) numField = ['case', ['all', ['==', ['get', 'mode'], 'bus'], ['has', 'nmLines']], ['format', ['get', 'nmLines'], {}], numField];
+    if (M && !B) numField = ['case', ['all', ['==', ['get', 'mode'], 'bus'], ['has', 'mLines']], ['format', ['get', 'mLines'], {}], numField];
+    const numPaint = M && !B
+      ? ['case', ['has', 'mLines'], MLINE_YELLOW, ['coalesce', ['get', 'color'], KMK]]
+      : ['coalesce', ['get', 'color'], KMK];
     for (const d of NUM_LAYERS) {
       map.setFilter(d.id, ['all', d.cond, numC]);
       map.setLayoutProperty(d.id, 'text-field', numField);
+      map.setPaintProperty(d.id, 'text-color', numPaint);
     }
   }
   document.getElementById('chips').addEventListener('click', (e) => {

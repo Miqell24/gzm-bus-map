@@ -26,9 +26,10 @@ const GAP_MIN = 300;
 
 const TROLLEY_GREEN = '#149a3f';
 const TROLLEY_DARK = '#0a5121';
-// GZM metrolinie (M-branded trunk bus network) — Metropolis-brand fuchsia
-const MLINE_PINK = '#d6006e';
-const MLINE_DARK = '#730044';
+// GZM metrolinie (M-branded trunk bus network) — amber, apart from both the
+// navy buses and the red trams (user request: yellow, not fuchsia)
+const MLINE_YELLOW = '#e8a000';
+const MLINE_DARK = '#7d5600';
 
 const t0 = Date.now();
 const log = (m) => console.log(`[${((Date.now() - t0) / 1000).toFixed(1)}s] ${m}`);
@@ -160,7 +161,7 @@ async function processMode(cfg) {
     cfg.mlineSet = new Set(routes.filter((r) => /^M\d+$/.test(r.route_short_name)).map((r) => r.route_short_name));
     if (cfg.mlineSet.size) {
       cfg.lineColors = cfg.lineColors || {}; cfg.lineColorsDark = cfg.lineColorsDark || {};
-      for (const L of cfg.mlineSet) { cfg.lineColors[L] = MLINE_PINK; cfg.lineColorsDark[L] = MLINE_DARK; }
+      for (const L of cfg.mlineSet) { cfg.lineColors[L] = MLINE_YELLOW; cfg.lineColorsDark[L] = MLINE_DARK; }
       log(`metrolines (${cfg.mlineSet.size}): ${[...cfg.mlineSet].sort(numSort).join(', ')}`);
     }
   }
@@ -421,6 +422,12 @@ async function processMode(cfg) {
       angle = Math.round((phi + (side < 0 ? 180 : 0)) * 10) / 10;
     }
     const arr = [...e.lines].sort(numSort);
+    // metroline membership for the independent metrolines toggle
+    let mstop = null;
+    if (cfg.mlineSet && cfg.mlineSet.size) {
+      const n = arr.filter((l) => cfg.mlineSet.has(l)).length;
+      mstop = n === arr.length ? 'all' : (n ? 'mix' : null);
+    }
     stopFeatures.push({
       type: 'Feature',
       geometry: { type: 'Point', coordinates: [round6(lon), round6(lat)] },
@@ -435,6 +442,7 @@ async function processMode(cfg) {
         angle,
         // metro stations render as full discs (no roadside pole side to show)
         ...(isMetroStop ? { metro: 1 } : {}),
+        ...(mstop ? { mstop } : {}),
         snapDist: best ? Math.round(best.d) : null,
       },
     });
@@ -750,6 +758,12 @@ const metaLines = results.flatMap((r) => r.metaLines);
     const arr = p.busLines ? [...p.lines.split(', '), ...p.busLines.split(', ')] : p.lines.split(', ');
     const baseProps = { lines: p.lines, color: p.color, mode: p.mode, arr };
     if (p.busLines) baseProps.busLines = p.busLines;
+    // mixed metroline corridors carry both halves so the frontend can show
+    // only the relevant one when a single network is toggled on
+    if (p.mode === 'bus' && p.mline === 'mix') {
+      baseProps.mLines = arr.filter((l) => /^M\d+$/.test(l)).join(', ');
+      baseProps.nmLines = arr.filter((l) => !/^M\d+$/.test(l)).join(', ');
+    }
     const anchors = [];
     const emit = (placed, extra) => {
       const props = { ...baseProps, angle: Math.round(placed.ang * 10) / 10 };
@@ -905,13 +919,14 @@ const BADGE_BANDS = [[13, 13.6], [13.6, 14.4], [14.4, 15.5], [15.5, 16.8], [16.8
       const modes = [...new Set(lines.map((l) => l.mode))].join(',');
       // a complex where EVERY terminating line is a metrolinia follows the
       // metrolines toggle (its boxes are filtered per-box by color)
-      const mall = lines.every((l) => l.color === MLINE_PINK) ? 1 : 0;
+      const mall = lines.every((l) => l.color === MLINE_YELLOW) ? 1 : 0;
+      const msome = lines.some((l) => l.color === MLINE_YELLOW) ? 1 : 0;
       let yOff = NAME_BASE;
       for (const nm of [...c.names].sort((a, b) => b.localeCompare(a))) {
         badgeFeatures.push({
           type: 'Feature',
           geometry: { type: 'Point', coordinates: [round6(lon), round6(lat)] },
-          properties: { name: nm, band, modes, arr: lines.map((l) => l.line), off: [0, -Math.round(yOff * 100) / 100], ...(mall ? { mall: 1 } : {}) },
+          properties: { name: nm, band, modes, arr: lines.map((l) => l.line), off: [0, -Math.round(yOff * 100) / 100], ...(mall ? { mall: 1 } : {}), ...(msome ? { msome: 1 } : {}) },
         });
         yOff += nameRows(nm) * NAME_LH;
       }
