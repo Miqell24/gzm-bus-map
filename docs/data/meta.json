@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-11T08:13:24.948Z",
+  "generatedAt": "2026-08-12T21:02:11.478Z",
   "bbox": [
     18.404296,
     49.971118,
@@ -194,7 +194,7 @@
       "color": "#0059a9",
       "dirs": [
         {
-          "dir": "0",
+          "dir": "Wartogłowiec Pętla",
           "headsign": "Wartogłowiec Pętla",
           "variants": 2,
           "tripCount": 14,
@@ -1447,9 +1447,9 @@
       "color": "#0059a9",
       "dirs": [
         {
-          "dir": "0",
+          "dir": "Gliwice Centrum Przesiadkowe",
           "headsign": "Gliwice Centrum Przesiadkowe",
-          "variants": 13,
+          "variants": 8,
           "tripCount": 6,
           "stops": 10,
           "lengthKm": 6.06,
@@ -1466,6 +1466,69 @@
             "extStart": 0,
             "extEnd": 0
           }
+        },
+        {
+          "dir": "Gliwice Płażyńskiego",
+          "headsign": "Gliwice Płażyńskiego",
+          "variants": 2,
+          "tripCount": 5,
+          "stops": 10,
+          "lengthKm": 5.85,
+          "stats": {
+            "observations": 294,
+            "matched": 294,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.2336544919092982,
+            "roundaboutSegs": 28,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "Knurów Centrum Przesiadkowe Szpitalna",
+          "headsign": "Knurów Centrum Przesiadkowe Szpitalna",
+          "variants": 1,
+          "tripCount": 1,
+          "stops": 22,
+          "lengthKm": 14.78,
+          "stats": {
+            "observations": 653,
+            "matched": 653,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.4614901410758938,
+            "roundaboutSegs": 38,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "Knurów Wojska Polskiego",
+          "headsign": "Knurów Wojska Polskiego",
+          "variants": 2,
+          "tripCount": 2,
+          "stops": 21,
+          "lengthKm": 12.15,
+          "stats": {
+            "observations": 561,
+            "matched": 561,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.4013970814647045,
+            "roundaboutSegs": 38,
+            "extStart": 0,
+            "extEnd": 0
+          }
         }
       ]
     },
@@ -1475,7 +1538,7 @@
       "color": "#0059a9",
       "dirs": [
         {
-          "dir": "0",
+          "dir": "Katowice Sądowa",
           "headsign": "Katowice Sądowa",
           "variants": 3,
           "tripCount": 26,
@@ -1503,7 +1566,7 @@
       "color": "#0059a9",
       "dirs": [
         {
-          "dir": "0",
+          "dir": "Katowice Sądowa",
           "headsign": "Katowice Sądowa",
           "variants": 3,
           "tripCount": 26,
@@ -2756,7 +2819,7 @@
       "color": "#0059a9",
       "dirs": [
         {
-          "dir": "1",
+          "dir": "Gliwice Centrum Przesiadkowe",
           "headsign": "Gliwice Centrum Przesiadkowe",
           "variants": 8,
           "tripCount": 11,
@@ -3029,7 +3092,7 @@
       "color": "#0059a9",
       "dirs": [
         {
-          "dir": "0",
+          "dir": "Będzin Kościuszki",
           "headsign": "Będzin Kościuszki",
           "variants": 3,
           "tripCount": 9,
@@ -4135,7 +4198,7 @@
       "color": "#0059a9",
       "dirs": [
         {
-          "dir": "0",
+          "dir": "Przełajka Pętla",
           "headsign": "Przełajka Pętla",
           "variants": 1,
           "tripCount": 18,
@@ -4163,7 +4226,7 @@
       "color": "#0059a9",
       "dirs": [
         {
-          "dir": "0",
+          "dir": "Będzin Kościuszki",
           "headsign": "Będzin Kościuszki",
           "variants": 7,
           "tripCount": 3,
@@ -5318,7 +5381,7 @@
       "color": "#0059a9",
       "dirs": [
         {
-          "dir": "0",
+          "dir": "Bytom Dworzec",
           "headsign": "Bytom Dworzec",
           "variants": 1,
           "tripCount": 16,
@@ -5787,7 +5850,7 @@
       "color": "#0059a9",
       "dirs": [
         {
-          "dir": "0",
+          "dir": "Gierałtowice Kościół",
           "headsign": "Gierałtowice Kościół",
           "variants": 1,
           "tripCount": 4,
@@ -6305,7 +6368,7 @@
       "color": "#0059a9",
       "dirs": [
         {
-          "dir": "1",
+          "dir": "Tarnowskie Góry Dworzec",
           "headsign": "Tarnowskie Góry Dworzec",
           "variants": 1,
           "tripCount": 1,
@@ -6480,9 +6543,30 @@
       "color": "#0059a9",
       "dirs": [
         {
-          "dir": "0",
+          "dir": "Chebzie Rondo",
+          "headsign": "Chebzie Rondo",
+          "variants": 1,
+          "tripCount": 3,
+          "stops": 30,
+          "lengthKm": 20.43,
+          "stats": {
+            "observations": 912,
+            "matched": 912,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 2.476648481377164,
+            "roundaboutSegs": 119,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "Halemba Pętla",
           "headsign": "Halemba Pętla",
-          "variants": 4,
+          "variants": 3,
           "tripCount": 27,
           "stops": 45,
           "lengthKm": 30.66,
@@ -6851,7 +6935,7 @@
       "color": "#0059a9",
       "dirs": [
         {
-          "dir": "0",
+          "dir": "Dołki Kaplica",
           "headsign": "Dołki Kaplica",
           "variants": 4,
           "tripCount": 11,
@@ -7761,7 +7845,7 @@
       "color": "#0059a9",
       "dirs": [
         {
-          "dir": "0",
+          "dir": "Gliwice Centrum Przesiadkowe",
           "headsign": "Gliwice Centrum Przesiadkowe",
           "variants": 3,
           "tripCount": 14,
@@ -8132,9 +8216,9 @@
       "color": "#0059a9",
       "dirs": [
         {
-          "dir": "0",
+          "dir": "Przełajka Pętla",
           "headsign": "Przełajka Pętla",
-          "variants": 3,
+          "variants": 2,
           "tripCount": 20,
           "stops": 29,
           "lengthKm": 17.49,
@@ -8148,6 +8232,27 @@
             "rawMeters": 0,
             "meanError": 1.2335003210931113,
             "roundaboutSegs": 43,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "Siemianowice Plac Skargi",
+          "headsign": "Siemianowice Plac Skargi",
+          "variants": 1,
+          "tripCount": 2,
+          "stops": 18,
+          "lengthKm": 10.13,
+          "stats": {
+            "observations": 451,
+            "matched": 451,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.2997924150545037,
+            "roundaboutSegs": 24,
             "extStart": 0,
             "extEnd": 0
           }
@@ -8944,7 +9049,7 @@
       "color": "#0059a9",
       "dirs": [
         {
-          "dir": "0",
+          "dir": "Gliwice Królewskiej Tamy Rondo",
           "headsign": "Gliwice Królewskiej Tamy Rondo",
           "variants": 1,
           "tripCount": 40,
@@ -9021,7 +9126,7 @@
       "color": "#0059a9",
       "dirs": [
         {
-          "dir": "1",
+          "dir": "Bytom Dworzec",
           "headsign": "Bytom Dworzec",
           "variants": 1,
           "tripCount": 15,
@@ -9196,7 +9301,7 @@
       "color": "#0059a9",
       "dirs": [
         {
-          "dir": "0",
+          "dir": "Zabrze Goethego",
           "headsign": "Zabrze Goethego",
           "variants": 1,
           "tripCount": 36,
@@ -9420,7 +9525,7 @@
       "color": "#0059a9",
       "dirs": [
         {
-          "dir": "0",
+          "dir": "Mikołów Dworzec",
           "headsign": "Mikołów Dworzec",
           "variants": 3,
           "tripCount": 18,
@@ -9595,9 +9700,30 @@
       "color": "#0059a9",
       "dirs": [
         {
-          "dir": "1",
+          "dir": "Tychy Towarowa",
+          "headsign": "Tychy Towarowa",
+          "variants": 1,
+          "tripCount": 1,
+          "stops": 36,
+          "lengthKm": 15.95,
+          "stats": {
+            "observations": 728,
+            "matched": 728,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.436212709953929,
+            "roundaboutSegs": 80,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "Wartogłowiec Pętla",
           "headsign": "Wartogłowiec Pętla",
-          "variants": 5,
+          "variants": 4,
           "tripCount": 11,
           "stops": 39,
           "lengthKm": 17.56,
@@ -9623,9 +9749,30 @@
       "color": "#0059a9",
       "dirs": [
         {
-          "dir": "0",
+          "dir": "Godula Plac Niepodległości",
+          "headsign": "Godula Plac Niepodległości",
+          "variants": 2,
+          "tripCount": 1,
+          "stops": 24,
+          "lengthKm": 16.38,
+          "stats": {
+            "observations": 674,
+            "matched": 674,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 2.573093267915488,
+            "roundaboutSegs": 41,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "Halemba Pętla",
           "headsign": "Halemba Pętla",
-          "variants": 7,
+          "variants": 5,
           "tripCount": 17,
           "stops": 43,
           "lengthKm": 30.06,
@@ -9847,7 +9994,7 @@
       "color": "#0059a9",
       "dirs": [
         {
-          "dir": "1",
+          "dir": "Osiedle Wieczorka Dworzec",
           "headsign": "Osiedle Wieczorka Dworzec",
           "variants": 4,
           "tripCount": 11,
@@ -10463,7 +10610,7 @@
       "color": "#0059a9",
       "dirs": [
         {
-          "dir": "1",
+          "dir": "Gliwice Centrum Przesiadkowe",
           "headsign": "Gliwice Centrum Przesiadkowe",
           "variants": 4,
           "tripCount": 14,
@@ -10638,9 +10785,9 @@
       "color": "#0059a9",
       "dirs": [
         {
-          "dir": "1",
+          "dir": "Mikołów Dworzec",
           "headsign": "Mikołów Dworzec",
-          "variants": 3,
+          "variants": 2,
           "tripCount": 12,
           "stops": 38,
           "lengthKm": 28.48,
@@ -10654,6 +10801,27 @@
             "rawMeters": 0,
             "meanError": 1.2763685278882697,
             "roundaboutSegs": 75,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "Zawiść Skrzyżowanie",
+          "headsign": "Zawiść Skrzyżowanie",
+          "variants": 1,
+          "tripCount": 1,
+          "stops": 21,
+          "lengthKm": 15.62,
+          "stats": {
+            "observations": 655,
+            "matched": 655,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.2319469616315728,
+            "roundaboutSegs": 52,
             "extStart": 0,
             "extEnd": 0
           }
@@ -10764,7 +10932,7 @@
       "color": "#0059a9",
       "dirs": [
         {
-          "dir": "0",
+          "dir": "Katowice Sądowa",
           "headsign": "Katowice Sądowa",
           "variants": 1,
           "tripCount": 70,
@@ -10792,7 +10960,7 @@
       "color": "#0059a9",
       "dirs": [
         {
-          "dir": "0",
+          "dir": "Katowice Dworzec",
           "headsign": "Katowice Dworzec",
           "variants": 1,
           "tripCount": 5,
@@ -11016,7 +11184,7 @@
       "color": "#0059a9",
       "dirs": [
         {
-          "dir": "1",
+          "dir": "Mikołów Dworzec",
           "headsign": "Mikołów Dworzec",
           "variants": 1,
           "tripCount": 6,
@@ -11044,7 +11212,7 @@
       "color": "#0059a9",
       "dirs": [
         {
-          "dir": "1",
+          "dir": "Mikołów Dworzec",
           "headsign": "Mikołów Dworzec",
           "variants": 1,
           "tripCount": 11,
@@ -11170,7 +11338,7 @@
       "color": "#0059a9",
       "dirs": [
         {
-          "dir": "0",
+          "dir": "Mikołów Szpital",
           "headsign": "Mikołów Szpital",
           "variants": 1,
           "tripCount": 10,
@@ -11296,7 +11464,7 @@
       "color": "#0059a9",
       "dirs": [
         {
-          "dir": "1",
+          "dir": "Mikołów Dworzec",
           "headsign": "Mikołów Dworzec",
           "variants": 1,
           "tripCount": 19,
@@ -11324,9 +11492,9 @@
       "color": "#0059a9",
       "dirs": [
         {
-          "dir": "0",
+          "dir": "Mikołów Dworzec",
           "headsign": "Mikołów Dworzec",
-          "variants": 3,
+          "variants": 2,
           "tripCount": 13,
           "stops": 38,
           "lengthKm": 27.89,
@@ -11340,6 +11508,27 @@
             "rawMeters": 0,
             "meanError": 1.4800864366596522,
             "roundaboutSegs": 60,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "Łaziska Górne Kopanina",
+          "headsign": "Łaziska Górne Kopanina",
+          "variants": 1,
+          "tripCount": 3,
+          "stops": 18,
+          "lengthKm": 12.09,
+          "stats": {
+            "observations": 482,
+            "matched": 482,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.3177481022231297,
+            "roundaboutSegs": 37,
             "extStart": 0,
             "extEnd": 0
           }
@@ -11401,7 +11590,7 @@
       "color": "#0059a9",
       "dirs": [
         {
-          "dir": "0",
+          "dir": "Katowice Sądowa",
           "headsign": "Katowice Sądowa",
           "variants": 1,
           "tripCount": 31,
@@ -11576,7 +11765,7 @@
       "color": "#0059a9",
       "dirs": [
         {
-          "dir": "0",
+          "dir": "Bytom Dworzec",
           "headsign": "Bytom Dworzec",
           "variants": 1,
           "tripCount": 17,
@@ -12045,7 +12234,7 @@
       "color": "#0059a9",
       "dirs": [
         {
-          "dir": "0",
+          "dir": "Mikołów Dworzec",
           "headsign": "Mikołów Dworzec",
           "variants": 1,
           "tripCount": 6,
@@ -13739,9 +13928,30 @@
       "color": "#0059a9",
       "dirs": [
         {
-          "dir": "0",
+          "dir": "Katowice Sokolska",
+          "headsign": "Katowice Sokolska",
+          "variants": 2,
+          "tripCount": 2,
+          "stops": 51,
+          "lengthKm": 35.48,
+          "stats": {
+            "observations": 1581,
+            "matched": 1581,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.632905263478122,
+            "roundaboutSegs": 149,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "Osiedle Tysiąclecia Pętla",
           "headsign": "Osiedle Tysiąclecia Pętla",
-          "variants": 5,
+          "variants": 3,
           "tripCount": 32,
           "stops": 59,
           "lengthKm": 40.6,
@@ -13767,9 +13977,30 @@
       "color": "#0059a9",
       "dirs": [
         {
-          "dir": "0",
+          "dir": "Gliwice Centrum Przesiadkowe",
+          "headsign": "Gliwice Centrum Przesiadkowe",
+          "variants": 2,
+          "tripCount": 2,
+          "stops": 21,
+          "lengthKm": 11.84,
+          "stats": {
+            "observations": 578,
+            "matched": 578,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.5503764185374693,
+            "roundaboutSegs": 32,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "Sikornik Osiedle",
           "headsign": "Sikornik Osiedle",
-          "variants": 7,
+          "variants": 3,
           "tripCount": 14,
           "stops": 36,
           "lengthKm": 18.96,
@@ -13783,6 +14014,27 @@
             "rawMeters": 0,
             "meanError": 1.5720396020783494,
             "roundaboutSegs": 58,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "Trynek Toruńska",
+          "headsign": "Trynek Toruńska",
+          "variants": 2,
+          "tripCount": 14,
+          "stops": 36,
+          "lengthKm": 19.53,
+          "stats": {
+            "observations": 963,
+            "matched": 963,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.5615486475119529,
+            "roundaboutSegs": 50,
             "extStart": 0,
             "extEnd": 0
           }
@@ -13942,7 +14194,7 @@
       "color": "#0059a9",
       "dirs": [
         {
-          "dir": "0",
+          "dir": "Brynów Centrum Przesiadkowe",
           "headsign": "Brynów Centrum Przesiadkowe",
           "variants": 3,
           "tripCount": 15,
@@ -14509,7 +14761,7 @@
       "color": "#0059a9",
       "dirs": [
         {
-          "dir": "0",
+          "dir": "Mikulczyce Zwrotnicza",
           "headsign": "Mikulczyce Zwrotnicza",
           "variants": 1,
           "tripCount": 14,
@@ -14586,7 +14838,7 @@
       "color": "#0059a9",
       "dirs": [
         {
-          "dir": "0",
+          "dir": "Zabrze Goethego",
           "headsign": "Zabrze Goethego",
           "variants": 1,
           "tripCount": 20,
@@ -14663,7 +14915,7 @@
       "color": "#0059a9",
       "dirs": [
         {
-          "dir": "0",
+          "dir": "Bytom Dworzec",
           "headsign": "Bytom Dworzec",
           "variants": 1,
           "tripCount": 19,
@@ -14691,7 +14943,7 @@
       "color": "#0059a9",
       "dirs": [
         {
-          "dir": "0",
+          "dir": "Zabrze Goethego",
           "headsign": "Zabrze Goethego",
           "variants": 1,
           "tripCount": 24,
@@ -14817,7 +15069,7 @@
       "color": "#0059a9",
       "dirs": [
         {
-          "dir": "1",
+          "dir": "Zabrze Goethego",
           "headsign": "Zabrze Goethego",
           "variants": 1,
           "tripCount": 20,
@@ -14845,7 +15097,7 @@
       "color": "#0059a9",
       "dirs": [
         {
-          "dir": "0",
+          "dir": "Będzin Kościuszki",
           "headsign": "Będzin Kościuszki",
           "variants": 1,
           "tripCount": 9,
@@ -14873,7 +15125,7 @@
       "color": "#0059a9",
       "dirs": [
         {
-          "dir": "0",
+          "dir": "Będzin Kościuszki",
           "headsign": "Będzin Kościuszki",
           "variants": 2,
           "tripCount": 10,
@@ -14950,7 +15202,7 @@
       "color": "#0059a9",
       "dirs": [
         {
-          "dir": "0",
+          "dir": "Bytom Szkoła Medyczna",
           "headsign": "Bytom Szkoła Medyczna",
           "variants": 1,
           "tripCount": 16,
@@ -15076,7 +15328,7 @@
       "color": "#0059a9",
       "dirs": [
         {
-          "dir": "0",
+          "dir": "Bytom Szkoła Medyczna",
           "headsign": "Bytom Szkoła Medyczna",
           "variants": 1,
           "tripCount": 15,
@@ -15202,7 +15454,7 @@
       "color": "#0059a9",
       "dirs": [
         {
-          "dir": "0",
+          "dir": "Tarnowskie Góry Plac Zembali",
           "headsign": "Tarnowskie Góry Plac Zembali",
           "variants": 1,
           "tripCount": 13,
@@ -15230,7 +15482,7 @@
       "color": "#0059a9",
       "dirs": [
         {
-          "dir": "0",
+          "dir": "Tarnowskie Góry Plac Zembali",
           "headsign": "Tarnowskie Góry Plac Zembali",
           "variants": 1,
           "tripCount": 13,
@@ -15356,7 +15608,7 @@
       "color": "#0059a9",
       "dirs": [
         {
-          "dir": "0",
+          "dir": "Zabrze Goethego",
           "headsign": "Zabrze Goethego",
           "variants": 1,
           "tripCount": 21,
@@ -15678,9 +15930,30 @@
       "color": "#0059a9",
       "dirs": [
         {
-          "dir": "0",
+          "dir": "Będzin Cmentarz Komunalny",
+          "headsign": "Będzin Cmentarz Komunalny",
+          "variants": 1,
+          "tripCount": 3,
+          "stops": 21,
+          "lengthKm": 21.38,
+          "stats": {
+            "observations": 945,
+            "matched": 945,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 2.4776178765969585,
+            "roundaboutSegs": 57,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "Katowice Piotra Skargi",
           "headsign": "Katowice Piotra Skargi",
-          "variants": 6,
+          "variants": 4,
           "tripCount": 6,
           "stops": 37,
           "lengthKm": 34.54,
@@ -15694,6 +15967,27 @@
             "rawMeters": 0,
             "meanError": 2.4842723719954556,
             "roundaboutSegs": 97,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "Sosnowiec Dworzec PKP",
+          "headsign": "Sosnowiec Dworzec PKP",
+          "variants": 1,
+          "tripCount": 3,
+          "stops": 9,
+          "lengthKm": 9.67,
+          "stats": {
+            "observations": 387,
+            "matched": 387,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.9386706787505916,
+            "roundaboutSegs": 34,
             "extStart": 0,
             "extEnd": 0
           }
@@ -16294,9 +16588,30 @@
       "color": "#0059a9",
       "dirs": [
         {
-          "dir": "0",
+          "dir": "Katowice Mickiewicza",
+          "headsign": "Katowice Mickiewicza",
+          "variants": 1,
+          "tripCount": 2,
+          "stops": 9,
+          "lengthKm": 4.39,
+          "stats": {
+            "observations": 206,
+            "matched": 206,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 2.050757978153795,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "Osiedle Paderewskiego Trzy Stawy",
           "headsign": "Osiedle Paderewskiego Trzy Stawy",
-          "variants": 3,
+          "variants": 2,
           "tripCount": 76,
           "stops": 19,
           "lengthKm": 9.8,
@@ -16469,7 +16784,7 @@
       "color": "#0059a9",
       "dirs": [
         {
-          "dir": "0",
+          "dir": "Ksawera Prosta Pętla",
           "headsign": "Ksawera Prosta Pętla",
           "variants": 1,
           "tripCount": 15,
@@ -16938,7 +17253,7 @@
       "color": "#0059a9",
       "dirs": [
         {
-          "dir": "1",
+          "dir": "Gierałtowice Kościół",
           "headsign": "Gierałtowice Kościół",
           "variants": 1,
           "tripCount": 5,
@@ -17260,7 +17575,7 @@
       "color": "#0059a9",
       "dirs": [
         {
-          "dir": "0",
+          "dir": "Siewierz Dom Kultury",
           "headsign": "Siewierz Dom Kultury",
           "variants": 2,
           "tripCount": 7,
@@ -17974,9 +18289,30 @@
       "color": "#149a3f",
       "dirs": [
         {
-          "dir": "1",
+          "dir": "Tychy Osiedle Z1",
+          "headsign": "Tychy Osiedle Z1",
+          "variants": 1,
+          "tripCount": 3,
+          "stops": 29,
+          "lengthKm": 11.75,
+          "stats": {
+            "observations": 530,
+            "matched": 530,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.2757559510497087,
+            "roundaboutSegs": 65,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "Tychy Sikorskiego Wiadukt",
           "headsign": "Tychy Sikorskiego Wiadukt",
-          "variants": 3,
+          "variants": 2,
           "tripCount": 13,
           "stops": 31,
           "lengthKm": 12.26,
@@ -18051,9 +18387,30 @@
       "color": "#149a3f",
       "dirs": [
         {
-          "dir": "1",
+          "dir": "Tychy Osiedle Z1",
+          "headsign": "Tychy Osiedle Z1",
+          "variants": 2,
+          "tripCount": 2,
+          "stops": 28,
+          "lengthKm": 11.76,
+          "stats": {
+            "observations": 555,
+            "matched": 555,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.3232596533332566,
+            "roundaboutSegs": 72,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "Tychy Sikorskiego Wiadukt",
           "headsign": "Tychy Sikorskiego Wiadukt",
-          "variants": 4,
+          "variants": 2,
           "tripCount": 13,
           "stops": 30,
           "lengthKm": 12.31,
@@ -18128,7 +18485,7 @@
       "color": "#0059a9",
       "dirs": [
         {
-          "dir": "0",
+          "dir": "Mikołów Dworzec",
           "headsign": "Mikołów Dworzec",
           "variants": 4,
           "tripCount": 5,
@@ -19724,7 +20081,7 @@
       "color": "#0059a9",
       "dirs": [
         {
-          "dir": "0",
+          "dir": "Katowice Sądowa",
           "headsign": "Katowice Sądowa",
           "variants": 1,
           "tripCount": 37,
@@ -19801,7 +20158,7 @@
       "color": "#0059a9",
       "dirs": [
         {
-          "dir": "0",
+          "dir": "Czeladź Dworzec",
           "headsign": "Czeladź Dworzec",
           "variants": 1,
           "tripCount": 55,
@@ -19829,7 +20186,7 @@
       "color": "#0059a9",
       "dirs": [
         {
-          "dir": "0",
+          "dir": "Brynów Centrum Przesiadkowe",
           "headsign": "Brynów Centrum Przesiadkowe",
           "variants": 1,
           "tripCount": 73,
@@ -20298,7 +20655,7 @@
       "color": "#0059a9",
       "dirs": [
         {
-          "dir": "0",
+          "dir": "Katowice Sądowa",
           "headsign": "Katowice Sądowa",
           "variants": 1,
           "tripCount": 38,
