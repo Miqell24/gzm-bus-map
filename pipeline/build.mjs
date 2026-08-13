@@ -987,10 +987,15 @@ const metaLines = results.flatMap((r) => r.metaLines);
     const a = s.split(', ');
     return a.length > 14 ? a.slice(0, 12).join(', ') + ' +' + (a.length - 12) : s;
   };
+  // GTFS prefixes Silesian tram numbers with T (T41); the city writes bare
+  // numbers (user 13.08.2026). Keys keep the prefix — bus 41 exists too, so
+  // selection and the journey planner must not merge the two — only the
+  // drawn label text drops it. (Bus "T-9" has a hyphen and stays untouched.)
+  const tramDisp = (s) => s.split(', ').map((l) => (/^T\d+$/.test(l) ? l.slice(1) : l)).join(', ');
   for (const g of groups.values()) {
     const p = g.best.f.properties;
     const arr = p.busLines ? [...p.lines.split(', '), ...p.busLines.split(', ')] : p.lines.split(', ');
-    const baseProps = { lines: p.lines, color: p.color, mode: p.mode, arr };
+    const baseProps = { lines: p.mode === 'tram' ? tramDisp(p.lines) : p.lines, color: p.color, mode: p.mode, arr };
     if (p.busLines) baseProps.busLines = p.busLines;
     // mixed metroline corridors carry both halves so the frontend can show
     // only the relevant one when a single network is toggled on
@@ -1294,6 +1299,7 @@ const BADGE_BANDS = [[13, 13.6], [13.6, 14.4], [14.4, 15.5], [15.5, 16.8], [16.8
           geometry: { type: 'Point', coordinates: [round6(lon), round6(lat)] },
           properties: {
             line: l.line, mode: l.mode, color: l.color, colorDark: l.colorDark, band,
+            ...(l.mode === 'tram' && /^T\d+$/.test(l.line) ? { disp: l.line.slice(1) } : {}),
             ...(scC < 1 ? { sc: scC } : {}),
             off: [
               Math.round((col - (rowLen - 1) / 2) * CELL_W * 100) / 100,
