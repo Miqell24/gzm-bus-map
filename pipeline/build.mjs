@@ -38,7 +38,20 @@ const MLINE_DARK = '#7d5600';
 
 const t0 = Date.now();
 const log = (m) => console.log(`[${((Date.now() - t0) / 1000).toFixed(1)}s] ${m}`);
-const numSort = (a, b) => (Number(a) - Number(b)) || a.localeCompare(b);
+// Natural line order everywhere lists are composed (street number rows, badge
+// grids, meta): alpha prefix groups families (M1 … M116 together, before
+// S1/Z-1), the numeric core decides inside a family, the suffix breaks ties
+// (7 before 7N). The old Number()-based compare left anything non-pure-numeric
+// — 76N, M101, T13 — to lexicographic chaos (user report 13.08.2026:
+// "13, 16, 41, 46, 6" on tram rows).
+const natKey = (s) => {
+  const m = String(s).match(/^(.*?)(\d+)(.*)$/);
+  return m ? [m[1].replace(/[-\s]+$/, ''), +m[2], m[3]] : [String(s), -1, ''];
+};
+const numSort = (a, b) => {
+  const A = natKey(a), B = natKey(b);
+  return A[0].localeCompare(B[0]) || (A[1] - B[1]) || A[2].localeCompare(B[2]);
+};
 function round6(v) { return Math.round(v * 1e6) / 1e6; }
 
 // ---------- CLI ----------
