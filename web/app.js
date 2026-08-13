@@ -148,9 +148,30 @@ async function init() {
   // tram keys carry the GTFS T prefix (T41) but the city writes bare numbers —
   // strip it from every displayed text, never from the key (bus 41 exists too)
   const dispLine = (l) => (/^T\d+$/.test(l) ? l.slice(1) : l);
-  document.getElementById('chips').innerHTML = meta.lines
-    .map((l) => `<button class="chip" data-line="${esc(l.line)}" style="background:${esc(l.color)}">${esc(dispLine(l.line))}</button>`)
-    .join(' ');
+  // Chips grouped by network and naturally sorted (1, 2 … 10, 11 — not the
+  // lexicographic 1, 10, 11 … 2 the raw key order produced). Lines here cross
+  // city borders, so the honest grouping is by network, not by town.
+  const natKey = (s) => {
+    const m = s.match(/^(.*?)(\d+)(.*)$/);
+    return m ? [m[1].replace(/[-\s]+$/, ''), +m[2], m[3]] : [s, -1, ''];
+  };
+  const natCmp = (a, b) => {
+    const A = natKey(a), B = natKey(b);
+    return A[0].localeCompare(B[0]) || (A[1] - B[1]) || A[2].localeCompare(B[2]);
+  };
+  const CATS = [
+    ['Buses', (l) => l.mode === 'bus' && !/^M\d+$/.test(l.line) && l.color !== TROLLEY_GREEN],
+    ['Trolleybuses (Tychy)', (l) => l.mode === 'bus' && l.color === TROLLEY_GREEN],
+    ['Metrolines', (l) => l.mode === 'bus' && /^M\d+$/.test(l.line)],
+    ['Trams', (l) => l.mode === 'tram'],
+  ];
+  document.getElementById('chips').innerHTML = CATS.map(([title, test]) => {
+    const ls = meta.lines.filter(test).sort((a, b) => natCmp(dispLine(a.line), dispLine(b.line)));
+    if (!ls.length) return '';
+    return `<span class="chip-cat">${title}</span>` + ls
+      .map((l) => `<button class="chip" data-line="${esc(l.line)}" style="background:${esc(l.color)}">${esc(dispLine(l.line))}</button>`)
+      .join(' ');
+  }).join('');
 
   // Line layers go below the base style labels (street names stay readable).
   const firstSymbol = map.getStyle().layers.find((l) => l.type === 'symbol')?.id;
