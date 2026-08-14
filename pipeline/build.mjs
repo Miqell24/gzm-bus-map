@@ -995,11 +995,8 @@ const metaLines = results.flatMap((r) => r.metaLines);
     if (ang < -90) ang += 180;
     return { c, ang, dx, dy };
   };
-  // metroline half-lists still use the plain cap (they have no markers)
-  const capList = (s) => {
-    const a = s.split(', ');
-    return a.length > 14 ? a.slice(0, 12).join(', ') + ' +' + (a.length - 12) : s;
-  };
+  // trolleybus numbers of every bus feed (Tychy A–H)
+  const TSET = new Set(MODES.flatMap((m) => [...(m.trolleySet || [])]));
   // GTFS prefixes Silesian tram numbers with T (T41); the city writes bare
   // numbers (user 13.08.2026). Keys keep the prefix — bus 41 exists too, so
   // selection and the journey planner must not merge the two — only the
@@ -1010,11 +1007,18 @@ const metaLines = results.flatMap((r) => r.metaLines);
     const arr = p.busLines ? [...p.lines.split(', '), ...p.busLines.split(', ')] : p.lines.split(', ');
     const baseProps = { lines: p.mode === 'tram' ? tramDisp(p.lines) : p.lines, color: p.color, mode: p.mode, arr };
     if (p.busLines) baseProps.busLines = p.busLines;
-    // mixed metroline corridors carry both halves so the frontend can show
-    // only the relevant one when a single network is toggled on
-    if (p.mode === 'bus' && p.mline === 'mix') {
-      baseProps.mLines = capList(arr.filter((l) => /^M\d+$/.test(l)).join(', '));
-      baseProps.nmLines = capList(arr.filter((l) => !/^M\d+$/.test(l)).join(', '));
+    // A corridor mixing colour categories is split into the groups it actually
+    // carries — amber metrolines, green trolleybuses, navy buses — so the row
+    // prints every number in ITS OWN colour (user 14.08.2026) and so a single
+    // toggled-on network can shrink the row to its own half. A single-colour
+    // corridor needs nothing: colorOf already paints the whole row. Lists stay
+    // UNCAPPED here, like `lines` itself — cutting them to "+N" would hide up
+    // to 33 numbers on the busiest Katowice corridors.
+    if (p.mode === 'bus') {
+      const groupsOf = { mLines: arr.filter((l) => /^M\d+$/.test(l)), tLines: arr.filter((l) => TSET.has(l)) };
+      groupsOf.nmLines = arr.filter((l) => !groupsOf.mLines.includes(l) && !groupsOf.tLines.includes(l));
+      const present = Object.entries(groupsOf).filter(([, g]) => g.length);
+      if (present.length > 1) for (const [k, g] of present) baseProps[k] = g.join(', ');
     }
     const anchors = [];
     // The collision engine knows nothing about the STROKES, so on a dual

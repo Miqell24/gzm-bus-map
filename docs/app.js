@@ -240,12 +240,26 @@ async function init() {
   // own color — M1 green, M2 red, M3 azure, tram purple) above the bus row.
   const TRAM_RED = '#d6212b';
   const railColor = ['coalesce', ['get', 'color'], TRAM_RED];
+  // A corridor mixing colour categories prints every number in ITS OWN colour:
+  // amber metrolines, green trolleybuses (Tychy), navy buses. The pipeline
+  // emits only the groups a row actually carries, so the cases below cover
+  // every combination; a single-colour row has none of them and falls through
+  // to the plain list painted by the layer colour.
+  const GROUP_COLOR = { mLines: MLINE_YELLOW, tLines: TROLLEY_GREEN, nmLines: KMK };
+  const row = (...keys) => ['format', ...keys.flatMap((k, i) =>
+    [...(i ? ['\n', {}] : []), ['get', k], { 'text-color': GROUP_COLOR[k] }])];
+  const splitRow = ['case',
+    ['all', ['has', 'mLines'], ['has', 'tLines'], ['has', 'nmLines']], row('mLines', 'tLines', 'nmLines'),
+    ['all', ['has', 'mLines'], ['has', 'tLines']], row('mLines', 'tLines'),
+    ['has', 'mLines'], row('mLines', 'nmLines'),
+    ['has', 'tLines'], row('tLines', 'nmLines'),
+    ['format', ['get', 'lines'], {}]];
   const numberField = ['case', ['has', 'busLines'],
     ['format',
       ['get', 'lines'], { 'text-color': railColor },
       '\n', {},
       ['get', 'busLines'], { 'text-color': KMK }],
-    ['format', ['get', 'lines'], {}]];
+    splitRow];
   map.addSource('labels', { type: 'geojson', data: 'data/labels.geojson' });
   const numbersLayout = {
     'text-field': numberField,
@@ -686,7 +700,7 @@ async function init() {
   let densityMainCond = true; // sparsest step: one main row per same-content corridor chain
   const busOnlyNumbers = ['case', ['has', 'busLines'],
     ['format', ['get', 'busLines'], { 'text-color': KMK }],
-    ['format', ['get', 'lines'], {}]];
+    splitRow];
   const tramOnlyNumbers = ['format', ['get', 'lines'], {}];
   function applyFilters() {
     const modes = [state.bus ? 'bus' : null, state.tram ? 'tram' : null].filter(Boolean);
@@ -774,7 +788,12 @@ async function init() {
       numField = state.tram && !(B || M) ? tramOnlyNumbers : numberField;
     }
     // with only one bus network on, mixed rows shrink to their relevant half
-    if (B && !M) numField = ['case', ['all', ['==', ['get', 'mode'], 'bus'], ['has', 'nmLines']], ['format', ['get', 'nmLines'], {}], numField];
+    if (B && !M) numField = ['case', ['all', ['==', ['get', 'mode'], 'bus'], ['any', ['has', 'tLines'], ['has', 'nmLines']]],
+      // metrolines off: the row keeps its buses AND trolleybuses, each coloured
+      ['case', ['all', ['has', 'tLines'], ['has', 'nmLines']], row('tLines', 'nmLines'),
+        ['has', 'tLines'], row('tLines'),
+        row('nmLines')],
+      numField];
     if (M && !B) numField = ['case', ['all', ['==', ['get', 'mode'], 'bus'], ['has', 'mLines']], ['format', ['get', 'mLines'], {}], numField];
     const numPaint = M && !B
       ? ['case', ['has', 'mLines'], MLINE_YELLOW, ['coalesce', ['get', 'color'], KMK]]
