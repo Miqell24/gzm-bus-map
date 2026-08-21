@@ -700,16 +700,107 @@ async function processMode(cfg) {
       properties: { name: r.name, lines: r.linesKey, arr, roundabout: r.roundabout, mode: cfg.mode, color: colorOf(arr), ...runFlags(arr) },
     };
   });
+  // A raw stretch is what the matcher leaves behind when it cannot route between
+  // two consecutive fixes: the shape's own points, drawn as-is. It enters the
+  // streets layer here — but its ends are the MATCHED POSITIONS, while the runs
+  // on either side are built from whole intervals of road segments, so the two
+  // rarely meet at the same coordinate. The result is a stub hanging in mid-air
+  // with the line apparently torn in two (Tricity user report, 19.08.2026;
+  // ported here 21.08.2026). So each end is pulled onto the nearest point of a
+  // run that carries one of the same lines. The reach is deliberately short:
+  // this closes a seam, it does not invent a route.
+  const RAW_JOIN = 120;
+  const joinRawEnd = (pt, lines) => {
+    let best = null, bd = RAW_JOIN;
+    for (const r of mergedRuns) {
+      const rl = r.linesKey.split(', ');
+      if (!rl.some((l) => lines.has(l))) continue;
+      for (let i = 1; i < r.coords.length; i++) {
+        // proj.toXY takes (lat, lon); these coords are [lon, lat]
+        const a = proj.toXY(r.coords[i - 1][1], r.coords[i - 1][0]);
+        const b = proj.toXY(r.coords[i][1], r.coords[i][0]);
+        const vx = b[0] - a[0], vy = b[1] - a[1], L2 = vx * vx + vy * vy;
+        const t = L2 ? Math.max(0, Math.min(1, ((pt[0] - a[0]) * vx + (pt[1] - a[1]) * vy) / L2)) : 0;
+        const q = [a[0] + vx * t, a[1] + vy * t];
+        const d = Math.hypot(pt[0] - q[0], pt[1] - q[1]);
+        if (d < bd) { bd = d; best = q; }
+      }
+    }
+    return best;
+  };
+  let rawJoined = 0;
   for (const g of rawRunsAll) {
     const arr = [...g.lines].sort(numSort);
+    const xy = g.coords.map(([lon, lat]) => proj.toXY(lat, lon));
+    for (const end of [0, 1]) {
+      const pt = end ? xy[xy.length - 1] : xy[0];
+      const j = joinRawEnd(pt, g.lines);
+      if (!j || Math.hypot(j[0] - pt[0], j[1] - pt[1]) < 0.5) continue;
+      const [lon, lat] = proj.toLonLat(j[0], j[1]);
+      if (end) g.coords.push([round6(lon), round6(lat)]);
+      else g.coords.unshift([round6(lon), round6(lat)]);
+      rawJoined++;
+    }
     streetFeatures.push({
       type: 'Feature',
       geometry: { type: 'LineString', coordinates: g.coords },
       properties: { name: '', lines: arr.join(', '), arr, roundabout: 0, mode: cfg.mode, color: colorOf(arr), unmapped: 1, ...runFlags(arr) },
     });
   }
+  if (rawJoined) log(`  ${rawJoined} ends of unrouted stretches pulled onto the runs beside them`);
   log(`Runs: ${runs.length} → ${mergedRuns.length} after merging` +
       (rawRunsAll.length ? ` (+${rawRunsAll.length} outside OSM)` : ''));
+
+  // HOLES IN THE STREETS LAYER. That layer is built from the road SEGMENTS a
+  // route travelled, and a segment only enters it once at least 25 m or half of
+  // it was used — a sensible rule that keeps glancing touches out, and one that
+  // leaves a hole whenever a route clips a long segment briefly. route.geojson
+  // runs through unbroken; the drawn network does not, and the line appears torn.
+  // So: find every line whose runs fall into more than one connected piece, and
+  // close the gap with a straight seam — only across a SEAM (≤ 60 m); anything
+  // wider is left alone and reported rather than invented.
+  {
+    const key = (c) => c[0].toFixed(6) + ',' + c[1].toFixed(6);
+    const dist = (a, b) => { const [ax, ay] = proj.toXY(a[1], a[0]), [bx, by] = proj.toXY(b[1], b[0]); return Math.hypot(ax - bx, ay - by); };
+    const byLine = new Map();
+    for (const f of streetFeatures) for (const l of f.properties.arr) {
+      if (!byLine.has(l)) byLine.set(l, []);
+      byLine.get(l).push(f);
+    }
+    const MAX_SEAM = 60;
+    let patched = 0, patchedM = 0;
+    for (const [line, lruns] of byLine) {
+      if (lruns.length < 2) continue;
+      const at = new Map();
+      lruns.forEach((f, i) => { for (const c of f.geometry.coordinates) {
+        const k = key(c); if (!at.has(k)) at.set(k, []); at.get(k).push(i); } });
+      const seen = new Array(lruns.length).fill(false);
+      const comps = [];
+      for (let i = 0; i < lruns.length; i++) {
+        if (seen[i]) continue;
+        const mem = [], q = [i]; seen[i] = true;
+        while (q.length) { const j = q.pop(); mem.push(j);
+          for (const c of lruns[j].geometry.coordinates) for (const n of (at.get(key(c)) || [])) if (!seen[n]) { seen[n] = true; q.push(n); } }
+        comps.push(mem);
+      }
+      if (comps.length < 2) continue;
+      const ptsOf = (m) => m.flatMap((j) => lruns[j].geometry.coordinates);
+      comps.sort((x, y) => ptsOf(y).length - ptsOf(x).length);
+      for (let ci = 1; ci < comps.length; ci++) {
+        const A = ptsOf(comps[0]), B = ptsOf(comps[ci]);
+        let bd = Infinity, pa = null, pb = null;
+        for (const x of A) for (const y of B) { const d = dist(x, y); if (d < bd) { bd = d; pa = x; pb = y; } }
+        if (!pa || bd > MAX_SEAM) continue;
+        streetFeatures.push({
+          type: 'Feature',
+          geometry: { type: 'LineString', coordinates: [pa, pb] },
+          properties: { name: '', lines: line, arr: [line], roundabout: 0, mode: cfg.mode, color: colorOf([line]), nolabel: 1, ...runFlags([line]) },
+        });
+        patched++; patchedM += bd;
+      }
+    }
+    if (patched) log(`  ${patched} seams closed in the drawn network (${Math.round(patchedM)} m total)`);
+  }
 
   const toLonLat = (xy) => xy.map(([x, y]) => { const [lon, lat] = proj.toLonLat(x, y); return [round6(lon), round6(lat)]; });
   const routeFeatures = reps.map((r) => ({
