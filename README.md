@@ -15,6 +15,16 @@ Fifth city of the family, alongside
 same visual system, different city and feeds. The largest network of the family:
 41 municipalities from Gliwice to Dąbrowa Górnicza.
 
+## Two views
+
+The panel's **Corridors / Lines** switch (ported from the Tricity map, 21.08.2026)
+redraws the same network line by line: a roadway carrying up to four lines is
+drawn as four coloured strands side by side (each line keeps one colour across the
+whole map), anything busier becomes one grey trunk with its numbers beside it in
+the lines' colours. `npm run lines` (`pipeline/lines.mjs`) derives the strand
+files from `data/out/`; `npm run audit` checks the drawn result (torn ends,
+folds, doubles, every line one connected piece).
+
 ## Features
 
 - GTFS from ZTM GZM matched onto the OSM road and tram network — weighted mean

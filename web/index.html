@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>GZM Metropolis Public Transport — interactive map</title>
 <link rel="stylesheet" href="vendor/maplibre-gl.css">
-<link rel="stylesheet" href="style.css?v=20260821b">
+<link rel="stylesheet" href="style.css?v=20260821c">
 </head>
 <body>
 <div id="map"></div>
@@ -73,18 +73,26 @@
 
     </nav>
   </details>
+  <div id="view-switch" class="viewsw" role="group" aria-label="Map view">
+    <button type="button" data-view="corridors" class="on">Corridors</button>
+    <button type="button" data-view="lines">Lines</button>
+  </div>
   <div id="base-switch" role="group" aria-label="Base map colours"
        title="The base map underneath the network: the paper look or flat grey newsprint.">
-    <button type="button" data-bg="paper" class="on">Paper base</button>
+    <button type="button" data-bg="paper">Paper base</button>
     <button type="button" data-bg="grey">Grey base</button>
   </div>
+  <p class="hint viewhint corridor-only">One stroke per roadway, the whole network in its mode colours.</p>
+  <p class="hint viewhint lines-only">Every line drawn on its own, in its own colour — up to four side by side.</p>
   <ul class="legend">
-    <li><label><input type="checkbox" id="toggle-bus" checked> <span class="sw line"></span> Bus &amp; trolleybus routes</label></li>
-    <li class="sublegend"><span class="mini" style="background:#149a3f"></span>trolleybus (Tychy)</li>
+    <li class="lines-only"><span class="sw bundle"><i></i><i></i><i></i><i></i></span> Up to 4 lines: each on its own, in its own colour</li>
+    <li class="lines-only"><span class="sw trunk"></span> 5 or more: one grey stroke, its numbers beside it</li>
+    <li><label><input type="checkbox" id="toggle-bus" checked> <span class="sw line corridor-only"></span> Bus &amp; trolleybus routes</label></li>
+    <li class="sublegend corridor-only"><span class="mini" style="background:#149a3f"></span>trolleybus (Tychy)</li>
 
-    <li><label><input type="checkbox" id="toggle-mline" checked> <span class="sw line mline"></span> Metroline routes (M)</label></li>
-    <li class="sublegend"><span class="mini" style="background:#e8a000"></span>dashed = shared with regular buses</li>
-    <li><label><input type="checkbox" id="toggle-tram" checked> <span class="sw line tram"></span> Tram routes</label></li>
+    <li><label><input type="checkbox" id="toggle-mline" checked> <span class="sw line corridor-only mline"></span> Metroline routes (M)</label></li>
+    <li class="sublegend corridor-only"><span class="mini" style="background:#e8a000"></span>dashed = shared with regular buses</li>
+    <li><label><input type="checkbox" id="toggle-tram" checked> <span class="sw line corridor-only tram"></span> Tram routes</label></li>
     <li><span class="sw stop"></span> Stop</li>
     <li><span class="sw terminus"></span> Terminus</li>
   </ul>
@@ -126,6 +134,6 @@
   <label class="debug"><input type="checkbox" id="toggle-shape"> show raw GTFS shapes (QA)</label>
 </aside>
 <script src="vendor/maplibre-gl.js"></script>
-<script src="app.js?v=20260821b"></script>
+<script src="app.js?v=20260821c"></script>
 </body>
 </html>

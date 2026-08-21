@@ -8,6 +8,8 @@
     "download": "bash pipeline/download.sh",
     "build": "node --max-old-space-size=6144 pipeline/build.mjs --all --tram all",
     "report": "node pipeline/report-gaps.mjs",
-    "serve": "node pipeline/serve.mjs 8128"
+    "serve": "node pipeline/serve.mjs 8128",
+    "lines": "node pipeline/lines.mjs",
+    "audit": "node --max-old-space-size=6144 pipeline/audit.mjs"
   }
 }
