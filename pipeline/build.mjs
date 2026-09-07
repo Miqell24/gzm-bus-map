@@ -48,9 +48,18 @@ const natKey = (s) => {
   const m = String(s).match(/^(.*?)(\d+)(.*)$/);
   return m ? [m[1].replace(/[-\s]+$/, ''), +m[2], m[3]] : [String(s), -1, ''];
 };
+// Line RANK (7.09.2026, user rule for the whole family): trolleybuses first,
+// day lines next, NIGHT lines last — in every list the map prints: the panel,
+// the number rows along the streets, the terminus badge grids. The night
+// rule is this city's own (NIGHT, tested on the printed number); the
+// trolleybuses are whatever the feed loop painted green (TROLLEYS).
+const NIGHT = /\dN$/;
+const TROLLEYS = new Set();
+const lineRank = (k) => (TROLLEYS.has(k) ? 0
+  : NIGHT.test(typeof LBL !== 'undefined' && LBL.has(k) ? LBL.get(k) : k) ? 2 : 1);
 const numSort = (a, b) => {
   const A = natKey(a), B = natKey(b);
-  return A[0].localeCompare(B[0]) || (A[1] - B[1]) || A[2].localeCompare(B[2]);
+  return lineRank(a) - lineRank(b) || A[0].localeCompare(B[0]) || (A[1] - B[1]) || A[2].localeCompare(B[2]);
 };
 function round6(v) { return Math.round(v * 1e6) / 1e6; }
 
@@ -172,7 +181,7 @@ async function processMode(cfg) {
     cfg.trolleySet = new Set(routes.filter((r) => r.route_type === '11').map((r) => r.route_short_name));
     if (cfg.trolleySet.size) {
       cfg.lineColors = {}; cfg.lineColorsDark = {};
-      for (const L of cfg.trolleySet) { cfg.lineColors[L] = TROLLEY_GREEN; cfg.lineColorsDark[L] = TROLLEY_DARK; }
+      for (const L of cfg.trolleySet) { cfg.lineColors[L] = TROLLEY_GREEN; cfg.lineColorsDark[L] = TROLLEY_DARK; TROLLEYS.add(L); }
       log(`trolleybus lines (${cfg.trolleySet.size}): ${[...cfg.trolleySet].sort(numSort).join(', ')}`);
     }
     // metrolinie: the M-numbered trunk lines get the Metropolis fuchsia so
@@ -1456,6 +1465,6 @@ writeFileSync(join(outDir, 'meta.json'), JSON.stringify({
   bbox: [bLonMin, bLatMin, bLonMax, bLatMax],
   badgeBands: BADGE_BANDS,
   modes: MODES.map((m) => ({ mode: m.mode, label: m.label, color: m.color })),
-  lines: metaLines,
+  lines: metaLines.map((l) => ({ ...l, rank: lineRank(l.line) })),
 }, null, 2));
 log(`Wrote data/out/{route,streets,labels,street-names,stops,badges,gtfs-shape}.geojson + meta.json`);

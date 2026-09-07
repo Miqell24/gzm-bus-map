@@ -42,6 +42,406 @@
   ],
   "lines": [
     {
+      "line": "A",
+      "mode": "bus",
+      "color": "#149a3f",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Tychy Dworzec PKP",
+          "variants": 2,
+          "tripCount": 49,
+          "stops": 16,
+          "lengthKm": 8.17,
+          "stats": {
+            "observations": 356,
+            "matched": 356,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.4424528219033528,
+            "roundaboutSegs": 49,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Tychy Zajezdnia",
+          "variants": 2,
+          "tripCount": 49,
+          "stops": 25,
+          "lengthKm": 12.73,
+          "stats": {
+            "observations": 539,
+            "matched": 539,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.4339676756481343,
+            "roundaboutSegs": 97,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 0
+    },
+    {
+      "line": "B",
+      "mode": "bus",
+      "color": "#149a3f",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Tychy Dworzec PKP",
+          "variants": 2,
+          "tripCount": 43,
+          "stops": 20,
+          "lengthKm": 8.2,
+          "stats": {
+            "observations": 359,
+            "matched": 359,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.186742250018182,
+            "roundaboutSegs": 21,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Tychy Sikorskiego Wiadukt",
+          "variants": 2,
+          "tripCount": 43,
+          "stops": 20,
+          "lengthKm": 8.17,
+          "stats": {
+            "observations": 386,
+            "matched": 386,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.2545533452256659,
+            "roundaboutSegs": 31,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 0
+    },
+    {
+      "line": "C",
+      "mode": "bus",
+      "color": "#149a3f",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Tychy Dworzec PKP",
+          "variants": 2,
+          "tripCount": 14,
+          "stops": 13,
+          "lengthKm": 7.53,
+          "stats": {
+            "observations": 312,
+            "matched": 312,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.4467046552123732,
+            "roundaboutSegs": 45,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Tychy Towarowa",
+          "variants": 2,
+          "tripCount": 14,
+          "stops": 22,
+          "lengthKm": 11.78,
+          "stats": {
+            "observations": 478,
+            "matched": 478,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.538388467295245,
+            "roundaboutSegs": 83,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 0
+    },
+    {
+      "line": "D",
+      "mode": "bus",
+      "color": "#149a3f",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Tychy Dworzec PKP",
+          "variants": 5,
+          "tripCount": 14,
+          "stops": 17,
+          "lengthKm": 7.57,
+          "stats": {
+            "observations": 328,
+            "matched": 328,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.3462455150413517,
+            "roundaboutSegs": 15,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Tychy Zajezdnia",
+          "variants": 3,
+          "tripCount": 16,
+          "stops": 24,
+          "lengthKm": 11.38,
+          "stats": {
+            "observations": 546,
+            "matched": 546,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.3522542283734584,
+            "roundaboutSegs": 60,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 0
+    },
+    {
+      "line": "E",
+      "mode": "bus",
+      "color": "#149a3f",
+      "dirs": [
+        {
+          "dir": "Tychy Osiedle Z1",
+          "headsign": "Tychy Osiedle Z1",
+          "variants": 1,
+          "tripCount": 3,
+          "stops": 29,
+          "lengthKm": 11.75,
+          "stats": {
+            "observations": 530,
+            "matched": 530,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.2757559510497087,
+            "roundaboutSegs": 65,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "Tychy Sikorskiego Wiadukt",
+          "headsign": "Tychy Sikorskiego Wiadukt",
+          "variants": 2,
+          "tripCount": 13,
+          "stops": 31,
+          "lengthKm": 12.26,
+          "stats": {
+            "observations": 555,
+            "matched": 555,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.2417299529190065,
+            "roundaboutSegs": 65,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 0
+    },
+    {
+      "line": "F",
+      "mode": "bus",
+      "color": "#149a3f",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Tychy Szpital Wojewódzki",
+          "variants": 1,
+          "tripCount": 18,
+          "stops": 18,
+          "lengthKm": 7.79,
+          "stats": {
+            "observations": 375,
+            "matched": 375,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.1845018511399372,
+            "roundaboutSegs": 37,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Tychy Szpital Wojewódzki",
+          "variants": 1,
+          "tripCount": 17,
+          "stops": 26,
+          "lengthKm": 11.32,
+          "stats": {
+            "observations": 479,
+            "matched": 479,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.2308479801838592,
+            "roundaboutSegs": 86,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 0
+    },
+    {
+      "line": "G",
+      "mode": "bus",
+      "color": "#149a3f",
+      "dirs": [
+        {
+          "dir": "Tychy Osiedle Z1",
+          "headsign": "Tychy Osiedle Z1",
+          "variants": 2,
+          "tripCount": 2,
+          "stops": 28,
+          "lengthKm": 11.76,
+          "stats": {
+            "observations": 555,
+            "matched": 555,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.3232596533332566,
+            "roundaboutSegs": 72,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "Tychy Sikorskiego Wiadukt",
+          "headsign": "Tychy Sikorskiego Wiadukt",
+          "variants": 2,
+          "tripCount": 13,
+          "stops": 30,
+          "lengthKm": 12.31,
+          "stats": {
+            "observations": 579,
+            "matched": 579,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.2846797333139504,
+            "roundaboutSegs": 72,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 0
+    },
+    {
+      "line": "H",
+      "mode": "bus",
+      "color": "#149a3f",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Tychy Dworzec PKP",
+          "variants": 3,
+          "tripCount": 10,
+          "stops": 22,
+          "lengthKm": 11.96,
+          "stats": {
+            "observations": 501,
+            "matched": 501,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.3632967634855746,
+            "roundaboutSegs": 57,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Tychy Szpital Wojewódzki",
+          "variants": 2,
+          "tripCount": 13,
+          "stops": 29,
+          "lengthKm": 12.27,
+          "stats": {
+            "observations": 526,
+            "matched": 526,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.3183085658970801,
+            "roundaboutSegs": 49,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 0
+    },
+    {
       "line": "0",
       "mode": "bus",
       "color": "#0059a9",
@@ -88,7 +488,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "1",
@@ -137,56 +538,8 @@
             "extEnd": 0
           }
         }
-      ]
-    },
-    {
-      "line": "1N",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Katowice Dworzec",
-          "variants": 1,
-          "tripCount": 2,
-          "stops": 42,
-          "lengthKm": 28.33,
-          "stats": {
-            "observations": 1169,
-            "matched": 1169,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.9436219333327895,
-            "roundaboutSegs": 52,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Tychy Sikorskiego Wiadukt",
-          "variants": 1,
-          "tripCount": 2,
-          "stops": 47,
-          "lengthKm": 31.02,
-          "stats": {
-            "observations": 1226,
-            "matched": 1226,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.6684478983886197,
-            "roundaboutSegs": 154,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "2",
@@ -214,7 +567,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "3",
@@ -263,7 +617,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "4",
@@ -312,7 +667,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "5",
@@ -361,7 +717,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "6",
@@ -410,7 +767,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "7",
@@ -459,56 +817,8 @@
             "extEnd": 0
           }
         }
-      ]
-    },
-    {
-      "line": "7N",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Zabrze Goethego",
-          "variants": 1,
-          "tripCount": 1,
-          "stops": 45,
-          "lengthKm": 29.55,
-          "stats": {
-            "observations": 1383,
-            "matched": 1383,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 2.2364445422638024,
-            "roundaboutSegs": 126,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Katowice Dworzec",
-          "variants": 1,
-          "tripCount": 1,
-          "stops": 46,
-          "lengthKm": 30.13,
-          "stats": {
-            "observations": 1357,
-            "matched": 1357,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 2.395488716266656,
-            "roundaboutSegs": 77,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "8",
@@ -599,7 +909,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "9",
@@ -627,7 +938,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "10",
@@ -655,7 +967,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "11",
@@ -704,7 +1017,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "12",
@@ -753,7 +1067,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "13",
@@ -802,7 +1117,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "15",
@@ -851,7 +1167,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "16",
@@ -900,7 +1217,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "17",
@@ -949,7 +1267,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "18",
@@ -998,7 +1317,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "19",
@@ -1047,7 +1367,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "20",
@@ -1096,7 +1417,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "21",
@@ -1145,7 +1467,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "22",
@@ -1194,7 +1517,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "23",
@@ -1243,7 +1567,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "24",
@@ -1292,7 +1617,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "25",
@@ -1341,7 +1667,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "26",
@@ -1390,7 +1717,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "27",
@@ -1439,7 +1767,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "28",
@@ -1488,7 +1817,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "29",
@@ -1537,7 +1867,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "30",
@@ -1586,56 +1917,8 @@
             "extEnd": 0
           }
         }
-      ]
-    },
-    {
-      "line": "30N",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Przełajka Pętla",
-          "variants": 1,
-          "tripCount": 3,
-          "stops": 29,
-          "lengthKm": 16.44,
-          "stats": {
-            "observations": 749,
-            "matched": 749,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.2505340618626357,
-            "roundaboutSegs": 68,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Katowice Dworzec",
-          "variants": 3,
-          "tripCount": 1,
-          "stops": 29,
-          "lengthKm": 16.94,
-          "stats": {
-            "observations": 755,
-            "matched": 755,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.2020896947763486,
-            "roundaboutSegs": 41,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "31",
@@ -1684,7 +1967,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "32",
@@ -1733,56 +2017,8 @@
             "extEnd": 135
           }
         }
-      ]
-    },
-    {
-      "line": "32N",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Łabędy Huta",
-          "variants": 1,
-          "tripCount": 3,
-          "stops": 35,
-          "lengthKm": 22.97,
-          "stats": {
-            "observations": 959,
-            "matched": 959,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.5800624175845563,
-            "roundaboutSegs": 65,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Zabrze Goethego",
-          "variants": 1,
-          "tripCount": 4,
-          "stops": 37,
-          "lengthKm": 23.5,
-          "stats": {
-            "observations": 980,
-            "matched": 980,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.6851328951862037,
-            "roundaboutSegs": 59,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "34",
@@ -1831,7 +2067,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "35",
@@ -1880,7 +2117,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "36",
@@ -1929,7 +2167,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "37",
@@ -1978,7 +2217,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "39",
@@ -2027,7 +2267,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "40",
@@ -2076,7 +2317,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "41",
@@ -2125,7 +2367,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "42",
@@ -2174,7 +2417,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "43",
@@ -2223,7 +2467,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "44",
@@ -2272,7 +2517,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "45",
@@ -2321,7 +2567,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "46",
@@ -2370,7 +2617,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "47",
@@ -2419,7 +2667,8 @@
             "extEnd": 135
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "48",
@@ -2468,7 +2717,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "49",
@@ -2517,7 +2767,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "50",
@@ -2566,7 +2817,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "51",
@@ -2615,7 +2867,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "52",
@@ -2664,7 +2917,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "55",
@@ -2713,7 +2967,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "56",
@@ -2762,7 +3017,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "57",
@@ -2811,7 +3067,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "58",
@@ -2839,7 +3096,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "59",
@@ -2888,7 +3146,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "61",
@@ -2937,7 +3196,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "64",
@@ -2986,7 +3246,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "65",
@@ -3035,7 +3296,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "66",
@@ -3084,7 +3346,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "67",
@@ -3112,7 +3375,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "69",
@@ -3161,7 +3425,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "70",
@@ -3210,7 +3475,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "71",
@@ -3259,7 +3525,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "72",
@@ -3308,7 +3575,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "73",
@@ -3357,7 +3625,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "74",
@@ -3406,7 +3675,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "75",
@@ -3455,7 +3725,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "76",
@@ -3504,56 +3775,8 @@
             "extEnd": 0
           }
         }
-      ]
-    },
-    {
-      "line": "76N",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Wesoła Kopalnia",
-          "variants": 1,
-          "tripCount": 2,
-          "stops": 46,
-          "lengthKm": 30.14,
-          "stats": {
-            "observations": 1335,
-            "matched": 1335,
-            "noCandidates": 0,
-            "viterbiBreaks": 2,
-            "bridged": 0,
-            "rawStretchCount": 2,
-            "rawMeters": 40,
-            "meanError": 1.836197235442396,
-            "roundaboutSegs": 131,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Katowice Dworzec",
-          "variants": 1,
-          "tripCount": 3,
-          "stops": 44,
-          "lengthKm": 27.64,
-          "stats": {
-            "observations": 1219,
-            "matched": 1219,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.6682798981081488,
-            "roundaboutSegs": 88,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "79",
@@ -3602,7 +3825,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "80",
@@ -3651,7 +3875,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "81",
@@ -3700,7 +3925,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "83",
@@ -3749,7 +3975,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "85",
@@ -3798,7 +4025,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "86",
@@ -3847,7 +4075,8 @@
             "extEnd": 135
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "87",
@@ -3896,7 +4125,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "88",
@@ -3945,7 +4175,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "89",
@@ -3994,7 +4225,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "90",
@@ -4043,7 +4275,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "91",
@@ -4092,7 +4325,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "92",
@@ -4141,7 +4375,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "93",
@@ -4190,7 +4425,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "96",
@@ -4218,7 +4454,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "97",
@@ -4246,7 +4483,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "98",
@@ -4295,7 +4533,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "99",
@@ -4344,7 +4583,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "100",
@@ -4393,7 +4633,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "101",
@@ -4442,7 +4683,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "103",
@@ -4491,7 +4733,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "104",
@@ -4540,7 +4783,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "105",
@@ -4589,7 +4833,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "106",
@@ -4638,7 +4883,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "107",
@@ -4687,7 +4933,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "108",
@@ -4736,7 +4983,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "109",
@@ -4785,7 +5033,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "110",
@@ -4834,7 +5083,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "111",
@@ -4883,7 +5133,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "112",
@@ -4932,7 +5183,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "114",
@@ -4981,7 +5233,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "115",
@@ -5030,7 +5283,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "116",
@@ -5079,7 +5333,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "118",
@@ -5128,7 +5383,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "120",
@@ -5177,7 +5433,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "121",
@@ -5226,7 +5483,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "124",
@@ -5275,7 +5533,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "125",
@@ -5324,7 +5583,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "126",
@@ -5373,7 +5633,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "127",
@@ -5401,7 +5662,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "128",
@@ -5450,7 +5712,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "129",
@@ -5499,7 +5762,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "130",
@@ -5548,56 +5812,8 @@
             "extEnd": 0
           }
         }
-      ]
-    },
-    {
-      "line": "130N",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Halemba Pętla",
-          "variants": 1,
-          "tripCount": 4,
-          "stops": 33,
-          "lengthKm": 23.05,
-          "stats": {
-            "observations": 1024,
-            "matched": 1024,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.913943987536188,
-            "roundaboutSegs": 69,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Katowice Dworzec",
-          "variants": 1,
-          "tripCount": 5,
-          "stops": 32,
-          "lengthKm": 23.24,
-          "stats": {
-            "observations": 1033,
-            "matched": 1033,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.8236599951315422,
-            "roundaboutSegs": 52,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "131",
@@ -5646,7 +5862,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "132",
@@ -5695,7 +5912,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "133",
@@ -5744,7 +5962,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "134",
@@ -5793,7 +6012,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "135",
@@ -5842,7 +6062,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "136",
@@ -5870,7 +6091,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "137",
@@ -5919,7 +6141,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "138",
@@ -5968,7 +6191,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "139",
@@ -6017,7 +6241,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "142",
@@ -6066,7 +6291,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "143",
@@ -6115,7 +6341,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "145",
@@ -6164,7 +6391,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "146",
@@ -6213,7 +6441,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "147",
@@ -6262,7 +6491,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "149",
@@ -6311,7 +6541,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "150",
@@ -6360,7 +6591,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "151",
@@ -6388,7 +6620,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "152",
@@ -6437,7 +6670,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "153",
@@ -6486,7 +6720,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "154",
@@ -6535,7 +6770,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "155",
@@ -6584,7 +6820,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "156",
@@ -6633,7 +6870,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "157",
@@ -6682,7 +6920,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "158",
@@ -6731,7 +6970,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "159",
@@ -6780,7 +7020,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "160",
@@ -6829,7 +7070,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "160S",
@@ -6878,7 +7120,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "162",
@@ -6927,7 +7170,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "164",
@@ -6955,7 +7199,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "165",
@@ -7004,7 +7249,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "166",
@@ -7053,7 +7299,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "167",
@@ -7102,7 +7349,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "168",
@@ -7151,7 +7399,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "169",
@@ -7200,7 +7449,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "173",
@@ -7249,7 +7499,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "174",
@@ -7298,7 +7549,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "176",
@@ -7347,7 +7599,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "177",
@@ -7396,7 +7649,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "178",
@@ -7445,7 +7699,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "179",
@@ -7494,7 +7749,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "180",
@@ -7543,7 +7799,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "181",
@@ -7592,7 +7849,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "182",
@@ -7641,7 +7899,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "183",
@@ -7690,7 +7949,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "184",
@@ -7739,7 +7999,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "185",
@@ -7788,7 +8049,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "186",
@@ -7837,7 +8099,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "187",
@@ -7865,7 +8128,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "188",
@@ -7914,7 +8178,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "189",
@@ -7963,7 +8228,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "190",
@@ -8012,7 +8278,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "191",
@@ -8061,7 +8328,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "192",
@@ -8110,7 +8378,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "193",
@@ -8159,7 +8428,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "194",
@@ -8208,7 +8478,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "196",
@@ -8257,7 +8528,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "197",
@@ -8306,7 +8578,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "198",
@@ -8355,7 +8628,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "199",
@@ -8404,7 +8678,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "200",
@@ -8453,7 +8728,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "201",
@@ -8502,7 +8778,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "202",
@@ -8551,7 +8828,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "203",
@@ -8600,7 +8878,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "204",
@@ -8649,7 +8928,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "205",
@@ -8698,7 +8978,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "206",
@@ -8747,7 +9028,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "207",
@@ -8796,7 +9078,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "208",
@@ -8845,7 +9128,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "219",
@@ -8894,7 +9178,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "220",
@@ -8943,7 +9228,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "222",
@@ -8992,7 +9278,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "223",
@@ -9041,7 +9328,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "224",
@@ -9069,7 +9357,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "225",
@@ -9118,7 +9407,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "227",
@@ -9146,7 +9436,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "230",
@@ -9195,7 +9486,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "231",
@@ -9244,7 +9536,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "232",
@@ -9293,7 +9586,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "234",
@@ -9321,7 +9615,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "236",
@@ -9370,7 +9665,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "237",
@@ -9419,7 +9715,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "242",
@@ -9468,7 +9765,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "243",
@@ -9517,7 +9815,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "245",
@@ -9545,7 +9844,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "246",
@@ -9594,7 +9894,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "249",
@@ -9643,7 +9944,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "250",
@@ -9692,7 +9994,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "254",
@@ -9741,7 +10044,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "255",
@@ -9790,7 +10094,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "256",
@@ -9839,7 +10144,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "259",
@@ -9888,7 +10194,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "260",
@@ -9937,7 +10244,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "262",
@@ -9986,7 +10294,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "264",
@@ -10014,7 +10323,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "266",
@@ -10063,7 +10373,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "268",
@@ -10112,7 +10423,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "269",
@@ -10161,7 +10473,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "270",
@@ -10210,7 +10523,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "271",
@@ -10259,7 +10573,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "272",
@@ -10308,7 +10623,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "273",
@@ -10357,7 +10673,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "274",
@@ -10406,7 +10723,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "275",
@@ -10455,7 +10773,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "280",
@@ -10504,7 +10823,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "283",
@@ -10553,7 +10873,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "286",
@@ -10602,7 +10923,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "287",
@@ -10630,7 +10952,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "288",
@@ -10679,7 +11002,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "289",
@@ -10728,7 +11052,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "292",
@@ -10777,7 +11102,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "294",
@@ -10826,7 +11152,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "295",
@@ -10875,7 +11202,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "296",
@@ -10924,7 +11252,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "297",
@@ -10952,35 +11281,8 @@
             "extEnd": 0
           }
         }
-      ]
-    },
-    {
-      "line": "297N",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "Katowice Dworzec",
-          "headsign": "Katowice Dworzec",
-          "variants": 1,
-          "tripCount": 5,
-          "stops": 33,
-          "lengthKm": 18.01,
-          "stats": {
-            "observations": 886,
-            "matched": 886,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.084753851530954,
-            "roundaboutSegs": 1,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "299",
@@ -11029,7 +11331,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "505",
@@ -11078,7 +11381,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "514",
@@ -11127,7 +11431,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "515",
@@ -11176,7 +11481,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "520",
@@ -11204,7 +11510,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "529",
@@ -11232,7 +11539,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "531",
@@ -11281,7 +11589,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "536",
@@ -11330,7 +11639,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "541",
@@ -11358,7 +11668,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "551",
@@ -11407,7 +11718,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "565",
@@ -11456,7 +11768,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "568",
@@ -11484,7 +11797,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "594",
@@ -11533,7 +11847,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "600",
@@ -11582,7 +11897,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "601",
@@ -11610,7 +11926,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "603",
@@ -11659,7 +11976,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "604",
@@ -11708,7 +12026,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "606",
@@ -11757,7 +12076,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "608",
@@ -11785,7 +12105,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "609",
@@ -11834,7 +12155,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "610",
@@ -11883,7 +12205,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "612",
@@ -11932,7 +12255,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "614",
@@ -11981,7 +12305,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "615",
@@ -12030,7 +12355,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "616",
@@ -12079,7 +12405,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "617",
@@ -12128,56 +12455,8 @@
             "extEnd": 0
           }
         }
-      ]
-    },
-    {
-      "line": "617N",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Helenka ELZAB",
-          "variants": 2,
-          "tripCount": 1,
-          "stops": 38,
-          "lengthKm": 23.14,
-          "stats": {
-            "observations": 985,
-            "matched": 985,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.6156502068536578,
-            "roundaboutSegs": 80,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Gliwice Zajezdnia",
-          "variants": 1,
-          "tripCount": 2,
-          "stops": 35,
-          "lengthKm": 23.1,
-          "stats": {
-            "observations": 991,
-            "matched": 991,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.5851383495855715,
-            "roundaboutSegs": 109,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "619",
@@ -12226,7 +12505,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "620",
@@ -12254,7 +12534,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "622",
@@ -12303,7 +12584,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "623",
@@ -12352,56 +12634,8 @@
             "extEnd": 0
           }
         }
-      ]
-    },
-    {
-      "line": "623N",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Miechowice Pętla",
-          "variants": 2,
-          "tripCount": 2,
-          "stops": 18,
-          "lengthKm": 10.35,
-          "stats": {
-            "observations": 420,
-            "matched": 420,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.5159371498768057,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Bytom Dworzec",
-          "variants": 2,
-          "tripCount": 2,
-          "stops": 17,
-          "lengthKm": 11.13,
-          "stats": {
-            "observations": 475,
-            "matched": 475,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.3436683369110818,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "624",
@@ -12450,7 +12684,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "625",
@@ -12499,7 +12734,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "627",
@@ -12548,7 +12784,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "629",
@@ -12597,7 +12834,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "632",
@@ -12646,7 +12884,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "634",
@@ -12695,7 +12934,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "636",
@@ -12744,7 +12984,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "637",
@@ -12793,7 +13034,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "638",
@@ -12842,7 +13084,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "639",
@@ -12891,7 +13134,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "640",
@@ -12940,7 +13184,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "641",
@@ -12989,7 +13234,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "644",
@@ -13038,7 +13284,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "645",
@@ -13087,7 +13334,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "646",
@@ -13136,7 +13384,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "647",
@@ -13185,7 +13434,8 @@
             "extEnd": 135
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "650",
@@ -13234,7 +13484,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "654",
@@ -13283,7 +13534,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "655",
@@ -13332,7 +13584,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "656",
@@ -13381,7 +13634,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "657",
@@ -13430,56 +13684,8 @@
             "extEnd": 0
           }
         }
-      ]
-    },
-    {
-      "line": "657N",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Panewniki Owsiana",
-          "variants": 1,
-          "tripCount": 5,
-          "stops": 34,
-          "lengthKm": 16.09,
-          "stats": {
-            "observations": 783,
-            "matched": 783,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.0027217092390432,
-            "roundaboutSegs": 27,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Katowice Sądowa",
-          "variants": 1,
-          "tripCount": 5,
-          "stops": 32,
-          "lengthKm": 16.88,
-          "stats": {
-            "observations": 803,
-            "matched": 803,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.9776429940516571,
-            "roundaboutSegs": 27,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "662",
@@ -13528,7 +13734,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "663",
@@ -13577,7 +13784,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "664",
@@ -13626,7 +13834,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "669",
@@ -13675,7 +13884,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "670",
@@ -13724,7 +13934,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "671",
@@ -13773,7 +13984,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "672",
@@ -13822,56 +14034,8 @@
             "extEnd": 0
           }
         }
-      ]
-    },
-    {
-      "line": "672N",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Murcki Rynek",
-          "variants": 1,
-          "tripCount": 3,
-          "stops": 23,
-          "lengthKm": 16.91,
-          "stats": {
-            "observations": 695,
-            "matched": 695,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.7005402787327937,
-            "roundaboutSegs": 21,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Katowice Dworzec",
-          "variants": 1,
-          "tripCount": 3,
-          "stops": 21,
-          "lengthKm": 17.02,
-          "stats": {
-            "observations": 735,
-            "matched": 735,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.6478150072286433,
-            "roundaboutSegs": 52,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "673",
@@ -13920,7 +14084,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "674",
@@ -13969,7 +14134,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "676",
@@ -14039,7 +14205,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "678",
@@ -14088,7 +14255,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "686",
@@ -14137,7 +14305,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "687",
@@ -14186,7 +14355,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "688",
@@ -14214,7 +14384,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "689",
@@ -14263,7 +14434,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "690",
@@ -14312,7 +14484,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "692",
@@ -14361,7 +14534,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "693",
@@ -14410,7 +14584,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "694",
@@ -14459,7 +14634,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "695",
@@ -14508,7 +14684,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "696",
@@ -14557,7 +14734,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "699",
@@ -14606,7 +14784,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "700",
@@ -14655,56 +14834,8 @@
             "extEnd": 0
           }
         }
-      ]
-    },
-    {
-      "line": "701N",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Ruda Południowa",
-          "variants": 2,
-          "tripCount": 3,
-          "stops": 17,
-          "lengthKm": 10.46,
-          "stats": {
-            "observations": 473,
-            "matched": 473,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 3.2218330534535418,
-            "roundaboutSegs": 44,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Gliwice Zajezdnia",
-          "variants": 1,
-          "tripCount": 4,
-          "stops": 19,
-          "lengthKm": 10.78,
-          "stats": {
-            "observations": 493,
-            "matched": 493,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 3.118730435600339,
-            "roundaboutSegs": 48,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "702",
@@ -14753,7 +14884,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "704",
@@ -14781,56 +14913,8 @@
             "extEnd": 0
           }
         }
-      ]
-    },
-    {
-      "line": "705N",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Biskupice Zamkowa",
-          "variants": 1,
-          "tripCount": 3,
-          "stops": 16,
-          "lengthKm": 9.26,
-          "stats": {
-            "observations": 402,
-            "matched": 402,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 2.0887730910730506,
-            "roundaboutSegs": 64,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Zabrze Goethego",
-          "variants": 1,
-          "tripCount": 3,
-          "stops": 16,
-          "lengthKm": 8.82,
-          "stats": {
-            "observations": 365,
-            "matched": 365,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.6889709830429476,
-            "roundaboutSegs": 25,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "706",
@@ -14858,7 +14942,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "707",
@@ -14907,7 +14992,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "708",
@@ -14935,7 +15021,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "709",
@@ -14963,7 +15050,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "712",
@@ -15012,7 +15100,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "716",
@@ -15061,7 +15150,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "720",
@@ -15089,7 +15179,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "721",
@@ -15117,7 +15208,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "722",
@@ -15145,7 +15237,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "723",
@@ -15194,7 +15287,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "730",
@@ -15222,7 +15316,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "735",
@@ -15271,7 +15366,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "738",
@@ -15320,7 +15416,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "740",
@@ -15348,7 +15445,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "742",
@@ -15397,7 +15495,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "743",
@@ -15446,7 +15545,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "744",
@@ -15474,7 +15574,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "745",
@@ -15502,7 +15603,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "746",
@@ -15551,7 +15653,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "749",
@@ -15600,7 +15703,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "770",
@@ -15628,7 +15732,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "780",
@@ -15677,7 +15782,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "788",
@@ -15726,7 +15832,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "800",
@@ -15775,7 +15882,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "805",
@@ -15824,7 +15932,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "807",
@@ -15873,7 +15982,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "808",
@@ -15922,7 +16032,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "813",
@@ -15992,7 +16103,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "814",
@@ -16041,7 +16153,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "817",
@@ -16090,7 +16203,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "830",
@@ -16139,7 +16253,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "835",
@@ -16188,7 +16303,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "840",
@@ -16237,56 +16353,8 @@
             "extEnd": 0
           }
         }
-      ]
-    },
-    {
-      "line": "840N",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Gliwice Zajezdnia",
-          "variants": 2,
-          "tripCount": 3,
-          "stops": 5,
-          "lengthKm": 4.52,
-          "stats": {
-            "observations": 160,
-            "matched": 160,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.5947433058425624,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Gliwice Centrum Przesiadkowe",
-          "variants": 2,
-          "tripCount": 2,
-          "stops": 35,
-          "lengthKm": 31.7,
-          "stats": {
-            "observations": 1381,
-            "matched": 1381,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 3.3898830527794632,
-            "roundaboutSegs": 148,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "880",
@@ -16335,7 +16403,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "900",
@@ -16384,7 +16453,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "901",
@@ -16433,154 +16503,8 @@
             "extEnd": 125
           }
         }
-      ]
-    },
-    {
-      "line": "902N",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Osiedle Bór Pętla",
-          "variants": 4,
-          "tripCount": 1,
-          "stops": 39,
-          "lengthKm": 36.74,
-          "stats": {
-            "observations": 1479,
-            "matched": 1479,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 2.493002858862303,
-            "roundaboutSegs": 147,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Zagórze Zajezdnia",
-          "variants": 4,
-          "tripCount": 1,
-          "stops": 40,
-          "lengthKm": 33.12,
-          "stats": {
-            "observations": 1425,
-            "matched": 1425,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 2.1432814250689587,
-            "roundaboutSegs": 181,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ]
-    },
-    {
-      "line": "903N",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Gołonóg Zajezdnia",
-          "variants": 2,
-          "tripCount": 1,
-          "stops": 24,
-          "lengthKm": 30.73,
-          "stats": {
-            "observations": 1212,
-            "matched": 1212,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 2.898389083127394,
-            "roundaboutSegs": 331,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Gołonóg Zajezdnia",
-          "variants": 2,
-          "tripCount": 1,
-          "stops": 21,
-          "lengthKm": 24.29,
-          "stats": {
-            "observations": 835,
-            "matched": 835,
-            "noCandidates": 0,
-            "viterbiBreaks": 1,
-            "bridged": 0,
-            "rawStretchCount": 1,
-            "rawMeters": 20,
-            "meanError": 2.816549165566156,
-            "roundaboutSegs": 237,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ]
-    },
-    {
-      "line": "904N",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Dobieszowice Skrzyżowanie",
-          "variants": 3,
-          "tripCount": 1,
-          "stops": 31,
-          "lengthKm": 21.36,
-          "stats": {
-            "observations": 898,
-            "matched": 898,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.7320670597516654,
-            "roundaboutSegs": 32,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Będzin Kościuszki",
-          "variants": 3,
-          "tripCount": 1,
-          "stops": 27,
-          "lengthKm": 16.82,
-          "stats": {
-            "observations": 776,
-            "matched": 776,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.586668940670558,
-            "roundaboutSegs": 37,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "910",
@@ -16629,7 +16553,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "911",
@@ -16678,56 +16603,8 @@
             "extEnd": 0
           }
         }
-      ]
-    },
-    {
-      "line": "911N",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Czeladź Wojkowicka Pętla",
-          "variants": 2,
-          "tripCount": 2,
-          "stops": 25,
-          "lengthKm": 13.79,
-          "stats": {
-            "observations": 651,
-            "matched": 651,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.8099738606928646,
-            "roundaboutSegs": 101,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Katowice Dworzec",
-          "variants": 2,
-          "tripCount": 2,
-          "stops": 24,
-          "lengthKm": 14.15,
-          "stats": {
-            "observations": 651,
-            "matched": 651,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.6618184634068942,
-            "roundaboutSegs": 66,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "913",
@@ -16776,7 +16653,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "916",
@@ -16804,7 +16682,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "920",
@@ -16853,7 +16732,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "921",
@@ -16902,7 +16782,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "922",
@@ -16951,7 +16832,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "924",
@@ -17000,7 +16882,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "925",
@@ -17049,7 +16932,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "928",
@@ -17098,7 +16982,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "930",
@@ -17147,7 +17032,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "931",
@@ -17196,7 +17082,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "935",
@@ -17245,7 +17132,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "936",
@@ -17273,7 +17161,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "937",
@@ -17322,7 +17211,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "949",
@@ -17371,7 +17261,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "950",
@@ -17420,7 +17311,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "954",
@@ -17469,7 +17361,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "959",
@@ -17518,7 +17411,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "967",
@@ -17567,7 +17461,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "969",
@@ -17595,7 +17490,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "972",
@@ -17644,7 +17540,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "973",
@@ -17693,7 +17590,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "974",
@@ -17742,7 +17640,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "982",
@@ -17791,7 +17690,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "989",
@@ -17840,7 +17740,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "995",
@@ -17889,7 +17790,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "998",
@@ -17938,56 +17840,8 @@
             "extEnd": 0
           }
         }
-      ]
-    },
-    {
-      "line": "A",
-      "mode": "bus",
-      "color": "#149a3f",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Tychy Dworzec PKP",
-          "variants": 2,
-          "tripCount": 49,
-          "stops": 16,
-          "lengthKm": 8.17,
-          "stats": {
-            "observations": 356,
-            "matched": 356,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.4424528219033528,
-            "roundaboutSegs": 49,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Tychy Zajezdnia",
-          "variants": 2,
-          "tripCount": 49,
-          "stops": 25,
-          "lengthKm": 12.73,
-          "stats": {
-            "observations": 539,
-            "matched": 539,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.4339676756481343,
-            "roundaboutSegs": 97,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "A4",
@@ -18036,56 +17890,8 @@
             "extEnd": 0
           }
         }
-      ]
-    },
-    {
-      "line": "A4N",
-      "mode": "bus",
-      "color": "#0059a9",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Gliwice Zajezdnia",
-          "variants": 1,
-          "tripCount": 5,
-          "stops": 26,
-          "lengthKm": 12.95,
-          "stats": {
-            "observations": 581,
-            "matched": 581,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.6236677933557486,
-            "roundaboutSegs": 15,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Trynek Toruńska",
-          "variants": 1,
-          "tripCount": 5,
-          "stops": 29,
-          "lengthKm": 13.17,
-          "stats": {
-            "observations": 592,
-            "matched": 592,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.6504161546362908,
-            "roundaboutSegs": 27,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "AP",
@@ -18134,350 +17940,8 @@
             "extEnd": 0
           }
         }
-      ]
-    },
-    {
-      "line": "B",
-      "mode": "bus",
-      "color": "#149a3f",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Tychy Dworzec PKP",
-          "variants": 2,
-          "tripCount": 43,
-          "stops": 20,
-          "lengthKm": 8.2,
-          "stats": {
-            "observations": 359,
-            "matched": 359,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.186742250018182,
-            "roundaboutSegs": 21,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Tychy Sikorskiego Wiadukt",
-          "variants": 2,
-          "tripCount": 43,
-          "stops": 20,
-          "lengthKm": 8.17,
-          "stats": {
-            "observations": 386,
-            "matched": 386,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.2545533452256659,
-            "roundaboutSegs": 31,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ]
-    },
-    {
-      "line": "C",
-      "mode": "bus",
-      "color": "#149a3f",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Tychy Dworzec PKP",
-          "variants": 2,
-          "tripCount": 14,
-          "stops": 13,
-          "lengthKm": 7.53,
-          "stats": {
-            "observations": 312,
-            "matched": 312,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.4467046552123732,
-            "roundaboutSegs": 45,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Tychy Towarowa",
-          "variants": 2,
-          "tripCount": 14,
-          "stops": 22,
-          "lengthKm": 11.78,
-          "stats": {
-            "observations": 478,
-            "matched": 478,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.538388467295245,
-            "roundaboutSegs": 83,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ]
-    },
-    {
-      "line": "D",
-      "mode": "bus",
-      "color": "#149a3f",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Tychy Dworzec PKP",
-          "variants": 5,
-          "tripCount": 14,
-          "stops": 17,
-          "lengthKm": 7.57,
-          "stats": {
-            "observations": 328,
-            "matched": 328,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.3462455150413517,
-            "roundaboutSegs": 15,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Tychy Zajezdnia",
-          "variants": 3,
-          "tripCount": 16,
-          "stops": 24,
-          "lengthKm": 11.38,
-          "stats": {
-            "observations": 546,
-            "matched": 546,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.3522542283734584,
-            "roundaboutSegs": 60,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ]
-    },
-    {
-      "line": "E",
-      "mode": "bus",
-      "color": "#149a3f",
-      "dirs": [
-        {
-          "dir": "Tychy Osiedle Z1",
-          "headsign": "Tychy Osiedle Z1",
-          "variants": 1,
-          "tripCount": 3,
-          "stops": 29,
-          "lengthKm": 11.75,
-          "stats": {
-            "observations": 530,
-            "matched": 530,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.2757559510497087,
-            "roundaboutSegs": 65,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "Tychy Sikorskiego Wiadukt",
-          "headsign": "Tychy Sikorskiego Wiadukt",
-          "variants": 2,
-          "tripCount": 13,
-          "stops": 31,
-          "lengthKm": 12.26,
-          "stats": {
-            "observations": 555,
-            "matched": 555,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.2417299529190065,
-            "roundaboutSegs": 65,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ]
-    },
-    {
-      "line": "F",
-      "mode": "bus",
-      "color": "#149a3f",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Tychy Szpital Wojewódzki",
-          "variants": 1,
-          "tripCount": 18,
-          "stops": 18,
-          "lengthKm": 7.79,
-          "stats": {
-            "observations": 375,
-            "matched": 375,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.1845018511399372,
-            "roundaboutSegs": 37,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Tychy Szpital Wojewódzki",
-          "variants": 1,
-          "tripCount": 17,
-          "stops": 26,
-          "lengthKm": 11.32,
-          "stats": {
-            "observations": 479,
-            "matched": 479,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.2308479801838592,
-            "roundaboutSegs": 86,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ]
-    },
-    {
-      "line": "G",
-      "mode": "bus",
-      "color": "#149a3f",
-      "dirs": [
-        {
-          "dir": "Tychy Osiedle Z1",
-          "headsign": "Tychy Osiedle Z1",
-          "variants": 2,
-          "tripCount": 2,
-          "stops": 28,
-          "lengthKm": 11.76,
-          "stats": {
-            "observations": 555,
-            "matched": 555,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.3232596533332566,
-            "roundaboutSegs": 72,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "Tychy Sikorskiego Wiadukt",
-          "headsign": "Tychy Sikorskiego Wiadukt",
-          "variants": 2,
-          "tripCount": 13,
-          "stops": 30,
-          "lengthKm": 12.31,
-          "stats": {
-            "observations": 579,
-            "matched": 579,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.2846797333139504,
-            "roundaboutSegs": 72,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ]
-    },
-    {
-      "line": "H",
-      "mode": "bus",
-      "color": "#149a3f",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Tychy Dworzec PKP",
-          "variants": 3,
-          "tripCount": 10,
-          "stops": 22,
-          "lengthKm": 11.96,
-          "stats": {
-            "observations": 501,
-            "matched": 501,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.3632967634855746,
-            "roundaboutSegs": 57,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Tychy Szpital Wojewódzki",
-          "variants": 2,
-          "tripCount": 13,
-          "stops": 29,
-          "lengthKm": 12.27,
-          "stats": {
-            "observations": 526,
-            "matched": 526,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.3183085658970801,
-            "roundaboutSegs": 49,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "K",
@@ -18505,7 +17969,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "M1",
@@ -18554,7 +18019,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "M2",
@@ -18603,7 +18069,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "M3",
@@ -18652,7 +18119,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "M4",
@@ -18701,7 +18169,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "M10",
@@ -18750,7 +18219,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "M11",
@@ -18799,7 +18269,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "M12",
@@ -18848,7 +18319,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "M13",
@@ -18897,7 +18369,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "M14",
@@ -18946,7 +18419,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "M15",
@@ -18995,7 +18469,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "M16",
@@ -19044,7 +18519,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "M17",
@@ -19093,7 +18569,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "M18",
@@ -19142,7 +18619,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "M19",
@@ -19191,7 +18669,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "M21",
@@ -19240,7 +18719,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "M22",
@@ -19289,7 +18769,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "M23",
@@ -19338,7 +18819,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "M24",
@@ -19387,7 +18869,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "M25",
@@ -19436,7 +18919,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "M28",
@@ -19485,7 +18969,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "M100",
@@ -19534,7 +19019,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "M101",
@@ -19583,7 +19069,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "M102",
@@ -19632,7 +19119,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "M103",
@@ -19681,7 +19169,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "M104",
@@ -19730,7 +19219,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "M105",
@@ -19779,7 +19269,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "M106",
@@ -19828,7 +19319,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "M107",
@@ -19877,7 +19369,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "M108",
@@ -19926,7 +19419,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "M109",
@@ -19975,7 +19469,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "M116",
@@ -20024,7 +19519,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "P",
@@ -20073,7 +19569,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "S1",
@@ -20101,7 +19598,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "T-9",
@@ -20150,7 +19648,37 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
+    },
+    {
+      "line": "Z210",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "Katowice Sądowa",
+          "headsign": "Katowice Sądowa",
+          "variants": 1,
+          "tripCount": 38,
+          "stops": 16,
+          "lengthKm": 8.69,
+          "stats": {
+            "observations": 430,
+            "matched": 430,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 2.310967545841108,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 1
     },
     {
       "line": "Z-1",
@@ -20178,7 +19706,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "Z-2",
@@ -20227,7 +19756,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "Z-6",
@@ -20276,7 +19806,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "Z-13",
@@ -20304,7 +19835,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "Z-25",
@@ -20353,7 +19885,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "Z-37",
@@ -20402,7 +19935,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "Z-45",
@@ -20451,7 +19985,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "Z-51",
@@ -20500,7 +20035,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "Z-54",
@@ -20549,7 +20085,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "Z-75",
@@ -20598,7 +20135,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "Z-95",
@@ -20647,35 +20185,937 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
-      "line": "Z210",
+      "line": "1N",
       "mode": "bus",
       "color": "#0059a9",
       "dirs": [
         {
-          "dir": "Katowice Sądowa",
-          "headsign": "Katowice Sądowa",
+          "dir": "0",
+          "headsign": "Katowice Dworzec",
           "variants": 1,
-          "tripCount": 38,
-          "stops": 16,
-          "lengthKm": 8.69,
+          "tripCount": 2,
+          "stops": 42,
+          "lengthKm": 28.33,
           "stats": {
-            "observations": 430,
-            "matched": 430,
+            "observations": 1169,
+            "matched": 1169,
             "noCandidates": 0,
             "viterbiBreaks": 0,
             "bridged": 0,
             "rawStretchCount": 0,
             "rawMeters": 0,
-            "meanError": 2.310967545841108,
+            "meanError": 1.9436219333327895,
+            "roundaboutSegs": 52,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Tychy Sikorskiego Wiadukt",
+          "variants": 1,
+          "tripCount": 2,
+          "stops": 47,
+          "lengthKm": 31.02,
+          "stats": {
+            "observations": 1226,
+            "matched": 1226,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.6684478983886197,
+            "roundaboutSegs": 154,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 2
+    },
+    {
+      "line": "7N",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Zabrze Goethego",
+          "variants": 1,
+          "tripCount": 1,
+          "stops": 45,
+          "lengthKm": 29.55,
+          "stats": {
+            "observations": 1383,
+            "matched": 1383,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 2.2364445422638024,
+            "roundaboutSegs": 126,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Katowice Dworzec",
+          "variants": 1,
+          "tripCount": 1,
+          "stops": 46,
+          "lengthKm": 30.13,
+          "stats": {
+            "observations": 1357,
+            "matched": 1357,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 2.395488716266656,
+            "roundaboutSegs": 77,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 2
+    },
+    {
+      "line": "30N",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Przełajka Pętla",
+          "variants": 1,
+          "tripCount": 3,
+          "stops": 29,
+          "lengthKm": 16.44,
+          "stats": {
+            "observations": 749,
+            "matched": 749,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.2505340618626357,
+            "roundaboutSegs": 68,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Katowice Dworzec",
+          "variants": 3,
+          "tripCount": 1,
+          "stops": 29,
+          "lengthKm": 16.94,
+          "stats": {
+            "observations": 755,
+            "matched": 755,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.2020896947763486,
+            "roundaboutSegs": 41,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 2
+    },
+    {
+      "line": "32N",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Łabędy Huta",
+          "variants": 1,
+          "tripCount": 3,
+          "stops": 35,
+          "lengthKm": 22.97,
+          "stats": {
+            "observations": 959,
+            "matched": 959,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.5800624175845563,
+            "roundaboutSegs": 65,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Zabrze Goethego",
+          "variants": 1,
+          "tripCount": 4,
+          "stops": 37,
+          "lengthKm": 23.5,
+          "stats": {
+            "observations": 980,
+            "matched": 980,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.6851328951862037,
+            "roundaboutSegs": 59,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 2
+    },
+    {
+      "line": "76N",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Wesoła Kopalnia",
+          "variants": 1,
+          "tripCount": 2,
+          "stops": 46,
+          "lengthKm": 30.14,
+          "stats": {
+            "observations": 1335,
+            "matched": 1335,
+            "noCandidates": 0,
+            "viterbiBreaks": 2,
+            "bridged": 0,
+            "rawStretchCount": 2,
+            "rawMeters": 40,
+            "meanError": 1.836197235442396,
+            "roundaboutSegs": 131,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Katowice Dworzec",
+          "variants": 1,
+          "tripCount": 3,
+          "stops": 44,
+          "lengthKm": 27.64,
+          "stats": {
+            "observations": 1219,
+            "matched": 1219,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.6682798981081488,
+            "roundaboutSegs": 88,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 2
+    },
+    {
+      "line": "130N",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Halemba Pętla",
+          "variants": 1,
+          "tripCount": 4,
+          "stops": 33,
+          "lengthKm": 23.05,
+          "stats": {
+            "observations": 1024,
+            "matched": 1024,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.913943987536188,
+            "roundaboutSegs": 69,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Katowice Dworzec",
+          "variants": 1,
+          "tripCount": 5,
+          "stops": 32,
+          "lengthKm": 23.24,
+          "stats": {
+            "observations": 1033,
+            "matched": 1033,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.8236599951315422,
+            "roundaboutSegs": 52,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 2
+    },
+    {
+      "line": "297N",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "Katowice Dworzec",
+          "headsign": "Katowice Dworzec",
+          "variants": 1,
+          "tripCount": 5,
+          "stops": 33,
+          "lengthKm": 18.01,
+          "stats": {
+            "observations": 886,
+            "matched": 886,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.084753851530954,
+            "roundaboutSegs": 1,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 2
+    },
+    {
+      "line": "617N",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Helenka ELZAB",
+          "variants": 2,
+          "tripCount": 1,
+          "stops": 38,
+          "lengthKm": 23.14,
+          "stats": {
+            "observations": 985,
+            "matched": 985,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.6156502068536578,
+            "roundaboutSegs": 80,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Gliwice Zajezdnia",
+          "variants": 1,
+          "tripCount": 2,
+          "stops": 35,
+          "lengthKm": 23.1,
+          "stats": {
+            "observations": 991,
+            "matched": 991,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.5851383495855715,
+            "roundaboutSegs": 109,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 2
+    },
+    {
+      "line": "623N",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Miechowice Pętla",
+          "variants": 2,
+          "tripCount": 2,
+          "stops": 18,
+          "lengthKm": 10.35,
+          "stats": {
+            "observations": 420,
+            "matched": 420,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.5159371498768057,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Bytom Dworzec",
+          "variants": 2,
+          "tripCount": 2,
+          "stops": 17,
+          "lengthKm": 11.13,
+          "stats": {
+            "observations": 475,
+            "matched": 475,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.3436683369110818,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 2
+    },
+    {
+      "line": "657N",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Panewniki Owsiana",
+          "variants": 1,
+          "tripCount": 5,
+          "stops": 34,
+          "lengthKm": 16.09,
+          "stats": {
+            "observations": 783,
+            "matched": 783,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.0027217092390432,
+            "roundaboutSegs": 27,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Katowice Sądowa",
+          "variants": 1,
+          "tripCount": 5,
+          "stops": 32,
+          "lengthKm": 16.88,
+          "stats": {
+            "observations": 803,
+            "matched": 803,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.9776429940516571,
+            "roundaboutSegs": 27,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 2
+    },
+    {
+      "line": "672N",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Murcki Rynek",
+          "variants": 1,
+          "tripCount": 3,
+          "stops": 23,
+          "lengthKm": 16.91,
+          "stats": {
+            "observations": 695,
+            "matched": 695,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.7005402787327937,
+            "roundaboutSegs": 21,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Katowice Dworzec",
+          "variants": 1,
+          "tripCount": 3,
+          "stops": 21,
+          "lengthKm": 17.02,
+          "stats": {
+            "observations": 735,
+            "matched": 735,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.6478150072286433,
+            "roundaboutSegs": 52,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 2
+    },
+    {
+      "line": "701N",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Ruda Południowa",
+          "variants": 2,
+          "tripCount": 3,
+          "stops": 17,
+          "lengthKm": 10.46,
+          "stats": {
+            "observations": 473,
+            "matched": 473,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 3.2218330534535418,
+            "roundaboutSegs": 44,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Gliwice Zajezdnia",
+          "variants": 1,
+          "tripCount": 4,
+          "stops": 19,
+          "lengthKm": 10.78,
+          "stats": {
+            "observations": 493,
+            "matched": 493,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 3.118730435600339,
+            "roundaboutSegs": 48,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 2
+    },
+    {
+      "line": "705N",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Biskupice Zamkowa",
+          "variants": 1,
+          "tripCount": 3,
+          "stops": 16,
+          "lengthKm": 9.26,
+          "stats": {
+            "observations": 402,
+            "matched": 402,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 2.0887730910730506,
+            "roundaboutSegs": 64,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Zabrze Goethego",
+          "variants": 1,
+          "tripCount": 3,
+          "stops": 16,
+          "lengthKm": 8.82,
+          "stats": {
+            "observations": 365,
+            "matched": 365,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.6889709830429476,
+            "roundaboutSegs": 25,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 2
+    },
+    {
+      "line": "840N",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Gliwice Zajezdnia",
+          "variants": 2,
+          "tripCount": 3,
+          "stops": 5,
+          "lengthKm": 4.52,
+          "stats": {
+            "observations": 160,
+            "matched": 160,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.5947433058425624,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Gliwice Centrum Przesiadkowe",
+          "variants": 2,
+          "tripCount": 2,
+          "stops": 35,
+          "lengthKm": 31.7,
+          "stats": {
+            "observations": 1381,
+            "matched": 1381,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 3.3898830527794632,
+            "roundaboutSegs": 148,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 2
+    },
+    {
+      "line": "902N",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Osiedle Bór Pętla",
+          "variants": 4,
+          "tripCount": 1,
+          "stops": 39,
+          "lengthKm": 36.74,
+          "stats": {
+            "observations": 1479,
+            "matched": 1479,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 2.493002858862303,
+            "roundaboutSegs": 147,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Zagórze Zajezdnia",
+          "variants": 4,
+          "tripCount": 1,
+          "stops": 40,
+          "lengthKm": 33.12,
+          "stats": {
+            "observations": 1425,
+            "matched": 1425,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 2.1432814250689587,
+            "roundaboutSegs": 181,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 2
+    },
+    {
+      "line": "903N",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Gołonóg Zajezdnia",
+          "variants": 2,
+          "tripCount": 1,
+          "stops": 24,
+          "lengthKm": 30.73,
+          "stats": {
+            "observations": 1212,
+            "matched": 1212,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 2.898389083127394,
+            "roundaboutSegs": 331,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Gołonóg Zajezdnia",
+          "variants": 2,
+          "tripCount": 1,
+          "stops": 21,
+          "lengthKm": 24.29,
+          "stats": {
+            "observations": 835,
+            "matched": 835,
+            "noCandidates": 0,
+            "viterbiBreaks": 1,
+            "bridged": 0,
+            "rawStretchCount": 1,
+            "rawMeters": 20,
+            "meanError": 2.816549165566156,
+            "roundaboutSegs": 237,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 2
+    },
+    {
+      "line": "904N",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Dobieszowice Skrzyżowanie",
+          "variants": 3,
+          "tripCount": 1,
+          "stops": 31,
+          "lengthKm": 21.36,
+          "stats": {
+            "observations": 898,
+            "matched": 898,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.7320670597516654,
+            "roundaboutSegs": 32,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Będzin Kościuszki",
+          "variants": 3,
+          "tripCount": 1,
+          "stops": 27,
+          "lengthKm": 16.82,
+          "stats": {
+            "observations": 776,
+            "matched": 776,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.586668940670558,
+            "roundaboutSegs": 37,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 2
+    },
+    {
+      "line": "911N",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Czeladź Wojkowicka Pętla",
+          "variants": 2,
+          "tripCount": 2,
+          "stops": 25,
+          "lengthKm": 13.79,
+          "stats": {
+            "observations": 651,
+            "matched": 651,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.8099738606928646,
+            "roundaboutSegs": 101,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Katowice Dworzec",
+          "variants": 2,
+          "tripCount": 2,
+          "stops": 24,
+          "lengthKm": 14.15,
+          "stats": {
+            "observations": 651,
+            "matched": 651,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.6618184634068942,
+            "roundaboutSegs": 66,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 2
+    },
+    {
+      "line": "A4N",
+      "mode": "bus",
+      "color": "#0059a9",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Gliwice Zajezdnia",
+          "variants": 1,
+          "tripCount": 5,
+          "stops": 26,
+          "lengthKm": 12.95,
+          "stats": {
+            "observations": 581,
+            "matched": 581,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.6236677933557486,
+            "roundaboutSegs": 15,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Trynek Toruńska",
+          "variants": 1,
+          "tripCount": 5,
+          "stops": 29,
+          "lengthKm": 13.17,
+          "stats": {
+            "observations": 592,
+            "matched": 592,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.6504161546362908,
+            "roundaboutSegs": 27,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 2
     },
     {
       "line": "T1",
@@ -20724,7 +21164,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "T2",
@@ -20773,7 +21214,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "T3",
@@ -20822,7 +21264,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "T4",
@@ -20871,7 +21314,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "T5",
@@ -20920,7 +21364,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "T6",
@@ -20969,7 +21414,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "T7",
@@ -21018,7 +21464,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "T9",
@@ -21067,7 +21514,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "T10",
@@ -21116,7 +21564,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "T11",
@@ -21165,7 +21614,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "T13",
@@ -21214,7 +21664,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "T15",
@@ -21263,7 +21714,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "T16",
@@ -21312,7 +21764,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "T17",
@@ -21361,7 +21814,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "T19",
@@ -21410,7 +21864,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "T20",
@@ -21459,7 +21914,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "T21",
@@ -21508,7 +21964,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "T22",
@@ -21557,7 +22014,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "T24",
@@ -21606,7 +22064,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "T26",
@@ -21655,7 +22114,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "T27",
@@ -21704,7 +22164,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "T28",
@@ -21753,7 +22214,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "T34",
@@ -21802,7 +22264,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "T36",
@@ -21851,7 +22314,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "T38",
@@ -21900,7 +22364,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "T41",
@@ -21949,7 +22414,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     },
     {
       "line": "T46",
@@ -21998,7 +22464,8 @@
             "extEnd": 0
           }
         }
-      ]
+      ],
+      "rank": 1
     }
   ]
 }
