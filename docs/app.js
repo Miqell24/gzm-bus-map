@@ -424,6 +424,12 @@ async function init() {
   }
   // one field for both: a row that carries l0 came from the lines view
   const numberField = ['case', ['has', 'l0'], colouredRow, corridorRow];
+  // Night lines print black (user rule, 8.09.2026): a row that carries one
+  // arrives from the pipeline (night.mjs) as coloured sections — l0/c0 … for
+  // the default rows, bl/bc for the bus-only view, tl/tc for the tram-only
+  // view — one section per run of same-coloured numbers, so the day numbers
+  // keep the mode colour and the night numbers are black.
+  const sectionRow = (pre) => { const r = ['format']; for (let i = 0; i < 24; i++) r.push(['coalesce', ['get', pre + 'l' + i], ''], { 'text-color': ['coalesce', ['get', pre + 'c' + i], KMK] }); return r; };
   map.addSource('labels', { type: 'geojson', data: 'data/labels.geojson' });
   const numbersLayout = {
     'text-field': numberField,
@@ -920,6 +926,8 @@ async function init() {
     ['format', ['get', 'busLines'], { 'text-color': KMK }],
     splitRow];
   const tramOnlyNumbers = ['format', ['get', 'lines'], {}];
+  const busOnlyNumbersN = ['case', ['has', 'bl0'], sectionRow('b'), busOnlyNumbers];
+  const tramOnlyNumbersN = ['case', ['has', 'tl0'], sectionRow('t'), tramOnlyNumbers];
   function applyFilters() {
     const modes = [state.bus ? 'bus' : null, state.tram ? 'tram' : null].filter(Boolean);
     const modeC = ['in', ['get', 'mode'], ['literal', modes]];
@@ -1000,10 +1008,10 @@ async function init() {
       // trams hidden: shared corridor labels (mode=tram with busLines) must stay,
       // but they show only the bus part
       numC = ['all', ['any', ['all', ['==', ['get', 'mode'], 'bus'], busLblC], ['has', 'busLines']], selC];
-      numField = busOnlyNumbers;
+      numField = busOnlyNumbersN;
     } else {
       numC = ['all', lblModeC, selC];
-      numField = state.tram && !(B || M) ? tramOnlyNumbers : numberField;
+      numField = state.tram && !(B || M) ? tramOnlyNumbersN : numberField;
     }
     // with only one bus network on, mixed rows shrink to their relevant half
     if (B && !M) numField = ['case', ['all', ['==', ['get', 'mode'], 'bus'], ['any', ['has', 'tLines'], ['has', 'nmLines']]],
