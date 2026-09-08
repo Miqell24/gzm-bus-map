@@ -242,7 +242,7 @@ async function init() {
     ...Object.entries(LINE_COLORS).flatMap(([l, c]) => [l, c]), CORRIDOR_INK];
   const paintChips = (linesView) => {
     document.getElementById('chips').innerHTML = CATS.map(([title, test]) => {
-      const ls = meta.lines.filter(test).sort((a, b) => natCmp(dispLine(a.line), dispLine(b.line)));
+      const ls = meta.lines.filter(test); // meta.json order: colours together, night lines last (night.mjs)
       if (!ls.length) return '';
       return `<span class="chip-cat">${title}</span>` + ls
         .map((l) => `<button class="chip${l.line === state.selected ? ' active' : ''}" data-line="${esc(l.line)}" ` +

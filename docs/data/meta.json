@@ -20189,935 +20189,6 @@
       "rank": 1
     },
     {
-      "line": "1N",
-      "mode": "bus",
-      "color": "#000000",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Katowice Dworzec",
-          "variants": 1,
-          "tripCount": 2,
-          "stops": 42,
-          "lengthKm": 28.33,
-          "stats": {
-            "observations": 1169,
-            "matched": 1169,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.9436219333327895,
-            "roundaboutSegs": 52,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Tychy Sikorskiego Wiadukt",
-          "variants": 1,
-          "tripCount": 2,
-          "stops": 47,
-          "lengthKm": 31.02,
-          "stats": {
-            "observations": 1226,
-            "matched": 1226,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.6684478983886197,
-            "roundaboutSegs": 154,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 2
-    },
-    {
-      "line": "7N",
-      "mode": "bus",
-      "color": "#000000",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Zabrze Goethego",
-          "variants": 1,
-          "tripCount": 1,
-          "stops": 45,
-          "lengthKm": 29.55,
-          "stats": {
-            "observations": 1383,
-            "matched": 1383,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 2.2364445422638024,
-            "roundaboutSegs": 126,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Katowice Dworzec",
-          "variants": 1,
-          "tripCount": 1,
-          "stops": 46,
-          "lengthKm": 30.13,
-          "stats": {
-            "observations": 1357,
-            "matched": 1357,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 2.395488716266656,
-            "roundaboutSegs": 77,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 2
-    },
-    {
-      "line": "30N",
-      "mode": "bus",
-      "color": "#000000",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Przełajka Pętla",
-          "variants": 1,
-          "tripCount": 3,
-          "stops": 29,
-          "lengthKm": 16.44,
-          "stats": {
-            "observations": 749,
-            "matched": 749,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.2505340618626357,
-            "roundaboutSegs": 68,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Katowice Dworzec",
-          "variants": 3,
-          "tripCount": 1,
-          "stops": 29,
-          "lengthKm": 16.94,
-          "stats": {
-            "observations": 755,
-            "matched": 755,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.2020896947763486,
-            "roundaboutSegs": 41,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 2
-    },
-    {
-      "line": "32N",
-      "mode": "bus",
-      "color": "#000000",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Łabędy Huta",
-          "variants": 1,
-          "tripCount": 3,
-          "stops": 35,
-          "lengthKm": 22.97,
-          "stats": {
-            "observations": 959,
-            "matched": 959,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.5800624175845563,
-            "roundaboutSegs": 65,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Zabrze Goethego",
-          "variants": 1,
-          "tripCount": 4,
-          "stops": 37,
-          "lengthKm": 23.5,
-          "stats": {
-            "observations": 980,
-            "matched": 980,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.6851328951862037,
-            "roundaboutSegs": 59,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 2
-    },
-    {
-      "line": "76N",
-      "mode": "bus",
-      "color": "#000000",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Wesoła Kopalnia",
-          "variants": 1,
-          "tripCount": 2,
-          "stops": 46,
-          "lengthKm": 30.14,
-          "stats": {
-            "observations": 1335,
-            "matched": 1335,
-            "noCandidates": 0,
-            "viterbiBreaks": 2,
-            "bridged": 0,
-            "rawStretchCount": 2,
-            "rawMeters": 40,
-            "meanError": 1.836197235442396,
-            "roundaboutSegs": 131,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Katowice Dworzec",
-          "variants": 1,
-          "tripCount": 3,
-          "stops": 44,
-          "lengthKm": 27.64,
-          "stats": {
-            "observations": 1219,
-            "matched": 1219,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.6682798981081488,
-            "roundaboutSegs": 88,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 2
-    },
-    {
-      "line": "130N",
-      "mode": "bus",
-      "color": "#000000",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Halemba Pętla",
-          "variants": 1,
-          "tripCount": 4,
-          "stops": 33,
-          "lengthKm": 23.05,
-          "stats": {
-            "observations": 1024,
-            "matched": 1024,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.913943987536188,
-            "roundaboutSegs": 69,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Katowice Dworzec",
-          "variants": 1,
-          "tripCount": 5,
-          "stops": 32,
-          "lengthKm": 23.24,
-          "stats": {
-            "observations": 1033,
-            "matched": 1033,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.8236599951315422,
-            "roundaboutSegs": 52,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 2
-    },
-    {
-      "line": "297N",
-      "mode": "bus",
-      "color": "#000000",
-      "dirs": [
-        {
-          "dir": "Katowice Dworzec",
-          "headsign": "Katowice Dworzec",
-          "variants": 1,
-          "tripCount": 5,
-          "stops": 33,
-          "lengthKm": 18.01,
-          "stats": {
-            "observations": 886,
-            "matched": 886,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.084753851530954,
-            "roundaboutSegs": 1,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 2
-    },
-    {
-      "line": "617N",
-      "mode": "bus",
-      "color": "#000000",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Helenka ELZAB",
-          "variants": 2,
-          "tripCount": 1,
-          "stops": 38,
-          "lengthKm": 23.14,
-          "stats": {
-            "observations": 985,
-            "matched": 985,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.6156502068536578,
-            "roundaboutSegs": 80,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Gliwice Zajezdnia",
-          "variants": 1,
-          "tripCount": 2,
-          "stops": 35,
-          "lengthKm": 23.1,
-          "stats": {
-            "observations": 991,
-            "matched": 991,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.5851383495855715,
-            "roundaboutSegs": 109,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 2
-    },
-    {
-      "line": "623N",
-      "mode": "bus",
-      "color": "#000000",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Miechowice Pętla",
-          "variants": 2,
-          "tripCount": 2,
-          "stops": 18,
-          "lengthKm": 10.35,
-          "stats": {
-            "observations": 420,
-            "matched": 420,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.5159371498768057,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Bytom Dworzec",
-          "variants": 2,
-          "tripCount": 2,
-          "stops": 17,
-          "lengthKm": 11.13,
-          "stats": {
-            "observations": 475,
-            "matched": 475,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.3436683369110818,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 2
-    },
-    {
-      "line": "657N",
-      "mode": "bus",
-      "color": "#000000",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Panewniki Owsiana",
-          "variants": 1,
-          "tripCount": 5,
-          "stops": 34,
-          "lengthKm": 16.09,
-          "stats": {
-            "observations": 783,
-            "matched": 783,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.0027217092390432,
-            "roundaboutSegs": 27,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Katowice Sądowa",
-          "variants": 1,
-          "tripCount": 5,
-          "stops": 32,
-          "lengthKm": 16.88,
-          "stats": {
-            "observations": 803,
-            "matched": 803,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.9776429940516571,
-            "roundaboutSegs": 27,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 2
-    },
-    {
-      "line": "672N",
-      "mode": "bus",
-      "color": "#000000",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Murcki Rynek",
-          "variants": 1,
-          "tripCount": 3,
-          "stops": 23,
-          "lengthKm": 16.91,
-          "stats": {
-            "observations": 695,
-            "matched": 695,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.7005402787327937,
-            "roundaboutSegs": 21,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Katowice Dworzec",
-          "variants": 1,
-          "tripCount": 3,
-          "stops": 21,
-          "lengthKm": 17.02,
-          "stats": {
-            "observations": 735,
-            "matched": 735,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.6478150072286433,
-            "roundaboutSegs": 52,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 2
-    },
-    {
-      "line": "701N",
-      "mode": "bus",
-      "color": "#000000",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Ruda Południowa",
-          "variants": 2,
-          "tripCount": 3,
-          "stops": 17,
-          "lengthKm": 10.46,
-          "stats": {
-            "observations": 473,
-            "matched": 473,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 3.2218330534535418,
-            "roundaboutSegs": 44,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Gliwice Zajezdnia",
-          "variants": 1,
-          "tripCount": 4,
-          "stops": 19,
-          "lengthKm": 10.78,
-          "stats": {
-            "observations": 493,
-            "matched": 493,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 3.118730435600339,
-            "roundaboutSegs": 48,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 2
-    },
-    {
-      "line": "705N",
-      "mode": "bus",
-      "color": "#000000",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Biskupice Zamkowa",
-          "variants": 1,
-          "tripCount": 3,
-          "stops": 16,
-          "lengthKm": 9.26,
-          "stats": {
-            "observations": 402,
-            "matched": 402,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 2.0887730910730506,
-            "roundaboutSegs": 64,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Zabrze Goethego",
-          "variants": 1,
-          "tripCount": 3,
-          "stops": 16,
-          "lengthKm": 8.82,
-          "stats": {
-            "observations": 365,
-            "matched": 365,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.6889709830429476,
-            "roundaboutSegs": 25,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 2
-    },
-    {
-      "line": "840N",
-      "mode": "bus",
-      "color": "#000000",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Gliwice Zajezdnia",
-          "variants": 2,
-          "tripCount": 3,
-          "stops": 5,
-          "lengthKm": 4.52,
-          "stats": {
-            "observations": 160,
-            "matched": 160,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.5947433058425624,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Gliwice Centrum Przesiadkowe",
-          "variants": 2,
-          "tripCount": 2,
-          "stops": 35,
-          "lengthKm": 31.7,
-          "stats": {
-            "observations": 1381,
-            "matched": 1381,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 3.3898830527794632,
-            "roundaboutSegs": 148,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 2
-    },
-    {
-      "line": "902N",
-      "mode": "bus",
-      "color": "#000000",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Osiedle Bór Pętla",
-          "variants": 4,
-          "tripCount": 1,
-          "stops": 39,
-          "lengthKm": 36.74,
-          "stats": {
-            "observations": 1479,
-            "matched": 1479,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 2.493002858862303,
-            "roundaboutSegs": 147,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Zagórze Zajezdnia",
-          "variants": 4,
-          "tripCount": 1,
-          "stops": 40,
-          "lengthKm": 33.12,
-          "stats": {
-            "observations": 1425,
-            "matched": 1425,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 2.1432814250689587,
-            "roundaboutSegs": 181,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 2
-    },
-    {
-      "line": "903N",
-      "mode": "bus",
-      "color": "#000000",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Gołonóg Zajezdnia",
-          "variants": 2,
-          "tripCount": 1,
-          "stops": 24,
-          "lengthKm": 30.73,
-          "stats": {
-            "observations": 1212,
-            "matched": 1212,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 2.898389083127394,
-            "roundaboutSegs": 331,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Gołonóg Zajezdnia",
-          "variants": 2,
-          "tripCount": 1,
-          "stops": 21,
-          "lengthKm": 24.29,
-          "stats": {
-            "observations": 835,
-            "matched": 835,
-            "noCandidates": 0,
-            "viterbiBreaks": 1,
-            "bridged": 0,
-            "rawStretchCount": 1,
-            "rawMeters": 20,
-            "meanError": 2.816549165566156,
-            "roundaboutSegs": 237,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 2
-    },
-    {
-      "line": "904N",
-      "mode": "bus",
-      "color": "#000000",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Dobieszowice Skrzyżowanie",
-          "variants": 3,
-          "tripCount": 1,
-          "stops": 31,
-          "lengthKm": 21.36,
-          "stats": {
-            "observations": 898,
-            "matched": 898,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.7320670597516654,
-            "roundaboutSegs": 32,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Będzin Kościuszki",
-          "variants": 3,
-          "tripCount": 1,
-          "stops": 27,
-          "lengthKm": 16.82,
-          "stats": {
-            "observations": 776,
-            "matched": 776,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.586668940670558,
-            "roundaboutSegs": 37,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 2
-    },
-    {
-      "line": "911N",
-      "mode": "bus",
-      "color": "#000000",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Czeladź Wojkowicka Pętla",
-          "variants": 2,
-          "tripCount": 2,
-          "stops": 25,
-          "lengthKm": 13.79,
-          "stats": {
-            "observations": 651,
-            "matched": 651,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.8099738606928646,
-            "roundaboutSegs": 101,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Katowice Dworzec",
-          "variants": 2,
-          "tripCount": 2,
-          "stops": 24,
-          "lengthKm": 14.15,
-          "stats": {
-            "observations": 651,
-            "matched": 651,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.6618184634068942,
-            "roundaboutSegs": 66,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 2
-    },
-    {
-      "line": "A4N",
-      "mode": "bus",
-      "color": "#000000",
-      "dirs": [
-        {
-          "dir": "0",
-          "headsign": "Gliwice Zajezdnia",
-          "variants": 1,
-          "tripCount": 5,
-          "stops": 26,
-          "lengthKm": 12.95,
-          "stats": {
-            "observations": 581,
-            "matched": 581,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.6236677933557486,
-            "roundaboutSegs": 15,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "1",
-          "headsign": "Trynek Toruńska",
-          "variants": 1,
-          "tripCount": 5,
-          "stops": 29,
-          "lengthKm": 13.17,
-          "stats": {
-            "observations": 592,
-            "matched": 592,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.6504161546362908,
-            "roundaboutSegs": 27,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rank": 2
-    },
-    {
       "line": "T1",
       "mode": "tram",
       "color": "#d6212b",
@@ -22466,6 +21537,935 @@
         }
       ],
       "rank": 1
+    },
+    {
+      "line": "1N",
+      "mode": "bus",
+      "color": "#000000",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Katowice Dworzec",
+          "variants": 1,
+          "tripCount": 2,
+          "stops": 42,
+          "lengthKm": 28.33,
+          "stats": {
+            "observations": 1169,
+            "matched": 1169,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.9436219333327895,
+            "roundaboutSegs": 52,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Tychy Sikorskiego Wiadukt",
+          "variants": 1,
+          "tripCount": 2,
+          "stops": 47,
+          "lengthKm": 31.02,
+          "stats": {
+            "observations": 1226,
+            "matched": 1226,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.6684478983886197,
+            "roundaboutSegs": 154,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 2
+    },
+    {
+      "line": "7N",
+      "mode": "bus",
+      "color": "#000000",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Zabrze Goethego",
+          "variants": 1,
+          "tripCount": 1,
+          "stops": 45,
+          "lengthKm": 29.55,
+          "stats": {
+            "observations": 1383,
+            "matched": 1383,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 2.2364445422638024,
+            "roundaboutSegs": 126,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Katowice Dworzec",
+          "variants": 1,
+          "tripCount": 1,
+          "stops": 46,
+          "lengthKm": 30.13,
+          "stats": {
+            "observations": 1357,
+            "matched": 1357,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 2.395488716266656,
+            "roundaboutSegs": 77,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 2
+    },
+    {
+      "line": "30N",
+      "mode": "bus",
+      "color": "#000000",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Przełajka Pętla",
+          "variants": 1,
+          "tripCount": 3,
+          "stops": 29,
+          "lengthKm": 16.44,
+          "stats": {
+            "observations": 749,
+            "matched": 749,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.2505340618626357,
+            "roundaboutSegs": 68,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Katowice Dworzec",
+          "variants": 3,
+          "tripCount": 1,
+          "stops": 29,
+          "lengthKm": 16.94,
+          "stats": {
+            "observations": 755,
+            "matched": 755,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.2020896947763486,
+            "roundaboutSegs": 41,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 2
+    },
+    {
+      "line": "32N",
+      "mode": "bus",
+      "color": "#000000",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Łabędy Huta",
+          "variants": 1,
+          "tripCount": 3,
+          "stops": 35,
+          "lengthKm": 22.97,
+          "stats": {
+            "observations": 959,
+            "matched": 959,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.5800624175845563,
+            "roundaboutSegs": 65,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Zabrze Goethego",
+          "variants": 1,
+          "tripCount": 4,
+          "stops": 37,
+          "lengthKm": 23.5,
+          "stats": {
+            "observations": 980,
+            "matched": 980,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.6851328951862037,
+            "roundaboutSegs": 59,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 2
+    },
+    {
+      "line": "76N",
+      "mode": "bus",
+      "color": "#000000",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Wesoła Kopalnia",
+          "variants": 1,
+          "tripCount": 2,
+          "stops": 46,
+          "lengthKm": 30.14,
+          "stats": {
+            "observations": 1335,
+            "matched": 1335,
+            "noCandidates": 0,
+            "viterbiBreaks": 2,
+            "bridged": 0,
+            "rawStretchCount": 2,
+            "rawMeters": 40,
+            "meanError": 1.836197235442396,
+            "roundaboutSegs": 131,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Katowice Dworzec",
+          "variants": 1,
+          "tripCount": 3,
+          "stops": 44,
+          "lengthKm": 27.64,
+          "stats": {
+            "observations": 1219,
+            "matched": 1219,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.6682798981081488,
+            "roundaboutSegs": 88,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 2
+    },
+    {
+      "line": "130N",
+      "mode": "bus",
+      "color": "#000000",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Halemba Pętla",
+          "variants": 1,
+          "tripCount": 4,
+          "stops": 33,
+          "lengthKm": 23.05,
+          "stats": {
+            "observations": 1024,
+            "matched": 1024,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.913943987536188,
+            "roundaboutSegs": 69,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Katowice Dworzec",
+          "variants": 1,
+          "tripCount": 5,
+          "stops": 32,
+          "lengthKm": 23.24,
+          "stats": {
+            "observations": 1033,
+            "matched": 1033,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.8236599951315422,
+            "roundaboutSegs": 52,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 2
+    },
+    {
+      "line": "297N",
+      "mode": "bus",
+      "color": "#000000",
+      "dirs": [
+        {
+          "dir": "Katowice Dworzec",
+          "headsign": "Katowice Dworzec",
+          "variants": 1,
+          "tripCount": 5,
+          "stops": 33,
+          "lengthKm": 18.01,
+          "stats": {
+            "observations": 886,
+            "matched": 886,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.084753851530954,
+            "roundaboutSegs": 1,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 2
+    },
+    {
+      "line": "617N",
+      "mode": "bus",
+      "color": "#000000",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Helenka ELZAB",
+          "variants": 2,
+          "tripCount": 1,
+          "stops": 38,
+          "lengthKm": 23.14,
+          "stats": {
+            "observations": 985,
+            "matched": 985,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.6156502068536578,
+            "roundaboutSegs": 80,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Gliwice Zajezdnia",
+          "variants": 1,
+          "tripCount": 2,
+          "stops": 35,
+          "lengthKm": 23.1,
+          "stats": {
+            "observations": 991,
+            "matched": 991,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.5851383495855715,
+            "roundaboutSegs": 109,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 2
+    },
+    {
+      "line": "623N",
+      "mode": "bus",
+      "color": "#000000",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Miechowice Pętla",
+          "variants": 2,
+          "tripCount": 2,
+          "stops": 18,
+          "lengthKm": 10.35,
+          "stats": {
+            "observations": 420,
+            "matched": 420,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.5159371498768057,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Bytom Dworzec",
+          "variants": 2,
+          "tripCount": 2,
+          "stops": 17,
+          "lengthKm": 11.13,
+          "stats": {
+            "observations": 475,
+            "matched": 475,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.3436683369110818,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 2
+    },
+    {
+      "line": "657N",
+      "mode": "bus",
+      "color": "#000000",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Panewniki Owsiana",
+          "variants": 1,
+          "tripCount": 5,
+          "stops": 34,
+          "lengthKm": 16.09,
+          "stats": {
+            "observations": 783,
+            "matched": 783,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.0027217092390432,
+            "roundaboutSegs": 27,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Katowice Sądowa",
+          "variants": 1,
+          "tripCount": 5,
+          "stops": 32,
+          "lengthKm": 16.88,
+          "stats": {
+            "observations": 803,
+            "matched": 803,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.9776429940516571,
+            "roundaboutSegs": 27,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 2
+    },
+    {
+      "line": "672N",
+      "mode": "bus",
+      "color": "#000000",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Murcki Rynek",
+          "variants": 1,
+          "tripCount": 3,
+          "stops": 23,
+          "lengthKm": 16.91,
+          "stats": {
+            "observations": 695,
+            "matched": 695,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.7005402787327937,
+            "roundaboutSegs": 21,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Katowice Dworzec",
+          "variants": 1,
+          "tripCount": 3,
+          "stops": 21,
+          "lengthKm": 17.02,
+          "stats": {
+            "observations": 735,
+            "matched": 735,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.6478150072286433,
+            "roundaboutSegs": 52,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 2
+    },
+    {
+      "line": "701N",
+      "mode": "bus",
+      "color": "#000000",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Ruda Południowa",
+          "variants": 2,
+          "tripCount": 3,
+          "stops": 17,
+          "lengthKm": 10.46,
+          "stats": {
+            "observations": 473,
+            "matched": 473,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 3.2218330534535418,
+            "roundaboutSegs": 44,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Gliwice Zajezdnia",
+          "variants": 1,
+          "tripCount": 4,
+          "stops": 19,
+          "lengthKm": 10.78,
+          "stats": {
+            "observations": 493,
+            "matched": 493,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 3.118730435600339,
+            "roundaboutSegs": 48,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 2
+    },
+    {
+      "line": "705N",
+      "mode": "bus",
+      "color": "#000000",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Biskupice Zamkowa",
+          "variants": 1,
+          "tripCount": 3,
+          "stops": 16,
+          "lengthKm": 9.26,
+          "stats": {
+            "observations": 402,
+            "matched": 402,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 2.0887730910730506,
+            "roundaboutSegs": 64,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Zabrze Goethego",
+          "variants": 1,
+          "tripCount": 3,
+          "stops": 16,
+          "lengthKm": 8.82,
+          "stats": {
+            "observations": 365,
+            "matched": 365,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.6889709830429476,
+            "roundaboutSegs": 25,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 2
+    },
+    {
+      "line": "840N",
+      "mode": "bus",
+      "color": "#000000",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Gliwice Zajezdnia",
+          "variants": 2,
+          "tripCount": 3,
+          "stops": 5,
+          "lengthKm": 4.52,
+          "stats": {
+            "observations": 160,
+            "matched": 160,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.5947433058425624,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Gliwice Centrum Przesiadkowe",
+          "variants": 2,
+          "tripCount": 2,
+          "stops": 35,
+          "lengthKm": 31.7,
+          "stats": {
+            "observations": 1381,
+            "matched": 1381,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 3.3898830527794632,
+            "roundaboutSegs": 148,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 2
+    },
+    {
+      "line": "902N",
+      "mode": "bus",
+      "color": "#000000",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Osiedle Bór Pętla",
+          "variants": 4,
+          "tripCount": 1,
+          "stops": 39,
+          "lengthKm": 36.74,
+          "stats": {
+            "observations": 1479,
+            "matched": 1479,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 2.493002858862303,
+            "roundaboutSegs": 147,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Zagórze Zajezdnia",
+          "variants": 4,
+          "tripCount": 1,
+          "stops": 40,
+          "lengthKm": 33.12,
+          "stats": {
+            "observations": 1425,
+            "matched": 1425,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 2.1432814250689587,
+            "roundaboutSegs": 181,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 2
+    },
+    {
+      "line": "903N",
+      "mode": "bus",
+      "color": "#000000",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Gołonóg Zajezdnia",
+          "variants": 2,
+          "tripCount": 1,
+          "stops": 24,
+          "lengthKm": 30.73,
+          "stats": {
+            "observations": 1212,
+            "matched": 1212,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 2.898389083127394,
+            "roundaboutSegs": 331,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Gołonóg Zajezdnia",
+          "variants": 2,
+          "tripCount": 1,
+          "stops": 21,
+          "lengthKm": 24.29,
+          "stats": {
+            "observations": 835,
+            "matched": 835,
+            "noCandidates": 0,
+            "viterbiBreaks": 1,
+            "bridged": 0,
+            "rawStretchCount": 1,
+            "rawMeters": 20,
+            "meanError": 2.816549165566156,
+            "roundaboutSegs": 237,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 2
+    },
+    {
+      "line": "904N",
+      "mode": "bus",
+      "color": "#000000",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Dobieszowice Skrzyżowanie",
+          "variants": 3,
+          "tripCount": 1,
+          "stops": 31,
+          "lengthKm": 21.36,
+          "stats": {
+            "observations": 898,
+            "matched": 898,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.7320670597516654,
+            "roundaboutSegs": 32,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Będzin Kościuszki",
+          "variants": 3,
+          "tripCount": 1,
+          "stops": 27,
+          "lengthKm": 16.82,
+          "stats": {
+            "observations": 776,
+            "matched": 776,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.586668940670558,
+            "roundaboutSegs": 37,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 2
+    },
+    {
+      "line": "911N",
+      "mode": "bus",
+      "color": "#000000",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Czeladź Wojkowicka Pętla",
+          "variants": 2,
+          "tripCount": 2,
+          "stops": 25,
+          "lengthKm": 13.79,
+          "stats": {
+            "observations": 651,
+            "matched": 651,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.8099738606928646,
+            "roundaboutSegs": 101,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Katowice Dworzec",
+          "variants": 2,
+          "tripCount": 2,
+          "stops": 24,
+          "lengthKm": 14.15,
+          "stats": {
+            "observations": 651,
+            "matched": 651,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.6618184634068942,
+            "roundaboutSegs": 66,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 2
+    },
+    {
+      "line": "A4N",
+      "mode": "bus",
+      "color": "#000000",
+      "dirs": [
+        {
+          "dir": "0",
+          "headsign": "Gliwice Zajezdnia",
+          "variants": 1,
+          "tripCount": 5,
+          "stops": 26,
+          "lengthKm": 12.95,
+          "stats": {
+            "observations": 581,
+            "matched": 581,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.6236677933557486,
+            "roundaboutSegs": 15,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "1",
+          "headsign": "Trynek Toruńska",
+          "variants": 1,
+          "tripCount": 5,
+          "stops": 29,
+          "lengthKm": 13.17,
+          "stats": {
+            "observations": 592,
+            "matched": 592,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.6504161546362908,
+            "roundaboutSegs": 27,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        }
+      ],
+      "rank": 2
     }
   ]
 }
