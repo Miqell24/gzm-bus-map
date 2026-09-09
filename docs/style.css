@@ -414,3 +414,11 @@ body.lines-view p.lines-only { display: block; }
 }
 .city-switch nav .city-filter:focus { outline: none; border-color: var(--kmk); box-shadow: 0 0 0 2px rgba(0, 89, 169, 0.2); }
 @media (pointer: coarse) { .city-switch nav .city-filter { font-size: 16px; } }
+
+/* sublegends mix text with inline colour chips — flex would scatter them, and
+   `.legend li` is (0,1,1) so a bare `.sublegend` never beats it */
+.legend li.sublegend { display: block; }
+
+/* Koleje Śląskie: the operator's liveries where the feed ships them, the
+   family's rail purple where it does not (the Berlin arrangement) */
+.sw.line.ks { background: linear-gradient(90deg, #FF0000 0 20%, #FF7800 20% 40%, #009600 40% 60%, #0096FF 60% 80%, #a518a3 80% 100%); }

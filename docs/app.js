@@ -183,7 +183,7 @@ async function init() {
   map.addControl(new maplibregl.NavigationControl({ visualizePitch: false }), 'top-right');
   map.addControl(new maplibregl.GeolocateControl({ positionOptions: { enableHighAccuracy: true }, trackUserLocation: true, showUserHeading: true, fitBoundsOptions: { maxZoom: 15.5 } }), 'top-right');
   map.addControl(new maplibregl.ScaleControl({ maxWidth: 120 }), 'bottom-left');
-  map.addControl(new maplibregl.AttributionControl({ compact: true, customAttribution: 'Timetables: GTFS ZTM GZM' }));
+  map.addControl(new maplibregl.AttributionControl({ compact: true, customAttribution: 'Timetables: GTFS ZTM GZM · Koleje Śląskie (koleje-ks.pl)' }));
 
   const [meta, linesMeta] = await Promise.all([
     fetch('data/meta.json').then((r) => r.json()),
@@ -256,7 +256,7 @@ async function init() {
   // 'lines' redraws the same data line by line, up to four coloured strands
   // side by side, everything busier as one grey trunk. Both views are built from
   // the same files; the switch is layers and paint, never a reload.
-  const state = { bus: true, tram: true, mline: true, selected: null, journey: null, view: 'corridors', bg: 'auto' };
+  const state = { bus: true, tram: true, rail: true, mline: true, selected: null, journey: null, view: 'corridors', bg: 'auto' };
   paintChips(false);
 
   // Line layers go below the base style labels (street names stay readable).
@@ -929,8 +929,14 @@ async function init() {
   const busOnlyNumbersN = ['case', ['has', 'bl0'], sectionRow('b'), busOnlyNumbers];
   const tramOnlyNumbersN = ['case', ['has', 'tl0'], sectionRow('t'), tramOnlyNumbers];
   function applyFilters() {
-    const modes = [state.bus ? 'bus' : null, state.tram ? 'tram' : null].filter(Boolean);
-    const modeC = ['in', ['get', 'mode'], ['literal', modes]];
+    // Koleje Śląskie ride the tram MODE (drawn on the rail graph) but they are
+    // their own network on the panel: the build stamps rail=1 on everything
+    // that pass produced, so one toggle holds the trams and another the trains.
+    const T = state.tram, R = state.rail;
+    const tramC = T && R ? true : T ? ['!', ['has', 'rail']] : R ? ['has', 'rail'] : false;
+    const modes = [state.bus ? 'bus' : null, (T || R) ? 'tram' : null].filter(Boolean);
+    const modeC = ['all', ['in', ['get', 'mode'], ['literal', modes]],
+      ['any', ['==', ['get', 'mode'], 'bus'], tramC]];
     // an active journey hides the WHOLE regular network (user request: the
     // line's return run and the rest of its route were noise) — the ride is
     // drawn complete by the journey overlay: legs, via stops, numbers
@@ -946,20 +952,20 @@ async function init() {
       (B || M) ? ['==', ['get', 'mline'], 'mix'] : false];
     const runModeC = ['any',
       ['all', ['==', ['get', 'mode'], 'bus'], busRunC],
-      state.tram ? ['==', ['get', 'mode'], 'tram'] : false];
+      (T || R) ? ['all', ['==', ['get', 'mode'], 'tram'], tramC] : false];
     const stopSubC = ['any',
       B ? ['!', ['has', 'mstop']] : false,
       M ? ['==', ['get', 'mstop'], 'all'] : false,
       (B || M) ? ['==', ['get', 'mstop'], 'mix'] : false];
     const stopModeC = ['any',
       ['all', ['==', ['get', 'mode'], 'bus'], stopSubC],
-      state.tram ? ['==', ['get', 'mode'], 'tram'] : false];
+      (T || R) ? ['all', ['==', ['get', 'mode'], 'tram'], tramC] : false];
     const boxSubC = ['any',
       B ? ['!=', ['get', 'color'], MLINE_YELLOW] : false,
       M ? ['==', ['get', 'color'], MLINE_YELLOW] : false];
     const boxModeC = ['any',
       ['all', ['==', ['get', 'mode'], 'bus'], boxSubC],
-      state.tram ? ['==', ['get', 'mode'], 'tram'] : false];
+      (T || R) ? ['all', ['==', ['get', 'mode'], 'tram'], tramC] : false];
     const busLblC = ['any',
       B ? ['!=', ['get', 'color'], MLINE_YELLOW] : false,
       M ? ['any', ['==', ['get', 'color'], MLINE_YELLOW], ['has', 'mLines']] : false];
@@ -990,7 +996,7 @@ async function init() {
     // ('in' does substring search on the "bus,tram" string), and with a line
     // selected only complexes where that line terminates keep their name
     const nameModeC = ['any',
-      state.tram ? ['in', 'tram', ['get', 'modes']] : false,
+      (T || R) ? ['in', 'tram', ['get', 'modes']] : false,
       ['all', ['in', 'bus', ['get', 'modes']], ['any',
         B ? ['!', ['has', 'msome']] : false,
         M ? ['==', ['get', 'mall'], 1] : false,
@@ -1003,15 +1009,15 @@ async function init() {
     let numC, numField;
     const lblModeC = ['any',
       ['all', ['==', ['get', 'mode'], 'bus'], busLblC],
-      state.tram ? ['==', ['get', 'mode'], 'tram'] : false];
-    if ((B || M) && !state.tram) {
+      (T || R) ? ['all', ['==', ['get', 'mode'], 'tram'], tramC] : false];
+    if ((B || M) && !(T || R)) {
       // trams hidden: shared corridor labels (mode=tram with busLines) must stay,
       // but they show only the bus part
       numC = ['all', ['any', ['all', ['==', ['get', 'mode'], 'bus'], busLblC], ['has', 'busLines']], selC];
       numField = busOnlyNumbersN;
     } else {
       numC = ['all', lblModeC, selC];
-      numField = state.tram && !(B || M) ? tramOnlyNumbersN : numberField;
+      numField = (T || R) && !(B || M) ? tramOnlyNumbersN : numberField;
     }
     // with only one bus network on, mixed rows shrink to their relevant half
     if (B && !M) numField = ['case', ['all', ['==', ['get', 'mode'], 'bus'], ['any', ['has', 'tLines'], ['has', 'nmLines']]],
@@ -1130,7 +1136,7 @@ async function init() {
     document.querySelectorAll('#chips .chip').forEach((c) => c.classList.toggle('active', c.dataset.line === state.selected));
     applyFilters();
   });
-  for (const [id, key] of [['toggle-bus', 'bus'], ['toggle-tram', 'tram'], ['toggle-mline', 'mline']]) {
+  for (const [id, key] of [['toggle-bus', 'bus'], ['toggle-tram', 'tram'], ['toggle-rail', 'rail'], ['toggle-mline', 'mline']]) {
     document.getElementById(id).addEventListener('change', (e) => { state[key] = e.target.checked; applyFilters(); });
   }
   applyFilters();
@@ -1324,7 +1330,7 @@ async function init() {
       const fs = Math.max(16, Math.round(out.width / 130));
       ctx.font = `${fs}px sans-serif`;
       ctx.textBaseline = 'bottom';
-      const txt = '© OpenStreetMap contributors · OpenFreeMap · GTFS: ZTM GZM';
+      const txt = '© OpenStreetMap contributors · OpenFreeMap · GTFS: ZTM GZM · Koleje Śląskie';
       const tw = ctx.measureText(txt).width;
       ctx.fillStyle = 'rgba(255,255,255,0.82)';
       ctx.fillRect(out.width - tw - fs, out.height - fs * 1.7, tw + fs, fs * 1.7);
@@ -1568,7 +1574,7 @@ async function init() {
             const fs = Math.max(16, Math.round(Wf / 500));
             cx.font = `${fs}px sans-serif`;
             cx.textBaseline = 'bottom';
-            const txt = '© OpenStreetMap contributors · OpenFreeMap · GTFS: ZTM GZM';
+            const txt = '© OpenStreetMap contributors · OpenFreeMap · GTFS: ZTM GZM · Koleje Śląskie';
             const tw = Math.min(cx.measureText(txt).width, wpx - fs);
             cx.fillStyle = 'rgba(255,255,255,0.82)';
             cx.fillRect(wpx - tw - fs, hpx - fs * 1.7, tw + fs, fs * 1.7);

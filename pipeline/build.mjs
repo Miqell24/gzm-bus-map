@@ -77,16 +77,60 @@ const busList = busArgs.filter((a) => a !== '--all');
 
 // routeTypes splits the single ZTM feed: 3 = bus, 11 = trolleybus (Tychy),
 // 0 = tram. Without it `--all` on the bus mode would swallow the tram lines too.
+// dark variant of a feed-supplied line colour (badge rims / terminus fills)
+function darken(hex, f) {
+  const n = parseInt(hex.slice(1), 16);
+  const r = Math.round(((n >> 16) & 255) * f), g = Math.round(((n >> 8) & 255) * f), b = Math.round((n & 255) * f);
+  return '#' + ((1 << 24) | (r << 16) | (g << 8) | b).toString(16).slice(1);
+}
+
 const MODES = [{
   mode: 'bus', label: 'buses', gtfsDir: 'data/gtfs', osmFile: 'data/osm/gzm.json',
   graphMode: 'road', color: '#0059a9', colorDark: '#00294f', routeTypes: ['3', '11'],
   all: busAll, lines: busList.length ? busList : (busAll ? [] : ['M1']),
 }];
 const tramAll = tramLines.length === 1 && tramLines[0] === 'all';
-if (tramLines.length) MODES.push({
+// Koleje Śląskie number their lines S1…S82; the trams of this basin are plain
+// numbers, so the two never collide and the switch is a regex.
+const isRail = (l) => /^S\d/.test(l);
+const tramSel = tramLines.filter((l) => !isRail(l));
+const ksSel = tramLines.filter(isRail);
+if (tramSel.length || (tramAll && tramLines.length)) MODES.push({
   mode: 'tram', label: 'trams', gtfsDir: 'data/gtfs', osmFile: 'data/osm/gzm-tram.json',
   graphMode: 'tram', color: '#d6212b', colorDark: '#7c1116', routeTypes: ['0'],
-  all: tramAll, lines: tramAll ? [] : tramLines,
+  all: tramAll, lines: tramAll ? [] : tramSel,
+});
+if (ksSel.length || (tramAll && tramLines.length)) MODES.push({
+  // Koleje Śląskie — the voivodeship's rail operator, its own GTFS
+  // (koleje-ks.pl, listed on odt.org.pl). Drawn WHOLE, the way Berlin draws
+  // its RB/RE: a line that serves the Metropolis is drawn to its last station,
+  // Racibórz and Zwardoń in the south-west, Chorzew Siemkowice in the north,
+  // Zakopane and Kraków in the east.
+  // The feed files a route per origin–destination pair (eleven of them under
+  // S82 alone), so one line number arrives as a dozen routes and as many
+  // patterns — which is what the representative-variant rule above is for.
+  // skipRoute: the trains the feed leaves unnumbered — "POCIĄG", "KSL", "NA",
+  // "AIR" and the Slovak "ZSSK" to Skalité — carry no line a passenger could
+  // read off a platform, so they stay out (Vienna's product rule, Göteborg's
+  // nameless TÅG).
+  mode: 'tram', label: 'Koleje Śląskie', gtfsDir: 'data/gtfs-ks', osmFile: 'data/osm/gzm-rail.json',
+  graphMode: 'tram', railKeep: new Set(['rail']),
+  // A station throat being rebuilt is tagged construction/disused/proposed and
+  // OFTEN carries no usage=main at all (Bytom, Zabrze) — admitting only the
+  // tagged-main ones left 148 breaks. So every building site that is through
+  // track counts, and only depot track (yard, spur, siding) and the tram works
+  // stay out; admitted ways are renamed to what they are being built as before
+  // the graph is built (the Vienna Verbindungsbahn rule).
+  railExtra: (e) => {
+    const t = e.tags || {};
+    if (!['construction', 'disused', 'proposed'].includes(t.railway)) return false;
+    if (['yard', 'spur', 'siding'].includes(t.service)) return false;
+    const target = t.construction || t.disused || t.proposed;
+    return !['tram', 'light_rail', 'subway'].includes(target);
+  },
+  color: '#a518a3', colorDark: '#5a0c59', routeTypes: ['2'], feedColors: true,
+  skipRoute: (r) => !isRail(r.route_short_name || ''),
+  all: tramAll, lines: tramAll ? [] : ksSel,
 });
 
 function mergeRuns(all) {
@@ -170,11 +214,29 @@ async function processMode(cfg) {
   const allRoutes = await readCsv(join(ROOT, cfg.gtfsDir, 'routes.txt'));
   // one feed, two modes: keep only this mode's route_type (see MODES above), so a
   // tram and a bus that share a line number never end up in the same mode either
-  const routes = cfg.routeTypes
+  let routes = cfg.routeTypes
     ? allRoutes.filter((r) => cfg.routeTypes.includes(r.route_type))
     : allRoutes;
   // feed quirk: some short names carry stray whitespace ("14 " vs "14")
   for (const r of routes) r.route_short_name = (r.route_short_name || '').trim();
+  if (cfg.skipRoute) routes = routes.filter((r) => !cfg.skipRoute(r));
+  // A commuter-rail feed ships its own line liveries (the family's exception to
+  // the mode-colour rule, as for a metro): Koleje Śląskie colour fifteen of
+  // their S-lines and leave the rest blank, which then take the mode colour —
+  // the Berlin arrangement, where the S-Bahn is official and the RB/RE is not.
+  if (cfg.feedColors) {
+    cfg.lineColors = cfg.lineColors || {}; cfg.lineColorsDark = cfg.lineColorsDark || {};
+    let n = 0;
+    for (const r of routes) {
+      const c = (r.route_color || '').trim().toUpperCase();
+      if (!/^[0-9A-F]{6}$/.test(c) || c === 'FFFFFF') continue;
+      if (cfg.lineColors[r.route_short_name]) continue;
+      cfg.lineColors[r.route_short_name] = '#' + c;
+      cfg.lineColorsDark[r.route_short_name] = darken('#' + c, 0.45);
+      n++;
+    }
+    if (n) log(`feed line colours: ${n} lines carry the operator's own livery`);
+  }
   // trolleybuses (GTFS route_type 11) ride the same roads but get their own color;
   // the set also flags shared bus+trolleybus roadways for the dashed overlay
   if (cfg.mode === 'bus') {
@@ -239,6 +301,35 @@ async function processMode(cfg) {
     e.count++;
     if (e.trips.length < tripCap) e.trips.push({ trip_id: t.trip_id, headsign: t.trip_headsign });
   }
+  // Length per variant, for the pick below — one streaming pass keeping only a
+  // running total and the previous point per shape. Both used by the rule that
+  // the busiest shape of a line+direction is very often a peak-hour short-turn:
+  // the representative is the LONGEST pattern still worked by at least
+  // REP_MIN_SHARE of the busiest pattern's trips (and never a lone trip). The
+  // busiest shape always clears its own bar, so this can only lengthen a drawn
+  // line, never shorten it. (The rule the family learned in Tricity; it matters
+  // most for Koleje Śląskie, whose S82 alone runs eleven origin-destination
+  // routes under one number.)
+  const shapeM = new Map();
+  if (hasShapes) {
+    const needed = new Set();
+    for (const dirs of byLineDir.values()) for (const m of dirs.values()) for (const sh of m.keys()) needed.add(sh);
+    const prev = new Map();
+    for await (const sh of iterCsv(join(ROOT, cfg.gtfsDir, 'shapes.txt'))) {
+      if (!needed.has(sh.shape_id)) continue;
+      const lat = Number(sh.shape_pt_lat), lon = Number(sh.shape_pt_lon);
+      const q = prev.get(sh.shape_id);
+      if (q) {
+        const k = Math.PI / 180 * 6371008.8;
+        shapeM.set(sh.shape_id, (shapeM.get(sh.shape_id) || 0) +
+          Math.hypot((lon - q[1]) * k * Math.cos(lat * Math.PI / 180), (lat - q[0]) * k));
+      }
+      prev.set(sh.shape_id, [lat, lon]);
+    }
+  }
+  const REP_MIN_SHARE = 0.15;
+  let longerReps = 0, longerM = 0;
+
   let reps = [];
   for (const L of LINES) {
     const dirs = byLineDir.get(L);
@@ -247,6 +338,19 @@ async function processMode(cfg) {
       const m = dirs.get(dir);
       let best = null;
       for (const [shapeId, e] of m) if (!best || e.count > best.e.count) best = { shapeId, e };
+      if (hasShapes && m.size > 1) {
+        const floor = Math.max(2, best.e.count * REP_MIN_SHARE);
+        const lenOf = (id) => shapeM.get(id) || 0;
+        let pick = best;
+        for (const [shapeId, e] of m) {
+          if (e.count >= floor && lenOf(shapeId) > lenOf(pick.shapeId)) pick = { shapeId, e };
+        }
+        if (pick.shapeId !== best.shapeId) {
+          longerReps++;
+          longerM += lenOf(pick.shapeId) - lenOf(best.shapeId);
+          best = pick;
+        }
+      }
       reps.push({
         line: L, dir, shapeId: best.shapeId,
         headsign: best.e.trips[0]?.headsign || '',
@@ -255,6 +359,7 @@ async function processMode(cfg) {
       });
     }
   }
+  if (longerReps) log(`Representative variant: ${longerReps} line-directions moved off the busiest short-turn onto the longest regular pattern (+${(longerM / 1000).toFixed(0)} km drawn)`);
 
   // ---------- 3) stop_times.txt (streaming) → stop sequences ----------
   const allTripIds = new Set();
@@ -318,6 +423,23 @@ async function processMode(cfg) {
   }
   const proj = makeProj((latMin + latMax) / 2, (lonMin + lonMax) / 2);
   const osm = JSON.parse(readFileSync(join(ROOT, cfg.osmFile), 'utf8'));
+  // railKeep: this cfg sees only its own kind of track (see MODES above);
+  // railExtra admits the building sites — a main line being rebuilt carries
+  // railway=construction/disused/proposed, and graph.mjs knows none of those,
+  // so an admitted way is renamed to what it is being built as (Vienna, 8.09).
+  if (cfg.railKeep) {
+    const before = osm.elements.length;
+    osm.elements = osm.elements.filter((e) => cfg.railKeep.has(e.tags?.railway) || (cfg.railExtra && cfg.railExtra(e)));
+    let retag = 0;
+    for (const e of osm.elements) {
+      const rw = e.tags?.railway;
+      if (['construction', 'disused', 'proposed'].includes(rw)) {
+        e.tags = { ...e.tags, railway: e.tags.construction || e.tags.disused || e.tags.proposed || 'rail' };
+        retag++;
+      }
+    }
+    log(`rails: ${osm.elements.length} of ${before} ways kept${retag ? `, ${retag} building sites retagged` : ''}`);
+  }
   const graph = buildGraph(osm.elements, proj, cfg.graphMode);
   log(`Graph (${cfg.graphMode}): ${graph.nodes.size} nodes, ${graph.segs.length} segments, ${graph.ways.size} ways`);
 
@@ -837,7 +959,20 @@ async function processMode(cfg) {
 
 // ---------- run per mode + write shared files ----------
 const results = [];
-for (const cfg of MODES) results.push(await processMode(cfg));
+for (const cfg of MODES) {
+  const r = await processMode(cfg);
+  // Koleje Śląskie ride the tram MODE (they are drawn on the rail graph) but
+  // they are their own network on the panel: every feature of that pass is
+  // stamped rail=1 so the legend can hold trams and trains apart.
+  if (cfg.gtfsDir === 'data/gtfs-ks') {
+    for (const arr of [r.routeFeatures, r.shapeFeatures, r.stopFeatures, r.streetFeatures]) {
+      for (const f of arr || []) f.properties.rail = 1;
+    }
+    for (const a of r.badgeAnchors || []) a.rail = 1;
+    for (const l of r.metaLines || []) l.rail = 1;
+  }
+  results.push(r);
+}
 
 const routeFeatures = results.flatMap((r) => r.routeFeatures);
 const shapeFeatures = results.flatMap((r) => r.shapeFeatures);
@@ -1106,6 +1241,7 @@ const metaLines = results.flatMap((r) => r.metaLines);
     const p = g.best.f.properties;
     const arr = p.busLines ? [...p.lines.split(', '), ...p.busLines.split(', ')] : p.lines.split(', ');
     const baseProps = { lines: p.mode === 'tram' ? tramDisp(p.lines) : p.lines, color: p.color, mode: p.mode, arr };
+    if (p.rail) baseProps.rail = 1;   // Koleje Śląskie: its own legend toggle
     if (p.busLines) baseProps.busLines = p.busLines;
     // A corridor mixing colour categories is split into the groups it actually
     // carries — amber metrolines, green trolleybuses, navy buses — so the row

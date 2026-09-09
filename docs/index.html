@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Metropolia GZM Public Transport — interactive map</title>
 <link rel="stylesheet" href="vendor/maplibre-gl.css">
-<link rel="stylesheet" href="style.css?v=20260826c">
+<link rel="stylesheet" href="style.css?v=20260909a">
 </head>
 <body>
 <div id="map"></div>
@@ -125,6 +125,8 @@
     <li><label><input type="checkbox" id="toggle-mline" checked> <span class="sw line corridor-only mline"></span> Metroline routes (M)</label></li>
     <li class="sublegend corridor-only"><span class="mini" style="background:#e8a000"></span>dashed = shared with regular buses</li>
     <li><label><input type="checkbox" id="toggle-tram" checked> <span class="sw line corridor-only tram"></span> Tram routes</label></li>
+    <li><label><input type="checkbox" id="toggle-rail" checked> <span class="sw line corridor-only ks"></span> Koleje &#346;l&#261;skie (S)</label></li>
+    <li class="sublegend corridor-only">The voivodeship's trains, drawn whole &mdash; Racib&oacute;rz and Zwardo&#324; in the south-west, Chorzew Siemkowice in the north, Krak&oacute;w and Zakopane in the east. Fifteen S-lines carry the operator's own colour; the rest take the rail purple.</li>
     <li><span class="sw stop"></span> Stop</li>
     <li><span class="sw terminus"></span> Terminus</li>
   </ul>
@@ -166,8 +168,8 @@
   <label class="debug"><input type="checkbox" id="toggle-shape"> show raw GTFS shapes (QA)</label>
 </aside>
 <script src="vendor/maplibre-gl.js"></script>
-<script src="app.js?v=20260908p"></script>
-<script src="pdf-export.js?v=20260908i"></script>
+<script src="app.js?v=20260909a"></script>
+<script src="pdf-export.js?v=20260909a"></script>
 <script>
 (() => {
   // City-switch filter: type instead of scrolling. Matches the English name,

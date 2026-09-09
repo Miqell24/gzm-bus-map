@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# Downloads input data: ZTM GZM GTFS feed, OSM network (Overpass), MapLibre GL.
+# Downloads input data: two GTFS feeds (ZTM GZM, Koleje Śląskie), the OSM
+# networks (Geofabrik + pyosmium) and MapLibre GL.
 # Everything is cached — re-running only fetches what is missing.
 #
 # GZM quirk: like Poznań, ONE feed carries all modes (route_type 0 trams,
@@ -8,7 +9,7 @@
 # CKAN API for the newest ZIP resource instead of hardcoding a dated URL.
 set -euo pipefail
 cd "$(dirname "$0")/.."
-mkdir -p data/gtfs data/osm web/vendor
+mkdir -p data/gtfs data/gtfs-ks data/osm web/vendor
 
 # A downloaded extract is only accepted if it PARSES and carries a plausible
 # number of elements. `grep -q '"elements"'` — the guard this family used
@@ -41,42 +42,36 @@ if [ ! -f data/gtfs/routes.txt ]; then
   unzip -o data/ztm_gzm_gtfs.zip -d data/gtfs
 fi
 
-# 2) OSM — roadways over the whole ZTM network (GTFS stops extent + margin: the
-#    conurbation spans Gliwice–Dąbrowa Górnicza and Tarnowskie Góry–Tychy, with
-#    single lines reaching Pyskowice, Sławków and Bieruń), incl. highway=construction
-if [ ! -f data/osm/gzm.json ]; then
-  echo "== Overpass (roads) =="
-  Q='[out:json][timeout:900];way(49.93,18.35,50.62,19.52)["highway"~"^(motorway|trunk|primary|secondary|tertiary|unclassified|residential|living_street|service|busway|construction|motorway_link|trunk_link|primary_link|secondary_link|tertiary_link)$"];out geom;'
-  ok=0
-  for EP in "https://overpass-api.de/api/interpreter" \
-            "https://maps.mail.ru/osm/tools/overpass/api/interpreter" \
-            "https://overpass.kumi.systems/api/interpreter"; do
-    echo "-- $EP"
-    if curl -fsS --max-time 900 -o data/osm/gzm.json --data-urlencode "data=$Q" "$EP" \
-       && ok_json "data/osm/gzm.json" 2000; then
-      ok=1; break
-    fi
-  done
-  [ "$ok" = 1 ] || { rm -f data/osm/gzm.json; echo "Overpass: all mirrors failed" >&2; exit 1; }
+# 1b) GTFS — Koleje Śląskie, the voivodeship's rail operator. Their own file
+#     (koleje-ks.pl, the one odt.org.pl lists), a route per origin–destination
+#     pair: eleven of them ride under S82 alone, which is what the
+#     representative-variant rule in build.mjs is for.
+if [ ! -f data/gtfs-ks/routes.txt ]; then
+  echo "== Koleje Śląskie GTFS =="
+  curl -fL --retry 3 --max-time 600 -o data/ks-gtfs.zip "https://koleje-ks.pl/gtfs/2025-2026.zip"
+  unzip -o data/ks-gtfs.zip -d data/gtfs-ks
 fi
 
-# 2b) OSM — tram tracks (separate network: railway=tram, not roadways). The bbox
-#     covers the Silesian Interurbans network: Gliwice in the west to Dąbrowa
-#     Górnicza in the east, plus depots.
-if [ ! -f data/osm/gzm-tram.json ]; then
-  echo "== Overpass (trams) =="
-  QT='[out:json][timeout:300];way(50.18,18.68,50.44,19.31)["railway"~"^(tram|light_rail)$"];out geom;'
-  ok=0
-  for EP in "https://overpass-api.de/api/interpreter" \
-            "https://maps.mail.ru/osm/tools/overpass/api/interpreter" \
-            "https://overpass.kumi.systems/api/interpreter"; do
-    echo "-- $EP"
-    if curl -fsS --max-time 300 -o data/osm/gzm-tram.json --data-urlencode "data=$QT" "$EP" \
-       && ok_json "data/osm/gzm-tram.json" 40; then
-      ok=1; break
+# 2) OSM — from the Geofabrik voivodeship extracts, not Overpass. On 9.09.2026
+#    every public mirror answered these queries with 504 for an hour (the wall
+#    Berlin, London, São Paulo and Vienna hit before), so the cuts are made
+#    locally: pipeline/pbf-cut.py (needs `pip3 install --user osmium`) writes
+#    exactly the JSON Overpass would have returned, node ids included, for
+#    three boxes — the Metropolis' roads, its tram tracks, and the main-line
+#    track the Koleje Śląskie trains need. That last one is much larger than
+#    the map's own frame because the trains are drawn WHOLE: Racibórz and
+#    Zwardoń in the south-west, Chorzew Siemkowice in the north, Kraków and
+#    Zakopane in the east, so the cut reads łódzkie and małopolskie too.
+if [ ! -f data/osm/gzm.json ] || [ ! -f data/osm/gzm-tram.json ] || [ ! -f data/osm/gzm-rail.json ]; then
+  python3 -c "import osmium" 2>/dev/null || { echo "brak pakietu osmium — zainstaluj: pip3 install --user osmium" >&2; exit 1; }
+  for V in slaskie malopolskie lodzkie; do
+    if [ ! -f "data/$V-latest.osm.pbf" ]; then
+      echo "== Geofabrik $V-latest.osm.pbf =="
+      curl -fL --retry 5 --retry-delay 5 -C - --max-time 3600 -o "data/$V-latest.osm.pbf"         "https://download.geofabrik.de/europe/poland/$V-latest.osm.pbf"
     fi
   done
-  [ "$ok" = 1 ] || { rm -f data/osm/gzm-tram.json; echo "Overpass (tram): all mirrors failed" >&2; exit 1; }
+  echo "== cutting OSM out of the extracts =="
+  python3 pipeline/pbf-cut.py
 fi
 
 # 3) MapLibre GL (vendored, no CDN at runtime)
@@ -87,4 +82,4 @@ if [ ! -f web/vendor/maplibre-gl.js ]; then
 fi
 
 echo "OK — data ready:"
-du -sh data/ztm_gzm_gtfs.zip data/osm/gzm.json data/osm/gzm-tram.json web/vendor/maplibre-gl.js 2>/dev/null || true
+du -sh data/gtfs data/gtfs-ks data/osm/gzm.json data/osm/gzm-tram.json data/osm/gzm-rail.json 2>/dev/null || true

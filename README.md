@@ -2,10 +2,48 @@
 
 Interactive web map of public transport in the GZM Metropolis (Katowice
 conurbation) in the visual logic of a classic printed network map:
-**432 bus lines, 8 trolleybus lines and 27 tram lines
-(ZTM GZM)** drawn exactly along roadways and tram tracks (own HMM/Viterbi map
-matching on an OSM graph), line numbers written parallel to every street they
-use, labeled stops, true roundabout arcs.
+**345 bus and trolleybus lines and 24 tram lines (ZTM GZM)**, and — since
+9.09.2026 — the **38 rail lines of Koleje Śląskie**, drawn exactly along
+roadways, tram tracks and main-line track (own HMM/Viterbi map matching on an
+OSM graph), line numbers written parallel to every street they use, labeled
+stops, true roundabout arcs. **407 lines / 22 758 km**, weighted mean matching
+error 1.8 m.
+
+## Koleje Śląskie
+
+The voivodeship's rail operator rides its own toggle and its own slice of the
+graph, from its own GTFS (koleje-ks.pl, the file odt.org.pl lists). The trains
+are drawn **whole**, the way the Berlin map draws its RB/RE and the Vienna map
+its REX: Racibórz and Zwardoń in the south-west, Chorzew Siemkowice in the
+north, Kraków and Zakopane in the east — 8 453 km of the sheet's 22 758, run
+far beyond the Metropolis' own 40-odd municipalities.
+
+Three things that feed needs and this pipeline learned for it:
+
+- **A route per origin–destination pair.** S82 alone arrives as eleven routes
+  (Chorzów Batory – Chorzew Siemkowice, Bytom – Kłobuck, and so on) under one
+  number, so a line reaches the matcher as a dozen patterns. The
+  representative-variant rule the family learned in Tricity was ported here for
+  it: the drawn pattern is the LONGEST still worked by ≥15 % of the busiest
+  pattern's trips. It lengthened 92 bus line-directions too (+326 km).
+- **Crossovers are track, and so is a building site.** Excluded from the rail
+  graph, crossovers tore the Koleje Śląskie lines into 148 pieces at the
+  station throats of Bytom, Nędza and Pszczyna — a train changes tracks at a
+  junction over exactly those ways. Heavy rail now keeps its crossovers and
+  sidings, the way Warsaw's SKM does (tram yards, spurs and sidings stay out),
+  and every `construction` / `disused` / `proposed` way that is through track
+  is admitted and renamed to what it is being built as before the graph is
+  built — `usage=main` alone was not enough, because Bytom's and Zabrze's
+  rebuilt throats carry no usage tag at all. 148 breaks → 15.
+- **Fifteen lines carry a colour, the rest do not.** The feed ships the
+  operator's livery for S1, S3, S4, S5, S6, S7, S8, S13, S18, S31, S61, S62,
+  S71, S72 and S78; the others take one rail purple. That is the Berlin
+  arrangement — official colours where the operator publishes them, one colour
+  where it does not.
+- **The trains the feed leaves unnumbered stay out**: "POCIĄG", "KSL", "NA",
+  "AIR" and the Slovak "ZSSK" to Skalité carry no line a passenger could read
+  off a platform. Combined designations that DO appear on the platform ("S1/S5"
+  — one train working two numbers) are kept exactly as the feed writes them.
 
 Fifth city of the family, alongside
 [krakow-bus-map](https://github.com/Miqell24/krakow-bus-map),
@@ -53,7 +91,7 @@ Node ≥ 18 (no npm dependencies), `curl`, `unzip`, `python3`, internet on first
 ## Usage
 
 ```bash
-npm run download   # ZTM GZM GTFS + OSM (Overpass) + MapLibre (cached in data/ and web/vendor/)
+npm run download   # GTFS (ZTM GZM, Koleje Śląskie) + OSM (Geofabrik + pyosmium) + MapLibre (cached in data/ and web/vendor/)
 npm run build      # extraction + map matching + GeoJSON files into data/out/
 npm run serve      # http://localhost:8128
 ```
