@@ -35,11 +35,18 @@ Three things that feed needs and this pipeline learned for it:
   is admitted and renamed to what it is being built as before the graph is
   built — `usage=main` alone was not enough, because Bytom's and Zabrze's
   rebuilt throats carry no usage tag at all. 148 breaks → 15.
-- **Fifteen lines carry a colour, the rest do not.** The feed ships the
-  operator's livery for S1, S3, S4, S5, S6, S7, S8, S13, S18, S31, S61, S62,
-  S71, S72 and S78; the others take one rail purple. That is the Berlin
-  arrangement — official colours where the operator publishes them, one colour
-  where it does not.
+- **One purple for the whole operator.** The feed ships the operator's livery
+  for fifteen of the twenty-five S-lines (S1, S3, S4, S5, S6, S7, S8, S13, S18,
+  S31, S61, S62, S71, S72, S78) and leaves the other ten blank. Drawing it as
+  given made the network look HALF branded — S1 red, S6 green, S82 purple, with
+  nothing to tell the reader that S82's purple is a missing value rather than a
+  livery. So the family rule holds instead: **the colour says the MODE**, and a
+  livery is kept only where the operator publishes a complete one — the way
+  Berlin keeps its S-Bahn's and paints its RB/RE one grey. Barcelona's FGC and
+  Rodalies and Kraków's Koleje Małopolskie ride the same purple. It settles the
+  shared-corridor case too: a run carrying two lines of different liveries has
+  to fall back to the mode colour, so the joint approach to Chałupki used to
+  change colour halfway down. Now it cannot.
 - **The trains the feed leaves unnumbered stay out**: "POCIĄG", "KSL", "NA",
   "AIR" and the Slovak "ZSSK" to Skalité carry no line a passenger could read
   off a platform. A **combined designation is not a line either**: "S1/S5" is a

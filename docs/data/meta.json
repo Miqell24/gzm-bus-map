@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-09T11:42:21.785Z",
+  "generatedAt": "2026-09-09T12:16:53.353Z",
   "bbox": [
     18.211001,
     49.307997,
@@ -16715,7 +16715,7 @@
       "line": "S1",
       "mode": "tram",
       "rail": 1,
-      "color": "#FF0000",
+      "color": "#a518a3",
       "dirs": [
         {
           "dir": "Bielsko-Biała Główna",
@@ -16955,7 +16955,7 @@
       "line": "S3",
       "mode": "tram",
       "rail": 1,
-      "color": "#FF66CC",
+      "color": "#a518a3",
       "dirs": [
         {
           "dir": "Katowice",
@@ -17006,7 +17006,7 @@
       "line": "S4",
       "mode": "tram",
       "rail": 1,
-      "color": "#FF7800",
+      "color": "#a518a3",
       "dirs": [
         {
           "dir": "Katowice",
@@ -17099,7 +17099,7 @@
       "line": "S5",
       "mode": "tram",
       "rail": 1,
-      "color": "#FFB900",
+      "color": "#a518a3",
       "dirs": [
         {
           "dir": "Bielsko-Biała Główna",
@@ -17297,7 +17297,7 @@
       "line": "S6",
       "mode": "tram",
       "rail": 1,
-      "color": "#009600",
+      "color": "#a518a3",
       "dirs": [
         {
           "dir": "Cieszyn",
@@ -17453,7 +17453,7 @@
       "line": "S7",
       "mode": "tram",
       "rail": 1,
-      "color": "#0096FF",
+      "color": "#a518a3",
       "dirs": [
         {
           "dir": "Gliwice",
@@ -17630,7 +17630,7 @@
       "line": "S8",
       "mode": "tram",
       "rail": 1,
-      "color": "#000096",
+      "color": "#a518a3",
       "dirs": [
         {
           "dir": "Bytom",
@@ -17879,7 +17879,7 @@
       "line": "S13",
       "mode": "tram",
       "rail": 1,
-      "color": "#00D29B",
+      "color": "#a518a3",
       "dirs": [
         {
           "dir": "Częstochowa",
@@ -18023,7 +18023,7 @@
       "line": "S18",
       "mode": "tram",
       "rail": 1,
-      "color": "#CC0066",
+      "color": "#a518a3",
       "dirs": [
         {
           "dir": "Bytom",
@@ -18074,7 +18074,7 @@
       "line": "S31",
       "mode": "tram",
       "rail": 1,
-      "color": "#000096",
+      "color": "#a518a3",
       "dirs": [
         {
           "dir": "Katowice",
@@ -18269,7 +18269,7 @@
       "line": "S61",
       "mode": "tram",
       "rail": 1,
-      "color": "#1D6434",
+      "color": "#a518a3",
       "dirs": [
         {
           "dir": "Chybie",
@@ -18341,7 +18341,7 @@
       "line": "S62",
       "mode": "tram",
       "rail": 1,
-      "color": "#009600",
+      "color": "#a518a3",
       "dirs": [
         {
           "dir": "Cieszyn",
@@ -18527,7 +18527,7 @@
       "line": "S71",
       "mode": "tram",
       "rail": 1,
-      "color": "#0096FF",
+      "color": "#a518a3",
       "dirs": [
         {
           "dir": "Bohumin",
@@ -18746,7 +18746,7 @@
       "line": "S72",
       "mode": "tram",
       "rail": 1,
-      "color": "#8C008C",
+      "color": "#a518a3",
       "dirs": [
         {
           "dir": "Bielsko-Biała Główna",
@@ -19148,7 +19148,7 @@
       "line": "S78",
       "mode": "tram",
       "rail": 1,
-      "color": "#828C96",
+      "color": "#a518a3",
       "dirs": [
         {
           "dir": "Chałupki",

@@ -186,7 +186,19 @@ if (ksSel.length || (tramAll && tramLines.length)) MODES.push({
   },
   // the two tracks of a main line are one axis on this sheet (see above)
   weldTracks: 9,
-  color: '#a518a3', colorDark: '#5a0c59', routeTypes: ['2'], feedColors: true,
+  // ONE purple for the whole operator, and no feedColors. The feed ships the
+  // operator's livery for fifteen of the twenty-five S-lines and leaves the
+  // other ten blank, so the network drew HALF branded: S1 red, S6 green, S82
+  // purple — and nothing told the reader that S82's purple is a missing value,
+  // not a livery (user 9.09.2026: "jest tego jakis powod czy tak sobie
+  // wymysliles?"). The family rule holds instead — the colour says the MODE,
+  // and a livery is kept only where the operator publishes a COMPLETE one, the
+  // way Berlin keeps the S-Bahn's and paints its RB/RE one grey. Barcelona's
+  // FGC and Rodalies and Krakow's Koleje Malopolskie ride the same purple.
+  // It also settles the shared-corridor case: a run carrying two lines of
+  // different liveries has to fall back to the mode colour, so the joint
+  // approach to Chalupki used to change colour halfway. Now it cannot.
+  color: '#a518a3', colorDark: '#5a0c59', routeTypes: ['2'],
   // A THROUGH train carries two numbers: "S1/S5" is S1 as far as Katowice and
   // S5 beyond it, and the feed files thirteen such pairs as lines of their own
   // (user 9.09.2026: "czy te pociagi to napewno tylko linie kolei slaskich?").
@@ -289,10 +301,11 @@ async function processMode(cfg) {
   // the Koleje Slaskie cfg — the "S1/S5" through trains)
   if (cfg.mapName) for (const r of routes) r.route_short_name = cfg.mapName(r.route_short_name);
   if (cfg.skipRoute) routes = routes.filter((r) => !cfg.skipRoute(r));
-  // A commuter-rail feed ships its own line liveries (the family's exception to
-  // the mode-colour rule, as for a metro): Koleje Śląskie colour fifteen of
-  // their S-lines and leave the rest blank, which then take the mode colour —
-  // the Berlin arrangement, where the S-Bahn is official and the RB/RE is not.
+  // A feed that ships COMPLETE line liveries can hand them over here (the
+  // family's exception to the mode-colour rule, as for a metro). Koleje
+  // Śląskie do not: fifteen of their twenty-five S-lines carry a route_color
+  // and the rest are blank, so the switch stays off and the whole operator
+  // rides one purple — see the cfg above.
   if (cfg.feedColors) {
     cfg.lineColors = cfg.lineColors || {}; cfg.lineColorsDark = cfg.lineColorsDark || {};
     let n = 0;
