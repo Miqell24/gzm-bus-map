@@ -3,10 +3,10 @@
 Interactive web map of public transport in the GZM Metropolis (Katowice
 conurbation) in the visual logic of a classic printed network map:
 **345 bus and trolleybus lines and 24 tram lines (ZTM GZM)**, and — since
-9.09.2026 — the **38 rail lines of Koleje Śląskie**, drawn exactly along
+9.09.2026 — the **25 rail lines of Koleje Śląskie**, drawn exactly along
 roadways, tram tracks and main-line track (own HMM/Viterbi map matching on an
 OSM graph), line numbers written parallel to every street they use, labeled
-stops, true roundabout arcs. **407 lines / 22 758 km**, weighted mean matching
+stops, true roundabout arcs. **394 lines / 22 727 km**, weighted mean matching
 error 1.8 m.
 
 ## Koleje Śląskie
@@ -15,7 +15,7 @@ The voivodeship's rail operator rides its own toggle and its own slice of the
 graph, from its own GTFS (koleje-ks.pl, the file odt.org.pl lists). The trains
 are drawn **whole**, the way the Berlin map draws its RB/RE and the Vienna map
 its REX: Racibórz and Zwardoń in the south-west, Chorzew Siemkowice in the
-north, Kraków and Zakopane in the east — 8 453 km of the sheet's 22 758, run
+north, Kraków and Zakopane in the east — 8 453 km of the sheet's 22 727, run
 far beyond the Metropolis' own 40-odd municipalities.
 
 Three things that feed needs and this pipeline learned for it:
@@ -42,8 +42,22 @@ Three things that feed needs and this pipeline learned for it:
   where it does not.
 - **The trains the feed leaves unnumbered stay out**: "POCIĄG", "KSL", "NA",
   "AIR" and the Slovak "ZSSK" to Skalité carry no line a passenger could read
-  off a platform. Combined designations that DO appear on the platform ("S1/S5"
-  — one train working two numbers) are kept exactly as the feed writes them.
+  off a platform. A **combined designation is not a line either**: "S1/S5" is a
+  through train, S1 as far as Katowice and S5 beyond it, and the feed files
+  thirteen such pairs (S1/S5, S6/S62, S72/S7, S71/S72…) as routes of their own.
+  No destination board ever shows one as a number, so each folds onto the
+  number the train DEPARTS under. The mirror route carries the pair the other
+  way round (S5/S1 → S5), so the joint section still ends up drawn under both
+  numbers — which is exactly what it carries. 38 "lines" → 25 real ones.
+- **Two tracks are one axis.** A double-track main line is two OSM ways 8–9 m
+  apart with sparse crossovers, and the matcher takes whichever one each shape
+  happens to sit on: south of Rudyszwałd S71 landed on one track of line 151
+  and S78 on the other, so the pair never formed a shared run and their joint
+  approach to Chałupki drew as two ribbons side by side instead of one purple
+  corridor. Every node now gets a synthetic zero-length link to the nodes of
+  other ways within 9 m on the same level and layer (`weldParallelTracks`, the
+  New York rule for four-track trunks): 51 343 links, and the rail matching
+  went from 15 breaks to **none**.
 
 Fifth city of the family, alongside
 [krakow-bus-map](https://github.com/Miqell24/krakow-bus-map),

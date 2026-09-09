@@ -84,6 +84,62 @@ function darken(hex, f) {
   return '#' + ((1 << 24) | (r << 16) | (g << 8) | b).toString(16).slice(1);
 }
 
+// Weld PARALLEL tracks. A double-track main line is two ways 8-9 m apart with
+// sparse crossovers, and the matcher picks whichever of the two each shape
+// happens to sit on: south of Rudyszwald S71 landed on one track of line 151
+// and S78 on the other, so the pair NEVER formed a shared run and the joint
+// approach to Chalupki drew as two ribbons side by side instead of one
+// (user report, 9.09.2026 — only ~600 m of it came out purple, where the two
+// happened to meet on the same way). Every node gets a synthetic zero-length
+// link to the nodes of OTHER ways within maxD metres on the same level and
+// layer, so the tracks of one corridor are interchangeable to the matcher:
+// they draw as one axis anyway. The New York rule (four-track trunks).
+function weldParallelTracks(elements, maxD) {
+  const SERVICE_X = new Set(['yard', 'spur', 'siding']);
+  const ways = elements.filter((e) => e.type === 'way' && e.tags?.railway
+    && !SERVICE_X.has(e.tags?.service) && e.nodes && e.geometry);
+  const cell = maxD * 2;
+  const grid = new Map();
+  const key = (x, y) => Math.floor(x / cell) + ',' + Math.floor(y / cell);
+  const lat0 = ways.length ? ways[0].geometry[0].lat : 50;
+  const kx = 111320 * Math.cos(lat0 * Math.PI / 180), ky = 111132;
+  const strata = (w) => (w.tags?.level ?? '') + '|' + (w.tags?.layer ?? '');
+  for (const w of ways) {
+    w.geometry.forEach((g, i) => {
+      const x = g.lon * kx, y = g.lat * ky;
+      const k = key(x, y);
+      let arr = grid.get(k);
+      if (!arr) grid.set(k, (arr = []));
+      arr.push({ w, i, x, y, nid: w.nodes[i], g });
+    });
+  }
+  const done = new Set();
+  let synId = -2e9, added = 0;
+  for (const arr of grid.values()) {
+    for (const p of arr) {
+      const cx = Math.floor(p.x / cell), cy = Math.floor(p.y / cell);
+      for (let dx = -1; dx <= 1; dx++) for (let dy = -1; dy <= 1; dy++) {
+        const nb = grid.get((cx + dx) + ',' + (cy + dy));
+        if (!nb) continue;
+        for (const q of nb) {
+          if (q.w === p.w || q.nid === p.nid) continue;
+          if (strata(q.w) !== strata(p.w)) continue;
+          if (Math.hypot(q.x - p.x, q.y - p.y) > maxD) continue;
+          const pk = p.nid < q.nid ? p.nid + '|' + q.nid : q.nid + '|' + p.nid;
+          if (done.has(pk)) continue;
+          done.add(pk);
+          elements.push({
+            type: 'way', id: synId--, nodes: [p.nid, q.nid],
+            geometry: [p.g, q.g], tags: { railway: p.w.tags.railway },
+          });
+          added++;
+        }
+      }
+    }
+  }
+  return added;
+}
+
 const MODES = [{
   mode: 'bus', label: 'buses', gtfsDir: 'data/gtfs', osmFile: 'data/osm/gzm.json',
   graphMode: 'road', color: '#0059a9', colorDark: '#00294f', routeTypes: ['3', '11'],
@@ -128,7 +184,17 @@ if (ksSel.length || (tramAll && tramLines.length)) MODES.push({
     const target = t.construction || t.disused || t.proposed;
     return !['tram', 'light_rail', 'subway'].includes(target);
   },
+  // the two tracks of a main line are one axis on this sheet (see above)
+  weldTracks: 9,
   color: '#a518a3', colorDark: '#5a0c59', routeTypes: ['2'], feedColors: true,
+  // A THROUGH train carries two numbers: "S1/S5" is S1 as far as Katowice and
+  // S5 beyond it, and the feed files thirteen such pairs as lines of their own
+  // (user 9.09.2026: "czy te pociagi to napewno tylko linie kolei slaskich?").
+  // They are not lines — no platform ever shows "S1/S5" as a destination board
+  // number — so each folds into the number the train DEPARTS under. The other
+  // half of the pair rides the opposite direction (S5/S1 -> S5), so the joint
+  // section still ends up drawn under both numbers, which is what it carries.
+  mapName: (sn) => sn.replace(/^(S\d+)\/S\d+$/, '$1'),
   skipRoute: (r) => !isRail(r.route_short_name || ''),
   all: tramAll, lines: tramAll ? [] : ksSel,
 });
@@ -219,6 +285,9 @@ async function processMode(cfg) {
     : allRoutes;
   // feed quirk: some short names carry stray whitespace ("14 " vs "14")
   for (const r of routes) r.route_short_name = (r.route_short_name || '').trim();
+  // feed hook: fold a route name that is not a line onto the line it is (see
+  // the Koleje Slaskie cfg — the "S1/S5" through trains)
+  if (cfg.mapName) for (const r of routes) r.route_short_name = cfg.mapName(r.route_short_name);
   if (cfg.skipRoute) routes = routes.filter((r) => !cfg.skipRoute(r));
   // A commuter-rail feed ships its own line liveries (the family's exception to
   // the mode-colour rule, as for a metro): Koleje Śląskie colour fifteen of
@@ -439,6 +508,10 @@ async function processMode(cfg) {
       }
     }
     log(`rails: ${osm.elements.length} of ${before} ways kept${retag ? `, ${retag} building sites retagged` : ''}`);
+  }
+  if (cfg.weldTracks) {
+    const n = weldParallelTracks(osm.elements, cfg.weldTracks);
+    log(`parallel tracks: ${n} synthetic links within ${cfg.weldTracks} m`);
   }
   const graph = buildGraph(osm.elements, proj, cfg.graphMode);
   log(`Graph (${cfg.graphMode}): ${graph.nodes.size} nodes, ${graph.segs.length} segments, ${graph.ways.size} ways`);
@@ -947,6 +1020,10 @@ async function processMode(cfg) {
   const metaLines = [...new Set(reps.map((r) => r.line))].sort(numSort).map((L) => ({
     line: L,
     mode: cfg.mode,
+    // the rail cfg rides the tram SLOT (a rail-capable graph, half-disc stops),
+    // but a train is not a tram: the flag keeps the panel's own category and
+    // the legend toggle apart from the trams (user 9.09.2026)
+    ...(cfg.gtfsDir === 'data/gtfs-ks' ? { rail: 1 } : {}),
     color: colorOf([L]),
     dirs: reps.filter((r) => r.line === L).map((r) => ({
       dir: r.dir, headsign: r.headsign, variants: r.variants, tripCount: r.tripCount,

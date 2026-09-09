@@ -230,7 +230,13 @@ async function init() {
     ['Buses', (l) => l.mode === 'bus' && !/^M\d+$/.test(l.line) && l.color !== TROLLEY_GREEN],
     ['Trolleybuses (Tychy)', (l) => l.mode === 'bus' && l.color === TROLLEY_GREEN],
     ['Metrolines', (l) => l.mode === 'bus' && /^M\d+$/.test(l.line)],
-    ['Trams', (l) => l.mode === 'tram'],
+    // The Koleje Slaskie cfg rides the tram SLOT in the pipeline (mode 'tram':
+    // a rail-capable graph, half-disc stops) — but a train is not a tram, and
+    // the panel used to file all thirty-eight S-lines under Trams (user report,
+    // 9.09.2026). The rail flag from meta.json separates them; the map legend
+    // already had its own toggle.
+    ['Trams', (l) => l.mode === 'tram' && !l.rail],
+    ['Koleje Śląskie (S)', (l) => l.mode === 'tram' && l.rail],
   ];
   // In the corridor view a chip carries its MODE's colour (navy bus, green
   // trolleybus, red tram); in the lines view it carries the colour that line is

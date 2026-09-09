@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-09T08:04:04.691Z",
+  "generatedAt": "2026-09-09T11:42:21.785Z",
   "bbox": [
     18.211001,
     49.307997,
@@ -16714,15 +16714,37 @@
     {
       "line": "S1",
       "mode": "tram",
+      "rail": 1,
       "color": "#FF0000",
       "dirs": [
+        {
+          "dir": "Bielsko-Biała Główna",
+          "headsign": "Bielsko-Biała Główna",
+          "variants": 2,
+          "tripCount": 5,
+          "stops": 14,
+          "lengthKm": 153.2,
+          "stats": {
+            "observations": 6158,
+            "matched": 6118,
+            "noCandidates": 40,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.5925105925543046,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
         {
           "dir": "Chorzów Batory",
           "headsign": "Chorzów Batory",
           "variants": 1,
           "tripCount": 1,
           "stops": 6,
-          "lengthKm": 20.92,
+          "lengthKm": 21.06,
           "stats": {
             "observations": 957,
             "matched": 957,
@@ -16731,7 +16753,7 @@
             "bridged": 0,
             "rawStretchCount": 0,
             "rawMeters": 0,
-            "meanError": 0.6816739525212065,
+            "meanError": 0.6540502396594176,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
@@ -16743,16 +16765,16 @@
           "variants": 10,
           "tripCount": 368,
           "stops": 32,
-          "lengthKm": 117.1,
+          "lengthKm": 116.64,
           "stats": {
             "observations": 5525,
             "matched": 5525,
             "noCandidates": 0,
-            "viterbiBreaks": 1,
+            "viterbiBreaks": 0,
             "bridged": 0,
-            "rawStretchCount": 1,
-            "rawMeters": 20,
-            "meanError": 1.8409918931189617,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.2335482479627435,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
@@ -16764,16 +16786,16 @@
           "variants": 3,
           "tripCount": 27,
           "stops": 14,
-          "lengthKm": 46.69,
+          "lengthKm": 46.22,
           "stats": {
             "observations": 2162,
             "matched": 2162,
             "noCandidates": 0,
-            "viterbiBreaks": 1,
+            "viterbiBreaks": 0,
             "bridged": 0,
-            "rawStretchCount": 1,
-            "rawMeters": 20,
-            "meanError": 2.0020525226756574,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.0482303947058007,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
@@ -16785,16 +16807,16 @@
           "variants": 6,
           "tripCount": 19,
           "stops": 19,
-          "lengthKm": 62.71,
+          "lengthKm": 62.65,
           "stats": {
             "observations": 1994,
             "matched": 1994,
             "noCandidates": 0,
-            "viterbiBreaks": 1,
+            "viterbiBreaks": 0,
             "bridged": 0,
-            "rawStretchCount": 1,
-            "rawMeters": 20,
-            "meanError": 2.3861688561506575,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.2246785702362353,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
@@ -16806,16 +16828,16 @@
           "variants": 22,
           "tripCount": 294,
           "stops": 32,
-          "lengthKm": 117.38,
+          "lengthKm": 116.75,
           "stats": {
             "observations": 5561,
             "matched": 5561,
             "noCandidates": 0,
-            "viterbiBreaks": 1,
+            "viterbiBreaks": 0,
             "bridged": 0,
-            "rawStretchCount": 1,
-            "rawMeters": 20,
-            "meanError": 2.098690155302004,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.0962362541855275,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
@@ -16827,16 +16849,37 @@
           "variants": 3,
           "tripCount": 130,
           "stops": 8,
-          "lengthKm": 27.6,
+          "lengthKm": 27.26,
           "stats": {
             "observations": 1245,
             "matched": 1245,
             "noCandidates": 0,
-            "viterbiBreaks": 1,
+            "viterbiBreaks": 0,
             "bridged": 0,
-            "rawStretchCount": 1,
-            "rawMeters": 20,
-            "meanError": 0.9978612925988364,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.8611688851923229,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "Wisła Głębce",
+          "headsign": "Wisła Głębce",
+          "variants": 2,
+          "tripCount": 14,
+          "stops": 34,
+          "lengthKm": 186.8,
+          "stats": {
+            "observations": 8295,
+            "matched": 8255,
+            "noCandidates": 40,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.5471616907720283,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
@@ -16848,67 +16891,16 @@
           "variants": 8,
           "tripCount": 51,
           "stops": 21,
-          "lengthKm": 72.6,
+          "lengthKm": 72.12,
           "stats": {
             "observations": 3425,
             "matched": 3425,
-            "noCandidates": 0,
-            "viterbiBreaks": 1,
-            "bridged": 0,
-            "rawStretchCount": 1,
-            "rawMeters": 20,
-            "meanError": 1.4739389982342592,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "Łazy",
-          "headsign": "Łazy",
-          "variants": 1,
-          "tripCount": 32,
-          "stops": 13,
-          "lengthKm": 50.91,
-          "stats": {
-            "observations": 2379,
-            "matched": 2379,
             "noCandidates": 0,
             "viterbiBreaks": 0,
             "bridged": 0,
             "rawStretchCount": 0,
             "rawMeters": 0,
-            "meanError": 2.7034166712415906,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rail": 1,
-      "rank": 1
-    },
-    {
-      "line": "S1/S5",
-      "mode": "tram",
-      "color": "#a518a3",
-      "dirs": [
-        {
-          "dir": "Bielsko-Biała Główna",
-          "headsign": "Bielsko-Biała Główna",
-          "variants": 2,
-          "tripCount": 5,
-          "stops": 14,
-          "lengthKm": 153.12,
-          "stats": {
-            "observations": 6158,
-            "matched": 6118,
-            "noCandidates": 40,
-            "viterbiBreaks": 2,
-            "bridged": 0,
-            "rawStretchCount": 2,
-            "rawMeters": 40,
-            "meanError": 2.6507492244771447,
+            "meanError": 0.8719494617153859,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
@@ -16920,58 +16912,49 @@
           "variants": 1,
           "tripCount": 23,
           "stops": 53,
-          "lengthKm": 202.78,
+          "lengthKm": 202.99,
           "stats": {
             "observations": 9774,
             "matched": 9734,
             "noCandidates": 40,
-            "viterbiBreaks": 2,
+            "viterbiBreaks": 0,
             "bridged": 0,
-            "rawStretchCount": 2,
-            "rawMeters": 40,
-            "meanError": 2.151385973112939,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.3588372291263047,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
           }
-        }
-      ],
-      "rail": 1,
-      "rank": 1
-    },
-    {
-      "line": "S1/S6",
-      "mode": "tram",
-      "color": "#a518a3",
-      "dirs": [
+        },
         {
-          "dir": "Wisła Głębce",
-          "headsign": "Wisła Głębce",
-          "variants": 2,
-          "tripCount": 14,
-          "stops": 34,
-          "lengthKm": 187.01,
+          "dir": "Łazy",
+          "headsign": "Łazy",
+          "variants": 1,
+          "tripCount": 32,
+          "stops": 13,
+          "lengthKm": 50.93,
           "stats": {
-            "observations": 8295,
-            "matched": 8255,
-            "noCandidates": 40,
-            "viterbiBreaks": 2,
+            "observations": 2379,
+            "matched": 2379,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
             "bridged": 0,
-            "rawStretchCount": 2,
-            "rawMeters": 40,
-            "meanError": 2.4669507572591995,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.3374169967064504,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
           }
         }
       ],
-      "rail": 1,
       "rank": 1
     },
     {
       "line": "S3",
       "mode": "tram",
+      "rail": 1,
       "color": "#FF66CC",
       "dirs": [
         {
@@ -16980,7 +16963,7 @@
           "variants": 2,
           "tripCount": 28,
           "stops": 24,
-          "lengthKm": 82.1,
+          "lengthKm": 81.92,
           "stats": {
             "observations": 561,
             "matched": 561,
@@ -16989,7 +16972,7 @@
             "bridged": 0,
             "rawStretchCount": 0,
             "rawMeters": 0,
-            "meanError": 2.995067803706813,
+            "meanError": 2.103686044865561,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
@@ -17001,7 +16984,7 @@
           "variants": 2,
           "tripCount": 44,
           "stops": 15,
-          "lengthKm": 81.71,
+          "lengthKm": 81.7,
           "stats": {
             "observations": 564,
             "matched": 564,
@@ -17010,19 +16993,19 @@
             "bridged": 0,
             "rawStretchCount": 0,
             "rawMeters": 0,
-            "meanError": 2.9309563936735716,
+            "meanError": 2.050853084782334,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
           }
         }
       ],
-      "rail": 1,
       "rank": 1
     },
     {
       "line": "S4",
       "mode": "tram",
+      "rail": 1,
       "color": "#FF7800",
       "dirs": [
         {
@@ -17031,16 +17014,16 @@
           "variants": 1,
           "tripCount": 85,
           "stops": 9,
-          "lengthKm": 21.76,
+          "lengthKm": 21.8,
           "stats": {
             "observations": 1035,
             "matched": 1035,
             "noCandidates": 0,
-            "viterbiBreaks": 2,
+            "viterbiBreaks": 0,
             "bridged": 0,
-            "rawStretchCount": 2,
-            "rawMeters": 40,
-            "meanError": 2.7707156749173927,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.3835774306997914,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
@@ -17052,16 +17035,16 @@
           "variants": 1,
           "tripCount": 54,
           "stops": 8,
-          "lengthKm": 15.74,
+          "lengthKm": 15.52,
           "stats": {
             "observations": 750,
             "matched": 750,
             "noCandidates": 0,
-            "viterbiBreaks": 1,
+            "viterbiBreaks": 0,
             "bridged": 0,
-            "rawStretchCount": 1,
-            "rawMeters": 20,
-            "meanError": 1.0856414598047552,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.831424177949721,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
@@ -17082,7 +17065,7 @@
             "bridged": 0,
             "rawStretchCount": 0,
             "rawMeters": 0,
-            "meanError": 1.0873823222916033,
+            "meanError": 1.0266378724231395,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
@@ -17094,7 +17077,7 @@
           "variants": 3,
           "tripCount": 1367,
           "stops": 5,
-          "lengthKm": 4.44,
+          "lengthKm": 4.45,
           "stats": {
             "observations": 206,
             "matched": 206,
@@ -17103,19 +17086,19 @@
             "bridged": 0,
             "rawStretchCount": 0,
             "rawMeters": 0,
-            "meanError": 0.9372677382066209,
+            "meanError": 0.8786137814885342,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
           }
         }
       ],
-      "rail": 1,
       "rank": 1
     },
     {
       "line": "S5",
       "mode": "tram",
+      "rail": 1,
       "color": "#FFB900",
       "dirs": [
         {
@@ -17124,16 +17107,16 @@
           "variants": 3,
           "tripCount": 26,
           "stops": 17,
-          "lengthKm": 55.9,
+          "lengthKm": 55.91,
           "stats": {
             "observations": 2672,
             "matched": 2632,
             "noCandidates": 40,
-            "viterbiBreaks": 2,
+            "viterbiBreaks": 0,
             "bridged": 0,
-            "rawStretchCount": 2,
-            "rawMeters": 40,
-            "meanError": 2.9442457172466225,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 2.056955602409225,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
@@ -17154,7 +17137,28 @@
             "bridged": 0,
             "rawStretchCount": 0,
             "rawMeters": 0,
-            "meanError": 0.938900569755267,
+            "meanError": 0.9266101507817417,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "Częstochowa",
+          "headsign": "Częstochowa",
+          "variants": 3,
+          "tripCount": 18,
+          "stops": 52,
+          "lengthKm": 215.99,
+          "stats": {
+            "observations": 9063,
+            "matched": 9023,
+            "noCandidates": 40,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.4233325349970463,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
@@ -17166,16 +17170,16 @@
           "variants": 12,
           "tripCount": 595,
           "stops": 39,
-          "lengthKm": 113.22,
+          "lengthKm": 113.72,
           "stats": {
             "observations": 5544,
             "matched": 5504,
             "noCandidates": 40,
-            "viterbiBreaks": 3,
+            "viterbiBreaks": 0,
             "bridged": 0,
-            "rawStretchCount": 3,
-            "rawMeters": 60,
-            "meanError": 1.8175664248795624,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.4051000997239071,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
@@ -17187,7 +17191,7 @@
           "variants": 1,
           "tripCount": 2,
           "stops": 17,
-          "lengthKm": 40.84,
+          "lengthKm": 40.88,
           "stats": {
             "observations": 1977,
             "matched": 1937,
@@ -17196,7 +17200,7 @@
             "bridged": 0,
             "rawStretchCount": 0,
             "rawMeters": 0,
-            "meanError": 2.068537439939922,
+            "meanError": 1.6421160489350113,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
@@ -17208,7 +17212,7 @@
           "variants": 4,
           "tripCount": 12,
           "stops": 27,
-          "lengthKm": 96.27,
+          "lengthKm": 96.31,
           "stats": {
             "observations": 4712,
             "matched": 4672,
@@ -17217,7 +17221,7 @@
             "bridged": 0,
             "rawStretchCount": 0,
             "rawMeters": 0,
-            "meanError": 1.5768990796342612,
+            "meanError": 1.395407518969998,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
@@ -17229,16 +17233,16 @@
           "variants": 1,
           "tripCount": 26,
           "stops": 29,
-          "lengthKm": 87.15,
+          "lengthKm": 87.16,
           "stats": {
             "observations": 4236,
             "matched": 4196,
             "noCandidates": 40,
-            "viterbiBreaks": 2,
+            "viterbiBreaks": 0,
             "bridged": 0,
-            "rawStretchCount": 2,
-            "rawMeters": 40,
-            "meanError": 2.081662557963462,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.5149845608194916,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
@@ -17250,16 +17254,16 @@
           "variants": 6,
           "tripCount": 571,
           "stops": 39,
-          "lengthKm": 113.43,
+          "lengthKm": 113.44,
           "stats": {
             "observations": 5520,
             "matched": 5480,
             "noCandidates": 40,
-            "viterbiBreaks": 2,
+            "viterbiBreaks": 0,
             "bridged": 0,
-            "rawStretchCount": 2,
-            "rawMeters": 40,
-            "meanError": 1.9361398167288888,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.502262430706086,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
@@ -17271,67 +17275,58 @@
           "variants": 3,
           "tripCount": 248,
           "stops": 25,
-          "lengthKm": 76.78,
+          "lengthKm": 76.8,
           "stats": {
             "observations": 3718,
             "matched": 3678,
             "noCandidates": 40,
-            "viterbiBreaks": 2,
+            "viterbiBreaks": 0,
             "bridged": 0,
-            "rawStretchCount": 2,
-            "rawMeters": 40,
-            "meanError": 2.2711537031294853,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.6246445385880195,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
           }
         }
       ],
-      "rail": 1,
-      "rank": 1
-    },
-    {
-      "line": "S5/S1",
-      "mode": "tram",
-      "color": "#a518a3",
-      "dirs": [
-        {
-          "dir": "Częstochowa",
-          "headsign": "Częstochowa",
-          "variants": 3,
-          "tripCount": 18,
-          "stops": 52,
-          "lengthKm": 215.6,
-          "stats": {
-            "observations": 9063,
-            "matched": 9023,
-            "noCandidates": 40,
-            "viterbiBreaks": 3,
-            "bridged": 0,
-            "rawStretchCount": 3,
-            "rawMeters": 60,
-            "meanError": 1.8596799650833278,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rail": 1,
       "rank": 1
     },
     {
       "line": "S6",
       "mode": "tram",
+      "rail": 1,
       "color": "#009600",
       "dirs": [
+        {
+          "dir": "Cieszyn",
+          "headsign": "Cieszyn",
+          "variants": 7,
+          "tripCount": 9,
+          "stops": 24,
+          "lengthKm": 85.42,
+          "stats": {
+            "observations": 3327,
+            "matched": 3287,
+            "noCandidates": 40,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 2.0666180757114785,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
         {
           "dir": "Czechowice-Dziedzice",
           "headsign": "Czechowice-Dziedzice",
           "variants": 3,
           "tripCount": 93,
           "stops": 19,
-          "lengthKm": 64.68,
+          "lengthKm": 64.73,
           "stats": {
             "observations": 2808,
             "matched": 2808,
@@ -17340,7 +17335,28 @@
             "bridged": 0,
             "rawStretchCount": 0,
             "rawMeters": 0,
-            "meanError": 1.299471132014685,
+            "meanError": 1.1684132026046659,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "Częstochowa",
+          "headsign": "Częstochowa",
+          "variants": 2,
+          "tripCount": 8,
+          "stops": 35,
+          "lengthKm": 196.25,
+          "stats": {
+            "observations": 9017,
+            "matched": 8978,
+            "noCandidates": 39,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.5362240210301723,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
@@ -17352,16 +17368,16 @@
           "variants": 12,
           "tripCount": 22,
           "stops": 21,
-          "lengthKm": 162.07,
+          "lengthKm": 162.24,
           "stats": {
             "observations": 7194,
             "matched": 7155,
             "noCandidates": 39,
-            "viterbiBreaks": 3,
+            "viterbiBreaks": 0,
             "bridged": 0,
-            "rawStretchCount": 3,
-            "rawMeters": 60,
-            "meanError": 1.9016302746858664,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.4282878418346847,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
@@ -17373,7 +17389,7 @@
           "variants": 1,
           "tripCount": 9,
           "stops": 2,
-          "lengthKm": 25.04,
+          "lengthKm": 25.07,
           "stats": {
             "observations": 1047,
             "matched": 1047,
@@ -17382,7 +17398,7 @@
             "bridged": 0,
             "rawStretchCount": 0,
             "rawMeters": 0,
-            "meanError": 1.3439324624722289,
+            "meanError": 1.1124954819888977,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
@@ -17394,7 +17410,7 @@
           "variants": 3,
           "tripCount": 19,
           "stops": 17,
-          "lengthKm": 89.79,
+          "lengthKm": 89.48,
           "stats": {
             "observations": 3906,
             "matched": 3867,
@@ -17403,7 +17419,7 @@
             "bridged": 0,
             "rawStretchCount": 0,
             "rawMeters": 0,
-            "meanError": 2.0174147440226773,
+            "meanError": 1.7679295735463223,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
@@ -17415,7 +17431,7 @@
           "variants": 12,
           "tripCount": 21,
           "stops": 21,
-          "lengthKm": 107.78,
+          "lengthKm": 107.8,
           "stats": {
             "observations": 3687,
             "matched": 3687,
@@ -17424,97 +17440,58 @@
             "bridged": 0,
             "rawStretchCount": 0,
             "rawMeters": 0,
-            "meanError": 1.5391503069336328,
+            "meanError": 1.3076170364208801,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
           }
         }
       ],
-      "rail": 1,
-      "rank": 1
-    },
-    {
-      "line": "S6/S1",
-      "mode": "tram",
-      "color": "#a518a3",
-      "dirs": [
-        {
-          "dir": "Częstochowa",
-          "headsign": "Częstochowa",
-          "variants": 2,
-          "tripCount": 8,
-          "stops": 35,
-          "lengthKm": 196.21,
-          "stats": {
-            "observations": 9017,
-            "matched": 8978,
-            "noCandidates": 39,
-            "viterbiBreaks": 3,
-            "bridged": 0,
-            "rawStretchCount": 3,
-            "rawMeters": 60,
-            "meanError": 2.15372275712687,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rail": 1,
-      "rank": 1
-    },
-    {
-      "line": "S6/S62",
-      "mode": "tram",
-      "color": "#a518a3",
-      "dirs": [
-        {
-          "dir": "Cieszyn",
-          "headsign": "Cieszyn",
-          "variants": 7,
-          "tripCount": 9,
-          "stops": 24,
-          "lengthKm": 85.84,
-          "stats": {
-            "observations": 3327,
-            "matched": 3287,
-            "noCandidates": 40,
-            "viterbiBreaks": 2,
-            "bridged": 0,
-            "rawStretchCount": 2,
-            "rawMeters": 40,
-            "meanError": 2.7443723525494454,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rail": 1,
       "rank": 1
     },
     {
       "line": "S7",
       "mode": "tram",
+      "rail": 1,
       "color": "#0096FF",
       "dirs": [
+        {
+          "dir": "Gliwice",
+          "headsign": "Gliwice",
+          "variants": 1,
+          "tripCount": 35,
+          "stops": 19,
+          "lengthKm": 76.39,
+          "stats": {
+            "observations": 2167,
+            "matched": 2167,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.8829982465297479,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
         {
           "dir": "Katowice",
           "headsign": "Katowice",
           "variants": 3,
           "tripCount": 230,
           "stops": 27,
-          "lengthKm": 82.24,
+          "lengthKm": 82.55,
           "stats": {
             "observations": 4031,
             "matched": 4031,
             "noCandidates": 0,
-            "viterbiBreaks": 2,
+            "viterbiBreaks": 0,
             "bridged": 0,
-            "rawStretchCount": 2,
-            "rawMeters": 37,
-            "meanError": 1.3298869577435772,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.9417864354105485,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
@@ -17526,16 +17503,16 @@
           "variants": 2,
           "tripCount": 18,
           "stops": 26,
-          "lengthKm": 76.23,
+          "lengthKm": 76.28,
           "stats": {
             "observations": 3746,
             "matched": 3746,
             "noCandidates": 0,
-            "viterbiBreaks": 1,
+            "viterbiBreaks": 0,
             "bridged": 0,
-            "rawStretchCount": 1,
-            "rawMeters": 17,
-            "meanError": 0.8832840967638951,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.7977722685871297,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
@@ -17547,16 +17524,16 @@
           "variants": 2,
           "tripCount": 5,
           "stops": 25,
-          "lengthKm": 74.56,
+          "lengthKm": 74.93,
           "stats": {
             "observations": 3661,
             "matched": 3661,
             "noCandidates": 0,
-            "viterbiBreaks": 1,
+            "viterbiBreaks": 0,
             "bridged": 0,
-            "rawStretchCount": 1,
-            "rawMeters": 12,
-            "meanError": 0.797544431282403,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.7700725116121935,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
@@ -17568,7 +17545,7 @@
           "variants": 1,
           "tripCount": 10,
           "stops": 20,
-          "lengthKm": 57.7,
+          "lengthKm": 57.72,
           "stats": {
             "observations": 2819,
             "matched": 2819,
@@ -17577,7 +17554,7 @@
             "bridged": 0,
             "rawStretchCount": 0,
             "rawMeters": 0,
-            "meanError": 0.8333102542864782,
+            "meanError": 0.8056329611998295,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
@@ -17589,16 +17566,16 @@
           "variants": 5,
           "tripCount": 219,
           "stops": 27,
-          "lengthKm": 82.34,
+          "lengthKm": 82.52,
           "stats": {
             "observations": 4042,
             "matched": 4042,
             "noCandidates": 0,
-            "viterbiBreaks": 3,
+            "viterbiBreaks": 0,
             "bridged": 0,
-            "rawStretchCount": 3,
-            "rawMeters": 60,
-            "meanError": 1.4722941266848768,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.1392647715309692,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
@@ -17610,7 +17587,7 @@
           "variants": 1,
           "tripCount": 72,
           "stops": 14,
-          "lengthKm": 36.5,
+          "lengthKm": 36.52,
           "stats": {
             "observations": 1758,
             "matched": 1758,
@@ -17619,58 +17596,19 @@
             "bridged": 0,
             "rawStretchCount": 0,
             "rawMeters": 0,
-            "meanError": 0.9743580304968464,
+            "meanError": 0.9299672439754011,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
           }
-        }
-      ],
-      "rail": 1,
-      "rank": 1
-    },
-    {
-      "line": "S7/S17",
-      "mode": "tram",
-      "color": "#a518a3",
-      "dirs": [
-        {
-          "dir": "Gliwice",
-          "headsign": "Gliwice",
-          "variants": 1,
-          "tripCount": 35,
-          "stops": 19,
-          "lengthKm": 76.4,
-          "stats": {
-            "observations": 2167,
-            "matched": 2167,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 0.9286717981413227,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rail": 1,
-      "rank": 1
-    },
-    {
-      "line": "S7/S72",
-      "mode": "tram",
-      "color": "#a518a3",
-      "dirs": [
+        },
         {
           "dir": "Żory",
           "headsign": "Żory",
           "variants": 1,
           "tripCount": 67,
           "stops": 17,
-          "lengthKm": 50.41,
+          "lengthKm": 50.66,
           "stats": {
             "observations": 2446,
             "matched": 2446,
@@ -17679,19 +17617,19 @@
             "bridged": 0,
             "rawStretchCount": 0,
             "rawMeters": 0,
-            "meanError": 1.0181870384012122,
+            "meanError": 0.8538249502410716,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
           }
         }
       ],
-      "rail": 1,
       "rank": 1
     },
     {
       "line": "S8",
       "mode": "tram",
+      "rail": 1,
       "color": "#000096",
       "dirs": [
         {
@@ -17700,7 +17638,7 @@
           "variants": 1,
           "tripCount": 55,
           "stops": 12,
-          "lengthKm": 49.88,
+          "lengthKm": 49.86,
           "stats": {
             "observations": 1695,
             "matched": 1695,
@@ -17709,7 +17647,7 @@
             "bridged": 0,
             "rawStretchCount": 0,
             "rawMeters": 0,
-            "meanError": 1.2107294387526584,
+            "meanError": 0.8892181904690848,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
@@ -17721,7 +17659,7 @@
           "variants": 1,
           "tripCount": 279,
           "stops": 16,
-          "lengthKm": 61.34,
+          "lengthKm": 61.36,
           "stats": {
             "observations": 2114,
             "matched": 2114,
@@ -17730,7 +17668,7 @@
             "bridged": 0,
             "rawStretchCount": 0,
             "rawMeters": 0,
-            "meanError": 1.2984258077474604,
+            "meanError": 0.9860565153525903,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
@@ -17742,16 +17680,16 @@
           "variants": 2,
           "tripCount": 43,
           "stops": 18,
-          "lengthKm": 67.65,
+          "lengthKm": 67.58,
           "stats": {
             "observations": 2403,
             "matched": 2403,
             "noCandidates": 0,
-            "viterbiBreaks": 1,
+            "viterbiBreaks": 0,
             "bridged": 0,
-            "rawStretchCount": 1,
-            "rawMeters": 20,
-            "meanError": 1.3981123565010378,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.0515950389281958,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
@@ -17763,7 +17701,7 @@
           "variants": 4,
           "tripCount": 315,
           "stops": 16,
-          "lengthKm": 61.35,
+          "lengthKm": 61.34,
           "stats": {
             "observations": 2164,
             "matched": 2164,
@@ -17772,7 +17710,7 @@
             "bridged": 0,
             "rawStretchCount": 0,
             "rawMeters": 0,
-            "meanError": 1.3413989245102063,
+            "meanError": 1.055957956288639,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
@@ -17784,7 +17722,7 @@
           "variants": 2,
           "tripCount": 15,
           "stops": 11,
-          "lengthKm": 28.09,
+          "lengthKm": 28.07,
           "stats": {
             "observations": 956,
             "matched": 956,
@@ -17793,19 +17731,19 @@
             "bridged": 0,
             "rawStretchCount": 0,
             "rawMeters": 0,
-            "meanError": 2.1308180133011887,
+            "meanError": 1.5545117555092665,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
           }
         }
       ],
-      "rail": 1,
       "rank": 1
     },
     {
       "line": "S9",
       "mode": "tram",
+      "rail": 1,
       "color": "#a518a3",
       "dirs": [
         {
@@ -17814,7 +17752,7 @@
           "variants": 3,
           "tripCount": 19,
           "stops": 17,
-          "lengthKm": 106.83,
+          "lengthKm": 106.55,
           "stats": {
             "observations": 2625,
             "matched": 2625,
@@ -17823,7 +17761,7 @@
             "bridged": 0,
             "rawStretchCount": 0,
             "rawMeters": 0,
-            "meanError": 2.939150504975142,
+            "meanError": 1.5281609869290094,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
@@ -17835,7 +17773,7 @@
           "variants": 2,
           "tripCount": 167,
           "stops": 21,
-          "lengthKm": 118.3,
+          "lengthKm": 118.04,
           "stats": {
             "observations": 3044,
             "matched": 3044,
@@ -17844,7 +17782,7 @@
             "bridged": 0,
             "rawStretchCount": 0,
             "rawMeters": 0,
-            "meanError": 2.762053561478197,
+            "meanError": 1.5074256431111097,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
@@ -17856,7 +17794,7 @@
           "variants": 4,
           "tripCount": 172,
           "stops": 21,
-          "lengthKm": 118.29,
+          "lengthKm": 118.05,
           "stats": {
             "observations": 3069,
             "matched": 3069,
@@ -17865,7 +17803,7 @@
             "bridged": 0,
             "rawStretchCount": 0,
             "rawMeters": 0,
-            "meanError": 2.364342899399357,
+            "meanError": 1.7575017047140262,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
@@ -17877,16 +17815,16 @@
           "variants": 3,
           "tripCount": 28,
           "stops": 23,
-          "lengthKm": 124.61,
+          "lengthKm": 124.26,
           "stats": {
             "observations": 3333,
             "matched": 3333,
             "noCandidates": 0,
-            "viterbiBreaks": 1,
+            "viterbiBreaks": 0,
             "bridged": 0,
-            "rawStretchCount": 1,
-            "rawMeters": 20,
-            "meanError": 2.706969128488377,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.5094508098897375,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
@@ -17898,7 +17836,7 @@
           "variants": 2,
           "tripCount": 32,
           "stops": 11,
-          "lengthKm": 90.21,
+          "lengthKm": 89.97,
           "stats": {
             "observations": 2088,
             "matched": 2088,
@@ -17907,7 +17845,7 @@
             "bridged": 0,
             "rawStretchCount": 0,
             "rawMeters": 0,
-            "meanError": 3.0675044894459016,
+            "meanError": 1.5051981841140267,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
@@ -17928,19 +17866,19 @@
             "bridged": 0,
             "rawStretchCount": 0,
             "rawMeters": 0,
-            "meanError": 2.2263896601862925,
+            "meanError": 1.6401476534793942,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
           }
         }
       ],
-      "rail": 1,
       "rank": 1
     },
     {
       "line": "S13",
       "mode": "tram",
+      "rail": 1,
       "color": "#00D29B",
       "dirs": [
         {
@@ -17949,7 +17887,7 @@
           "variants": 1,
           "tripCount": 198,
           "stops": 8,
-          "lengthKm": 37.66,
+          "lengthKm": 37.68,
           "stats": {
             "observations": 1558,
             "matched": 1558,
@@ -17958,7 +17896,7 @@
             "bridged": 0,
             "rawStretchCount": 0,
             "rawMeters": 0,
-            "meanError": 0.7536667106428838,
+            "meanError": 0.7039746225401075,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
@@ -17970,7 +17908,7 @@
           "variants": 1,
           "tripCount": 203,
           "stops": 8,
-          "lengthKm": 37.65,
+          "lengthKm": 37.67,
           "stats": {
             "observations": 1566,
             "matched": 1566,
@@ -17979,19 +17917,19 @@
             "bridged": 0,
             "rawStretchCount": 0,
             "rawMeters": 0,
-            "meanError": 0.6815046404698384,
+            "meanError": 0.6508068946456438,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
           }
         }
       ],
-      "rail": 1,
       "rank": 1
     },
     {
       "line": "S17",
       "mode": "tram",
+      "rail": 1,
       "color": "#a518a3",
       "dirs": [
         {
@@ -18000,7 +17938,7 @@
           "variants": 2,
           "tripCount": 116,
           "stops": 11,
-          "lengthKm": 51.36,
+          "lengthKm": 51.35,
           "stats": {
             "observations": 983,
             "matched": 983,
@@ -18009,7 +17947,28 @@
             "bridged": 0,
             "rawStretchCount": 0,
             "rawMeters": 0,
-            "meanError": 1.0399881269270763,
+            "meanError": 0.9250331896398988,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "Racibórz",
+          "headsign": "Racibórz",
+          "variants": 1,
+          "tripCount": 43,
+          "stops": 19,
+          "lengthKm": 74.75,
+          "stats": {
+            "observations": 2175,
+            "matched": 2175,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.2374774641069923,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
@@ -18021,7 +17980,7 @@
           "variants": 1,
           "tripCount": 110,
           "stops": 6,
-          "lengthKm": 38.28,
+          "lengthKm": 38.25,
           "stats": {
             "observations": 408,
             "matched": 408,
@@ -18030,7 +17989,7 @@
             "bridged": 0,
             "rawStretchCount": 0,
             "rawMeters": 0,
-            "meanError": 0.7957866965484429,
+            "meanError": 0.7510837631386357,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
@@ -18042,7 +18001,7 @@
           "variants": 1,
           "tripCount": 96,
           "stops": 11,
-          "lengthKm": 49.73,
+          "lengthKm": 49.71,
           "stats": {
             "observations": 980,
             "matched": 980,
@@ -18051,49 +18010,19 @@
             "bridged": 0,
             "rawStretchCount": 0,
             "rawMeters": 0,
-            "meanError": 0.8548119053191516,
+            "meanError": 0.7627225006829315,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
           }
         }
       ],
-      "rail": 1,
-      "rank": 1
-    },
-    {
-      "line": "S17/S7",
-      "mode": "tram",
-      "color": "#a518a3",
-      "dirs": [
-        {
-          "dir": "Racibórz",
-          "headsign": "Racibórz",
-          "variants": 1,
-          "tripCount": 43,
-          "stops": 19,
-          "lengthKm": 74.77,
-          "stats": {
-            "observations": 2175,
-            "matched": 2175,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.3037169540937432,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rail": 1,
       "rank": 1
     },
     {
       "line": "S18",
       "mode": "tram",
+      "rail": 1,
       "color": "#CC0066",
       "dirs": [
         {
@@ -18102,7 +18031,7 @@
           "variants": 1,
           "tripCount": 310,
           "stops": 4,
-          "lengthKm": 18.84,
+          "lengthKm": 18.8,
           "stats": {
             "observations": 7,
             "matched": 7,
@@ -18111,7 +18040,7 @@
             "bridged": 0,
             "rawStretchCount": 0,
             "rawMeters": 0,
-            "meanError": 3.8434310696128198,
+            "meanError": 2.629746848647152,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
@@ -18123,7 +18052,7 @@
           "variants": 1,
           "tripCount": 315,
           "stops": 4,
-          "lengthKm": 18.84,
+          "lengthKm": 18.8,
           "stats": {
             "observations": 7,
             "matched": 7,
@@ -18132,19 +18061,19 @@
             "bridged": 0,
             "rawStretchCount": 0,
             "rawMeters": 0,
-            "meanError": 4.975956575186127,
+            "meanError": 3.3651067654182323,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
           }
         }
       ],
-      "rail": 1,
       "rank": 1
     },
     {
       "line": "S31",
       "mode": "tram",
+      "rail": 1,
       "color": "#000096",
       "dirs": [
         {
@@ -18153,7 +18082,7 @@
           "variants": 1,
           "tripCount": 73,
           "stops": 11,
-          "lengthKm": 33.71,
+          "lengthKm": 33.44,
           "stats": {
             "observations": 1461,
             "matched": 1461,
@@ -18162,7 +18091,7 @@
             "bridged": 0,
             "rawStretchCount": 0,
             "rawMeters": 0,
-            "meanError": 1.269922636457216,
+            "meanError": 0.9545218672407983,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
@@ -18174,7 +18103,7 @@
           "variants": 1,
           "tripCount": 464,
           "stops": 8,
-          "lengthKm": 22.88,
+          "lengthKm": 22.9,
           "stats": {
             "observations": 954,
             "matched": 954,
@@ -18183,7 +18112,7 @@
             "bridged": 0,
             "rawStretchCount": 0,
             "rawMeters": 0,
-            "meanError": 0.7380623839605428,
+            "meanError": 0.68961393661261,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
@@ -18195,7 +18124,7 @@
           "variants": 2,
           "tripCount": 468,
           "stops": 8,
-          "lengthKm": 22.88,
+          "lengthKm": 22.9,
           "stats": {
             "observations": 959,
             "matched": 959,
@@ -18204,19 +18133,19 @@
             "bridged": 0,
             "rawStretchCount": 0,
             "rawMeters": 0,
-            "meanError": 0.8016409921194662,
+            "meanError": 0.7273091210084178,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
           }
         }
       ],
-      "rail": 1,
       "rank": 1
     },
     {
       "line": "S34",
       "mode": "tram",
+      "rail": 1,
       "color": "#a518a3",
       "dirs": [
         {
@@ -18225,7 +18154,7 @@
           "variants": 2,
           "tripCount": 42,
           "stops": 19,
-          "lengthKm": 137.87,
+          "lengthKm": 138.04,
           "stats": {
             "observations": 3058,
             "matched": 3058,
@@ -18234,7 +18163,7 @@
             "bridged": 0,
             "rawStretchCount": 0,
             "rawMeters": 0,
-            "meanError": 2.0317566045139452,
+            "meanError": 1.5775501580902513,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
@@ -18246,7 +18175,7 @@
           "variants": 1,
           "tripCount": 16,
           "stops": 16,
-          "lengthKm": 133.47,
+          "lengthKm": 133.55,
           "stats": {
             "observations": 3030,
             "matched": 3030,
@@ -18255,7 +18184,7 @@
             "bridged": 0,
             "rawStretchCount": 0,
             "rawMeters": 0,
-            "meanError": 2.421002999544785,
+            "meanError": 1.3168083271105748,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
@@ -18267,7 +18196,7 @@
           "variants": 1,
           "tripCount": 47,
           "stops": 19,
-          "lengthKm": 137.88,
+          "lengthKm": 137.96,
           "stats": {
             "observations": 3036,
             "matched": 3036,
@@ -18276,19 +18205,19 @@
             "bridged": 0,
             "rawStretchCount": 0,
             "rawMeters": 0,
-            "meanError": 2.4258712836784815,
+            "meanError": 1.3207359358151913,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
           }
         }
       ],
-      "rail": 1,
       "rank": 1
     },
     {
       "line": "S51",
       "mode": "tram",
+      "rail": 1,
       "color": "#a518a3",
       "dirs": [
         {
@@ -18297,16 +18226,16 @@
           "variants": 2,
           "tripCount": 3,
           "stops": 37,
-          "lengthKm": 410.58,
+          "lengthKm": 410.95,
           "stats": {
             "observations": 11194,
             "matched": 11154,
             "noCandidates": 40,
-            "viterbiBreaks": 3,
+            "viterbiBreaks": 0,
             "bridged": 0,
-            "rawStretchCount": 3,
-            "rawMeters": 60,
-            "meanError": 1.7523720222000645,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.4003001443169272,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
@@ -18318,28 +18247,28 @@
           "variants": 2,
           "tripCount": 2,
           "stops": 26,
-          "lengthKm": 305.83,
+          "lengthKm": 305.91,
           "stats": {
             "observations": 8140,
             "matched": 8100,
             "noCandidates": 40,
-            "viterbiBreaks": 2,
+            "viterbiBreaks": 0,
             "bridged": 0,
-            "rawStretchCount": 2,
-            "rawMeters": 40,
-            "meanError": 2.3253400013368295,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.526074818702455,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
           }
         }
       ],
-      "rail": 1,
       "rank": 1
     },
     {
       "line": "S61",
       "mode": "tram",
+      "rail": 1,
       "color": "#1D6434",
       "dirs": [
         {
@@ -18348,16 +18277,16 @@
           "variants": 1,
           "tripCount": 2,
           "stops": 9,
-          "lengthKm": 31.9,
+          "lengthKm": 31.63,
           "stats": {
             "observations": 1448,
             "matched": 1448,
             "noCandidates": 0,
-            "viterbiBreaks": 1,
+            "viterbiBreaks": 0,
             "bridged": 0,
-            "rawStretchCount": 1,
-            "rawMeters": 20,
-            "meanError": 1.7967549405521883,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.4163844297372377,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
@@ -18369,7 +18298,7 @@
           "variants": 4,
           "tripCount": 36,
           "stops": 11,
-          "lengthKm": 46.61,
+          "lengthKm": 45.63,
           "stats": {
             "observations": 2179,
             "matched": 2179,
@@ -18378,7 +18307,7 @@
             "bridged": 0,
             "rawStretchCount": 0,
             "rawMeters": 0,
-            "meanError": 1.5280956322257335,
+            "meanError": 1.1617975418535154,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
@@ -18390,7 +18319,7 @@
           "variants": 3,
           "tripCount": 78,
           "stops": 14,
-          "lengthKm": 55.09,
+          "lengthKm": 55.12,
           "stats": {
             "observations": 2100,
             "matched": 2100,
@@ -18399,19 +18328,19 @@
             "bridged": 0,
             "rawStretchCount": 0,
             "rawMeters": 0,
-            "meanError": 1.3488106687134869,
+            "meanError": 1.1859646108639428,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
           }
         }
       ],
-      "rail": 1,
       "rank": 1
     },
     {
       "line": "S62",
       "mode": "tram",
+      "rail": 1,
       "color": "#009600",
       "dirs": [
         {
@@ -18438,7 +18367,7 @@
         {
           "dir": "Goleszów",
           "headsign": "Goleszów",
-          "variants": 1,
+          "variants": 2,
           "tripCount": 87,
           "stops": 10,
           "lengthKm": 19.61,
@@ -18501,58 +18430,7 @@
         {
           "dir": "Wisła Głębce",
           "headsign": "Wisła Głębce",
-          "variants": 1,
-          "tripCount": 103,
-          "stops": 10,
-          "lengthKm": 21.83,
-          "stats": {
-            "observations": 778,
-            "matched": 778,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.7428836463609616,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rail": 1,
-      "rank": 1
-    },
-    {
-      "line": "S62/S6",
-      "mode": "tram",
-      "color": "#a518a3",
-      "dirs": [
-        {
-          "dir": "Goleszów",
-          "headsign": "Goleszów",
-          "variants": 1,
-          "tripCount": 304,
-          "stops": 5,
-          "lengthKm": 10.02,
-          "stats": {
-            "observations": 50,
-            "matched": 50,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 8.197116467516276,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        },
-        {
-          "dir": "Wisła Głębce",
-          "headsign": "Wisła Głębce",
-          "variants": 1,
+          "variants": 2,
           "tripCount": 28,
           "stops": 14,
           "lengthKm": 31.85,
@@ -18571,12 +18449,12 @@
           }
         }
       ],
-      "rail": 1,
       "rank": 1
     },
     {
       "line": "S70",
       "mode": "tram",
+      "rail": 1,
       "color": "#a518a3",
       "dirs": [
         {
@@ -18585,16 +18463,16 @@
           "variants": 2,
           "tripCount": 16,
           "stops": 9,
-          "lengthKm": 27.59,
+          "lengthKm": 27.89,
           "stats": {
             "observations": 1366,
             "matched": 1366,
             "noCandidates": 0,
-            "viterbiBreaks": 2,
+            "viterbiBreaks": 0,
             "bridged": 0,
-            "rawStretchCount": 2,
-            "rawMeters": 40,
-            "meanError": 2.27910981269769,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.23458922438714,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
@@ -18606,16 +18484,16 @@
           "variants": 2,
           "tripCount": 12,
           "stops": 8,
-          "lengthKm": 24.64,
+          "lengthKm": 24.81,
           "stats": {
             "observations": 1214,
             "matched": 1214,
             "noCandidates": 0,
-            "viterbiBreaks": 3,
+            "viterbiBreaks": 0,
             "bridged": 0,
-            "rawStretchCount": 3,
-            "rawMeters": 60,
-            "meanError": 2.309044142321113,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.3029350373044621,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
@@ -18627,28 +18505,28 @@
           "variants": 1,
           "tripCount": 15,
           "stops": 9,
-          "lengthKm": 27.69,
+          "lengthKm": 27.85,
           "stats": {
             "observations": 1366,
             "matched": 1366,
             "noCandidates": 0,
-            "viterbiBreaks": 3,
+            "viterbiBreaks": 0,
             "bridged": 0,
-            "rawStretchCount": 3,
-            "rawMeters": 60,
-            "meanError": 2.1216260767164004,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.2275525643462923,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
           }
         }
       ],
-      "rail": 1,
       "rank": 1
     },
     {
       "line": "S71",
       "mode": "tram",
+      "rail": 1,
       "color": "#0096FF",
       "dirs": [
         {
@@ -18657,16 +18535,16 @@
           "variants": 4,
           "tripCount": 51,
           "stops": 26,
-          "lengthKm": 78.98,
+          "lengthKm": 79.16,
           "stats": {
             "observations": 3539,
             "matched": 3502,
             "noCandidates": 37,
-            "viterbiBreaks": 3,
+            "viterbiBreaks": 0,
             "bridged": 0,
-            "rawStretchCount": 3,
-            "rawMeters": 60,
-            "meanError": 1.382095003046533,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.9711004146370212,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
@@ -18678,16 +18556,16 @@
           "variants": 8,
           "tripCount": 110,
           "stops": 25,
-          "lengthKm": 75.07,
+          "lengthKm": 75.25,
           "stats": {
             "observations": 3429,
             "matched": 3429,
             "noCandidates": 0,
-            "viterbiBreaks": 3,
+            "viterbiBreaks": 0,
             "bridged": 0,
-            "rawStretchCount": 3,
-            "rawMeters": 60,
-            "meanError": 1.333474175715012,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.9137273688242021,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
@@ -18704,11 +18582,11 @@
             "observations": 3582,
             "matched": 3530,
             "noCandidates": 52,
-            "viterbiBreaks": 3,
+            "viterbiBreaks": 0,
             "bridged": 0,
-            "rawStretchCount": 3,
-            "rawMeters": 60,
-            "meanError": 1.5685467150759638,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.0580378510358017,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
@@ -18720,16 +18598,16 @@
           "variants": 3,
           "tripCount": 2,
           "stops": 25,
-          "lengthKm": 73.19,
+          "lengthKm": 72.9,
           "stats": {
             "observations": 3296,
             "matched": 3244,
             "noCandidates": 52,
-            "viterbiBreaks": 2,
+            "viterbiBreaks": 0,
             "bridged": 0,
-            "rawStretchCount": 2,
-            "rawMeters": 40,
-            "meanError": 1.0715818309634428,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.90343324581359,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
@@ -18741,16 +18619,16 @@
           "variants": 3,
           "tripCount": 7,
           "stops": 24,
-          "lengthKm": 71.18,
+          "lengthKm": 71.56,
           "stats": {
             "observations": 3212,
             "matched": 3160,
             "noCandidates": 52,
-            "viterbiBreaks": 1,
+            "viterbiBreaks": 0,
             "bridged": 0,
-            "rawStretchCount": 1,
-            "rawMeters": 20,
-            "meanError": 0.9487501231878414,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.8529676388782408,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
@@ -18762,16 +18640,16 @@
           "variants": 3,
           "tripCount": 19,
           "stops": 2,
-          "lengthKm": 37.91,
+          "lengthKm": 38.08,
           "stats": {
             "observations": 1877,
             "matched": 1877,
             "noCandidates": 0,
-            "viterbiBreaks": 3,
+            "viterbiBreaks": 0,
             "bridged": 0,
-            "rawStretchCount": 3,
-            "rawMeters": 60,
-            "meanError": 1.7008245447520152,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.0502859816468975,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
@@ -18783,7 +18661,7 @@
           "variants": 4,
           "tripCount": 5,
           "stops": 19,
-          "lengthKm": 54.33,
+          "lengthKm": 54.36,
           "stats": {
             "observations": 2369,
             "matched": 2317,
@@ -18792,7 +18670,7 @@
             "bridged": 0,
             "rawStretchCount": 0,
             "rawMeters": 0,
-            "meanError": 1.0512650244481423,
+            "meanError": 0.9272437451022909,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
@@ -18804,7 +18682,7 @@
           "variants": 2,
           "tripCount": 21,
           "stops": 12,
-          "lengthKm": 29.22,
+          "lengthKm": 29.25,
           "stats": {
             "observations": 1193,
             "matched": 1193,
@@ -18813,7 +18691,7 @@
             "bridged": 0,
             "rawStretchCount": 0,
             "rawMeters": 0,
-            "meanError": 1.3365115299199264,
+            "meanError": 1.116490844003119,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
@@ -18825,37 +18703,28 @@
           "variants": 3,
           "tripCount": 25,
           "stops": 19,
-          "lengthKm": 57.3,
+          "lengthKm": 57.47,
           "stats": {
             "observations": 2847,
             "matched": 2847,
             "noCandidates": 0,
-            "viterbiBreaks": 3,
+            "viterbiBreaks": 0,
             "bridged": 0,
-            "rawStretchCount": 3,
-            "rawMeters": 60,
-            "meanError": 1.3887249842047702,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.9347028080903435,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
           }
-        }
-      ],
-      "rail": 1,
-      "rank": 1
-    },
-    {
-      "line": "S71/S72",
-      "mode": "tram",
-      "color": "#a518a3",
-      "dirs": [
+        },
         {
           "dir": "Żory",
           "headsign": "Żory",
           "variants": 1,
           "tripCount": 20,
           "stops": 9,
-          "lengthKm": 25.38,
+          "lengthKm": 25.62,
           "stats": {
             "observations": 1262,
             "matched": 1262,
@@ -18864,19 +18733,19 @@
             "bridged": 0,
             "rawStretchCount": 0,
             "rawMeters": 0,
-            "meanError": 1.1849920004902759,
+            "meanError": 0.8571140365982515,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
           }
         }
       ],
-      "rail": 1,
       "rank": 1
     },
     {
       "line": "S72",
       "mode": "tram",
+      "rail": 1,
       "color": "#8C008C",
       "dirs": [
         {
@@ -18885,7 +18754,7 @@
           "variants": 3,
           "tripCount": 29,
           "stops": 18,
-          "lengthKm": 55.16,
+          "lengthKm": 55.19,
           "stats": {
             "observations": 2659,
             "matched": 2619,
@@ -18894,7 +18763,7 @@
             "bridged": 0,
             "rawStretchCount": 0,
             "rawMeters": 0,
-            "meanError": 1.9434620272656584,
+            "meanError": 1.6087052461307099,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
@@ -18906,7 +18775,7 @@
           "variants": 1,
           "tripCount": 2,
           "stops": 13,
-          "lengthKm": 43.77,
+          "lengthKm": 43.81,
           "stats": {
             "observations": 2140,
             "matched": 2100,
@@ -18915,7 +18784,7 @@
             "bridged": 0,
             "rawStretchCount": 0,
             "rawMeters": 0,
-            "meanError": 2.2081113206891803,
+            "meanError": 1.7905823769010434,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
@@ -18943,12 +18812,33 @@
           }
         },
         {
+          "dir": "Racibórz",
+          "headsign": "Racibórz",
+          "variants": 4,
+          "tripCount": 61,
+          "stops": 17,
+          "lengthKm": 50.66,
+          "stats": {
+            "observations": 2457,
+            "matched": 2457,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.1550665813746666,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
           "dir": "Rybnik",
           "headsign": "Rybnik",
           "variants": 6,
           "tripCount": 38,
           "stops": 18,
-          "lengthKm": 55.15,
+          "lengthKm": 55.19,
           "stats": {
             "observations": 2659,
             "matched": 2619,
@@ -18957,7 +18847,28 @@
             "bridged": 0,
             "rawStretchCount": 0,
             "rawMeters": 0,
-            "meanError": 1.720769440227985,
+            "meanError": 1.385584946866043,
+            "roundaboutSegs": 0,
+            "extStart": 0,
+            "extEnd": 0
+          }
+        },
+        {
+          "dir": "Wodzisław Śląski",
+          "headsign": "Wodzisław Śląski",
+          "variants": 1,
+          "tripCount": 47,
+          "stops": 9,
+          "lengthKm": 25.61,
+          "stats": {
+            "observations": 1262,
+            "matched": 1262,
+            "noCandidates": 0,
+            "viterbiBreaks": 0,
+            "bridged": 0,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 0.7091518125411039,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
@@ -18983,23 +18894,14 @@
             "extStart": 0,
             "extEnd": 0
           }
-        }
-      ],
-      "rail": 1,
-      "rank": 1
-    },
-    {
-      "line": "S72/S5",
-      "mode": "tram",
-      "color": "#a518a3",
-      "dirs": [
+        },
         {
           "dir": "Żywiec",
           "headsign": "Żywiec",
           "variants": 3,
           "tripCount": 3,
           "stops": 26,
-          "lengthKm": 76.04,
+          "lengthKm": 76.08,
           "stats": {
             "observations": 3705,
             "matched": 3665,
@@ -19008,79 +18910,19 @@
             "bridged": 0,
             "rawStretchCount": 0,
             "rawMeters": 0,
-            "meanError": 1.5536859366028235,
+            "meanError": 1.3028269958568983,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
           }
         }
       ],
-      "rail": 1,
-      "rank": 1
-    },
-    {
-      "line": "S72/S7",
-      "mode": "tram",
-      "color": "#a518a3",
-      "dirs": [
-        {
-          "dir": "Racibórz",
-          "headsign": "Racibórz",
-          "variants": 4,
-          "tripCount": 61,
-          "stops": 17,
-          "lengthKm": 50.43,
-          "stats": {
-            "observations": 2457,
-            "matched": 2457,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.3323614620222877,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rail": 1,
-      "rank": 1
-    },
-    {
-      "line": "S72/S71",
-      "mode": "tram",
-      "color": "#a518a3",
-      "dirs": [
-        {
-          "dir": "Wodzisław Śląski",
-          "headsign": "Wodzisław Śląski",
-          "variants": 1,
-          "tripCount": 47,
-          "stops": 9,
-          "lengthKm": 25.39,
-          "stats": {
-            "observations": 1262,
-            "matched": 1262,
-            "noCandidates": 0,
-            "viterbiBreaks": 0,
-            "bridged": 0,
-            "rawStretchCount": 0,
-            "rawMeters": 0,
-            "meanError": 1.0118612582681916,
-            "roundaboutSegs": 0,
-            "extStart": 0,
-            "extEnd": 0
-          }
-        }
-      ],
-      "rail": 1,
       "rank": 1
     },
     {
       "line": "S74",
       "mode": "tram",
+      "rail": 1,
       "color": "#a518a3",
       "dirs": [
         {
@@ -19089,7 +18931,7 @@
           "variants": 1,
           "tripCount": 254,
           "stops": 5,
-          "lengthKm": 16.89,
+          "lengthKm": 16.9,
           "stats": {
             "observations": 154,
             "matched": 154,
@@ -19131,7 +18973,7 @@
           "variants": 2,
           "tripCount": 255,
           "stops": 5,
-          "lengthKm": 16.89,
+          "lengthKm": 16.9,
           "stats": {
             "observations": 141,
             "matched": 141,
@@ -19140,19 +18982,19 @@
             "bridged": 0,
             "rawStretchCount": 0,
             "rawMeters": 0,
-            "meanError": 3.3363365521873596,
+            "meanError": 3.3040163548026547,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
           }
         }
       ],
-      "rail": 1,
       "rank": 1
     },
     {
       "line": "S75",
       "mode": "tram",
+      "rail": 1,
       "color": "#a518a3",
       "dirs": [
         {
@@ -19161,7 +19003,7 @@
           "variants": 1,
           "tripCount": 18,
           "stops": 32,
-          "lengthKm": 158.8,
+          "lengthKm": 159.01,
           "stats": {
             "observations": 5198,
             "matched": 5198,
@@ -19170,7 +19012,7 @@
             "bridged": 0,
             "rawStretchCount": 0,
             "rawMeters": 0,
-            "meanError": 1.024548520558246,
+            "meanError": 0.8386038611152399,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
@@ -19182,7 +19024,7 @@
           "variants": 1,
           "tripCount": 24,
           "stops": 32,
-          "lengthKm": 156.93,
+          "lengthKm": 157.14,
           "stats": {
             "observations": 5171,
             "matched": 5171,
@@ -19191,19 +19033,19 @@
             "bridged": 0,
             "rawStretchCount": 0,
             "rawMeters": 0,
-            "meanError": 1.1028151416575758,
+            "meanError": 0.8972285942180811,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
           }
         }
       ],
-      "rail": 1,
       "rank": 1
     },
     {
       "line": "S76",
       "mode": "tram",
+      "rail": 1,
       "color": "#a518a3",
       "dirs": [
         {
@@ -19212,7 +19054,7 @@
           "variants": 1,
           "tripCount": 11,
           "stops": 21,
-          "lengthKm": 126.39,
+          "lengthKm": 126.59,
           "stats": {
             "observations": 3218,
             "matched": 3218,
@@ -19221,7 +19063,7 @@
             "bridged": 0,
             "rawStretchCount": 0,
             "rawMeters": 0,
-            "meanError": 1.3344774944962579,
+            "meanError": 1.0932581578113951,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
@@ -19233,7 +19075,7 @@
           "variants": 1,
           "tripCount": 9,
           "stops": 21,
-          "lengthKm": 115.28,
+          "lengthKm": 115.4,
           "stats": {
             "observations": 2574,
             "matched": 2574,
@@ -19242,19 +19084,19 @@
             "bridged": 0,
             "rawStretchCount": 0,
             "rawMeters": 0,
-            "meanError": 1.4873652743576957,
+            "meanError": 1.2442072369922286,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
           }
         }
       ],
-      "rail": 1,
       "rank": 1
     },
     {
       "line": "S77",
       "mode": "tram",
+      "rail": 1,
       "color": "#a518a3",
       "dirs": [
         {
@@ -19263,7 +19105,7 @@
           "variants": 1,
           "tripCount": 35,
           "stops": 19,
-          "lengthKm": 123,
+          "lengthKm": 123.25,
           "stats": {
             "observations": 4575,
             "matched": 4575,
@@ -19272,7 +19114,7 @@
             "bridged": 0,
             "rawStretchCount": 0,
             "rawMeters": 0,
-            "meanError": 1.364421704735128,
+            "meanError": 1.227585674298606,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
@@ -19284,7 +19126,7 @@
           "variants": 1,
           "tripCount": 36,
           "stops": 19,
-          "lengthKm": 113.48,
+          "lengthKm": 113.68,
           "stats": {
             "observations": 3924,
             "matched": 3924,
@@ -19293,19 +19135,19 @@
             "bridged": 0,
             "rawStretchCount": 0,
             "rawMeters": 0,
-            "meanError": 1.268309091923507,
+            "meanError": 1.15483104644946,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
           }
         }
       ],
-      "rail": 1,
       "rank": 1
     },
     {
       "line": "S78",
       "mode": "tram",
+      "rail": 1,
       "color": "#828C96",
       "dirs": [
         {
@@ -19314,7 +19156,7 @@
           "variants": 1,
           "tripCount": 269,
           "stops": 6,
-          "lengthKm": 20.35,
+          "lengthKm": 20.37,
           "stats": {
             "observations": 936,
             "matched": 936,
@@ -19323,7 +19165,7 @@
             "bridged": 0,
             "rawStretchCount": 0,
             "rawMeters": 0,
-            "meanError": 0.9163091404105492,
+            "meanError": 0.6705113435287499,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
@@ -19335,7 +19177,7 @@
           "variants": 1,
           "tripCount": 257,
           "stops": 6,
-          "lengthKm": 20.35,
+          "lengthKm": 20.36,
           "stats": {
             "observations": 844,
             "matched": 844,
@@ -19344,19 +19186,19 @@
             "bridged": 0,
             "rawStretchCount": 0,
             "rawMeters": 0,
-            "meanError": 0.9842306287310296,
+            "meanError": 0.6703338456634058,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
           }
         }
       ],
-      "rail": 1,
       "rank": 1
     },
     {
       "line": "S82",
       "mode": "tram",
+      "rail": 1,
       "color": "#a518a3",
       "dirs": [
         {
@@ -19365,7 +19207,7 @@
           "variants": 2,
           "tripCount": 12,
           "stops": 15,
-          "lengthKm": 106.26,
+          "lengthKm": 106.23,
           "stats": {
             "observations": 1617,
             "matched": 1617,
@@ -19374,7 +19216,7 @@
             "bridged": 0,
             "rawStretchCount": 0,
             "rawMeters": 0,
-            "meanError": 1.4604215711690642,
+            "meanError": 1.1723400599715776,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
@@ -19386,16 +19228,16 @@
           "variants": 4,
           "tripCount": 21,
           "stops": 21,
-          "lengthKm": 124.45,
+          "lengthKm": 123.9,
           "stats": {
             "observations": 2353,
             "matched": 2353,
             "noCandidates": 0,
-            "viterbiBreaks": 1,
+            "viterbiBreaks": 0,
             "bridged": 0,
-            "rawStretchCount": 1,
-            "rawMeters": 20,
-            "meanError": 1.6334396897305965,
+            "rawStretchCount": 0,
+            "rawMeters": 0,
+            "meanError": 1.2730063673003744,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
@@ -19407,7 +19249,7 @@
           "variants": 2,
           "tripCount": 143,
           "stops": 19,
-          "lengthKm": 117.72,
+          "lengthKm": 117.73,
           "stats": {
             "observations": 2036,
             "matched": 2036,
@@ -19416,7 +19258,7 @@
             "bridged": 0,
             "rawStretchCount": 0,
             "rawMeters": 0,
-            "meanError": 1.5000684626695768,
+            "meanError": 1.2145962354788504,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
@@ -19437,14 +19279,13 @@
             "bridged": 0,
             "rawStretchCount": 0,
             "rawMeters": 0,
-            "meanError": 1.5039059006599482,
+            "meanError": 1.2284297034004865,
             "roundaboutSegs": 0,
             "extStart": 0,
             "extEnd": 0
           }
         }
       ],
-      "rail": 1,
       "rank": 1
     },
     {
