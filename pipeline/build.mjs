@@ -55,8 +55,32 @@ const natKey = (s) => {
 // trolleybuses are whatever the feed loop painted green (TROLLEYS).
 const NIGHT = /\dN$/;
 const TROLLEYS = new Set();
+// Metrolines (M1, M2 … M116) open the bus list, right after the trolleybuses
+// (user 17.09.2026: "sortowanych na początku listy") — the Metropolis' trunk
+// network, printed first the way Berlin prints its MetroBus.
+const MLINE = /^M\d+$/;
 const lineRank = (k) => (TROLLEYS.has(k) ? 0
+  : MLINE.test(k) ? 0.5
   : NIGHT.test(typeof LBL !== 'undefined' && LBL.has(k) ? LBL.get(k) : k) ? 2 : 1);
+// Tariff borders are not stops: the feed files every "granica KATO - SIEM
+// (Bytków)" — a fare-zone boundary between two towns — as a stop of its own,
+// 346 poles of them. They leave every line's stop list (user 17.09.2026, the rule
+// Vienna applies to its Tarifgrenze). "Gierałtowice Granica" is a real stop
+// (a place called Granica) and stays: only names that START with the word.
+const TARIFF_BORDER = /^granica\s/i;
+// Koleje Śląskie S-lines in the operator's own colours, read off the
+// "Schemat linii komunikacyjnych" valid from 30.08.2026 (kolejeslaskie.pl) —
+// every S-line, not only the fifteen the GTFS carries (user 17.09.2026:
+// "linie S — kreski w konwencji metra / szybkiej kolei, kolory są na mapie
+// Kolei Śląskich"). Stretches shared by lines of different colours fall back
+// to the rail purple, the way Berlin draws its S-Bahn trunk.
+const KS_COLORS = {
+  S1: '#ec3034', S13: '#60c094', S17: '#a89c88', S18: '#ec3898', S3: '#e064a4',
+  S31: '#244090', S34: '#0c74b8', S4: '#f47c34', S5: '#fcb430', S51: '#fcb430',
+  S6: '#1ca454', S61: '#046838', S62: '#1ca454', S7: '#408ccc', S71: '#408ccc',
+  S72: '#843894', S74: '#ec207c', S75: '#805838', S76: '#805838', S77: '#805838',
+  S78: '#6c6c70', S8: '#244090', S82: '#149cd8', S9: '#880010',
+};
 const numSort = (a, b) => {
   const A = natKey(a), B = natKey(b);
   return lineRank(a) - lineRank(b) || A[0].localeCompare(B[0]) || (A[1] - B[1]) || A[2].localeCompare(B[2]);
@@ -198,7 +222,10 @@ if (ksSel.length || (tramAll && tramLines.length)) MODES.push({
   // It also settles the shared-corridor case: a run carrying two lines of
   // different liveries has to fall back to the mode colour, so the joint
   // approach to Chalupki used to change colour halfway. Now it cannot.
-  color: '#a518a3', colorDark: '#5a0c59', routeTypes: ['2'],
+  // 17.09.2026: the purple stays the MODE colour (legend, shared stretches);
+  // each line now carries the colour of the operator's own line map, which
+  // covers EVERY S-line — the missing-data objection above no longer holds.
+  color: '#a518a3', colorDark: '#5a0c59', routeTypes: ['2'], lineLivery: KS_COLORS,
   // A THROUGH train carries two numbers: "S1/S5" is S1 as far as Katowice and
   // S5 beyond it, and the feed files thirteen such pairs as lines of their own
   // (user 9.09.2026: "czy te pociagi to napewno tylko linie kolei slaskich?").
@@ -306,6 +333,13 @@ async function processMode(cfg) {
   // Śląskie do not: fifteen of their twenty-five S-lines carry a route_color
   // and the rest are blank, so the switch stays off and the whole operator
   // rides one purple — see the cfg above.
+  if (cfg.lineLivery) {
+    cfg.lineColors = cfg.lineColors || {}; cfg.lineColorsDark = cfg.lineColorsDark || {};
+    const names = new Set(routes.map((r) => r.route_short_name));
+    const miss = [...names].filter((n) => !cfg.lineLivery[n]);
+    for (const [L, c] of Object.entries(cfg.lineLivery)) { cfg.lineColors[L] = c; cfg.lineColorsDark[L] = darken(c, 0.45); }
+    log(`line liveries: ${names.size - miss.length}/${names.size} lines${miss.length ? ` (no colour on the line map: ${miss.join(', ')} — rail purple)` : ''}`);
+  }
   if (cfg.feedColors) {
     cfg.lineColors = cfg.lineColors || {}; cfg.lineColorsDark = cfg.lineColorsDark || {};
     let n = 0;
@@ -328,14 +362,12 @@ async function processMode(cfg) {
       for (const L of cfg.trolleySet) { cfg.lineColors[L] = TROLLEY_GREEN; cfg.lineColorsDark[L] = TROLLEY_DARK; TROLLEYS.add(L); }
       log(`trolleybus lines (${cfg.trolleySet.size}): ${[...cfg.trolleySet].sort(numSort).join(', ')}`);
     }
-    // metrolinie: the M-numbered trunk lines get the Metropolis fuchsia so
-    // they stand out from regular navy buses and can be toggled separately
-    cfg.mlineSet = new Set(routes.filter((r) => /^M\d+$/.test(r.route_short_name)).map((r) => r.route_short_name));
-    if (cfg.mlineSet.size) {
-      cfg.lineColors = cfg.lineColors || {}; cfg.lineColorsDark = cfg.lineColorsDark || {};
-      for (const L of cfg.mlineSet) { cfg.lineColors[L] = MLINE_YELLOW; cfg.lineColorsDark[L] = MLINE_DARK; }
-      log(`metrolines (${cfg.mlineSet.size}): ${[...cfg.mlineSet].sort(numSort).join(', ')}`);
-    }
+    // metrolinie: from 17.09.2026 the M-numbered trunk lines are drawn as
+    // the buses they are — navy strokes, navy numbers (user: "oznaczenie linii
+    // M normalnym kolorem autobusowym (kreski i numery)"); they stand out by
+    // ORDER instead (lineRank above). The amber split is switched off by an
+    // empty set, which every later mline branch already treats as "none".
+    cfg.mlineSet = new Set();
   }
   let LINES = cfg.all
     ? [...new Set(routes.map((r) => r.route_short_name))].sort(numSort)
@@ -468,6 +500,15 @@ async function processMode(cfg) {
     // feed names carry double spaces here and there — collapse for clean labels
     const name = (s.stop_name || '').replace(/\s+/g, ' ').trim();
     stopsById.set(s.stop_id, { name, lat: Number(s.stop_lat), lon: Number(s.stop_lon) });
+  }
+  {
+    let dropped = 0;
+    for (const r of reps) {
+      const keep = r.stopSeq.filter((s) => !TARIFF_BORDER.test(stopsById.get(s.stopId)?.name ?? ''));
+      dropped += r.stopSeq.length - keep.length;
+      r.stopSeq = keep;
+    }
+    if (dropped) log(`tariff borders ("granica …") dropped from stop lists: ${dropped} calls`);
   }
 
   // ---------- 5) route polylines: shapes.txt, or the stop sequence itself ----------

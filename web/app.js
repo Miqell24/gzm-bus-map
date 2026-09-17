@@ -209,8 +209,8 @@ async function init() {
   // Panel (English, minimal): legend + mode toggles + expandable clickable line list.
   const nBus = meta.lines.filter((l) => l.mode === 'bus').length;
   const nTram = meta.lines.filter((l) => l.mode === 'tram').length;
-  const nM = meta.lines.filter((l) => l.mode === 'bus' && /^M\d+$/.test(l.line)).length;
-  document.getElementById('count').textContent = `(${nBus - nM} bus/trolleybus · ${nM} metroline · ${nTram} tram)`;
+  const nRail = meta.lines.filter((l) => l.mode === 'tram' && l.rail).length;
+  document.getElementById('count').textContent = `(${nBus} bus/trolleybus · ${nTram - nRail} tram · ${nRail} Koleje Śląskie)`;
   document.getElementById('stamp').textContent = new Date(meta.generatedAt).toLocaleDateString('en-GB');
   // tram keys carry the GTFS T prefix (T41) but the city writes bare numbers —
   // strip it from every displayed text, never from the key (bus 41 exists too)
@@ -227,9 +227,9 @@ async function init() {
     return A[0].localeCompare(B[0]) || (A[1] - B[1]) || A[2].localeCompare(B[2]);
   };
   const CATS = [
-    ['Buses', (l) => l.mode === 'bus' && !/^M\d+$/.test(l.line) && l.color !== TROLLEY_GREEN],
+    // metrolines (M) are buses since 17.09.2026: navy, at the head of the list
+    ['Buses', (l) => l.mode === 'bus' && l.color !== TROLLEY_GREEN],
     ['Trolleybuses (Tychy)', (l) => l.mode === 'bus' && l.color === TROLLEY_GREEN],
-    ['Metrolines', (l) => l.mode === 'bus' && /^M\d+$/.test(l.line)],
     // The Koleje Slaskie cfg rides the tram SLOT in the pipeline (mode 'tram':
     // a rail-capable graph, half-disc stops) — but a train is not a tram, and
     // the panel used to file all thirty-eight S-lines under Trams (user report,
@@ -1143,6 +1143,7 @@ async function init() {
     applyFilters();
   });
   for (const [id, key] of [['toggle-bus', 'bus'], ['toggle-tram', 'tram'], ['toggle-rail', 'rail'], ['toggle-mline', 'mline']]) {
+    if (!document.getElementById(id)) continue; // toggle-mline left the legend 17.09.2026
     document.getElementById(id).addEventListener('change', (e) => { state[key] = e.target.checked; applyFilters(); });
   }
   applyFilters();

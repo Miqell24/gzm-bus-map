@@ -421,4 +421,4 @@ body.lines-view p.lines-only { display: block; }
 
 /* Koleje Śląskie: the operator's liveries where the feed ships them, the
    family's rail purple where it does not (the Berlin arrangement) */
-.sw.line.ks { background: #a518a3; }
+.sw.line.ks { background: linear-gradient(90deg, #ec3034 0 25%, #244090 25% 50%, #1ca454 50% 75%, #fcb430 75%); }

@@ -137,3 +137,9 @@ rm -rf data/gtfs data/ztm_gzm_gtfs.zip && npm run download && npm run build
 
 Map data © OpenStreetMap contributors · tiles by OpenFreeMap · timetables: GTFS
 ZTM GZM (otwartedane.metropoliagzm.pl).
+
+## 17.09.2026 — requested fixes
+
+- **Metrolines in bus navy, first in the list.** The M lines are drawn and numbered as the buses they are (no amber, no separate legend toggle) and open the bus list, right after the Tychy trolleybuses (`lineRank`).
+- **Koleje Śląskie in the operator's colours.** Every S-line carries its colour from the operator's *Schemat linii komunikacyjnych* valid from 30.08.2026 (`KS_COLORS`, cfg `lineLivery`); stretches shared by lines of different colours stay rail purple, as Berlin draws its S-Bahn trunk. The Lines view pins the same colours (`lines.mjs`). S70 is not on the line map and stays purple.
+- **Tariff borders are not stops.** The feed files every fare-zone boundary between two towns (`granica KATO - SIEM (Bytków)`, 346 poles) as a stop; names starting with `granica ` leave every stop list. `Gierałtowice Granica` is a real place and stays.
