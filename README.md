@@ -67,10 +67,10 @@ Three things that feed needs and this pipeline learned for it:
   went from 15 breaks to **none**.
 
 Fifth city of the family, alongside
-[krakow-bus-map](https://github.com/Miqell24/krakow-bus-map),
-[athens-bus-map](https://github.com/Miqell24/athens-bus-map),
-[thessaloniki-bus-map](https://github.com/Miqell24/thessaloniki-bus-map) and
-[poznan-bus-map](https://github.com/Miqell24/poznan-bus-map) — same pipeline and
+[krakow-bus-map](https://github.com/AGCGHub/krakow-bus-map),
+[athens-bus-map](https://github.com/AGCGHub/athens-bus-map),
+[thessaloniki-bus-map](https://github.com/AGCGHub/thessaloniki-bus-map) and
+[poznan-bus-map](https://github.com/AGCGHub/poznan-bus-map) — same pipeline and
 same visual system, different city and feeds. The largest network of the family:
 41 municipalities from Gliwice to Dąbrowa Górnicza.
 
