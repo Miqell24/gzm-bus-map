@@ -226,6 +226,14 @@ if (ksSel.length || (tramAll && tramLines.length)) MODES.push({
   // each line now carries the colour of the operator's own line map, which
   // covers EVERY S-line — the missing-data objection above no longer holds.
   color: '#a518a3', colorDark: '#5a0c59', routeTypes: ['2'], lineLivery: KS_COLORS,
+  // 18.09.2026: the S-lines take the family's METRO / rapid-rail convention —
+  // the wide translucent ribbon, one full disc per station (platform records
+  // merged by name) and station names that are never dropped — the way Berlin,
+  // Vienna and Copenhagen draw their S-Bahn (user: "linie S - kreski w
+  // konwencji metra / szybkiej kolei").
+  allMetro: true,
+  // the operator's shapes wander between stations here and there (see detourFix)
+  detourFix: true,
   // A THROUGH train carries two numbers: "S1/S5" is S1 as far as Katowice and
   // S5 beyond it, and the feed files thirteen such pairs as lines of their own
   // (user 9.09.2026: "czy te pociagi to napewno tylko linie kolei slaskich?").
@@ -526,6 +534,49 @@ async function processMode(cfg) {
       r.shapeLatLon = pts.map((p) => [p[1], p[2]]);
       if (r.shapeLatLon.length < 2) log(`SKIPPED ${r.line}/${r.dir}: empty shape ${r.shapeId}`);
     }
+    // detourFix (18.09.2026): a feed shape that wanders between two consecutive
+    // stops. Koleje Slaskie draw S51 Zakopane - Czestochowa from Sucha Beskidzka
+    // down to Zywiec and Bielsko-Biala, then out to Kalwaria and back, 128 km
+    // between two stations 17 km apart - the matcher followed it faithfully and
+    // the map showed a train where none runs. The stops are pinned on the shape
+    // in travel order; where the shape between two of them is longer than
+    // 2.5 x the straight line + 3 km, its vertices in between are dropped and
+    // the router finds the track between the two stations on the graph.
+    if (cfg.detourFix) {
+      const Dkm = (a, b) => Math.hypot((a[0] - b[0]) * 111.2, (a[1] - b[1]) * 111.2 * Math.cos(a[0] * Math.PI / 180));
+      const segD = (p, a, b) => { const kx = Math.cos(a[0] * Math.PI / 180); const ax = a[1] * kx, ay = a[0], bx = b[1] * kx, by = b[0], px = p[1] * kx, py = p[0]; const dx = bx - ax, dy = by - ay; const L = dx * dx + dy * dy; const t = L ? Math.max(0, Math.min(1, ((px - ax) * dx + (py - ay) * dy) / L)) : 0; return Math.hypot(px - ax - t * dx, py - ay - t * dy) * 111.2; };
+      let fixedTotal = 0;
+      for (const r of reps) {
+        const S = r.shapeLatLon;
+        if (S.length < 3) continue;
+        const cum = [0];
+        for (let i = 1; i < S.length; i++) cum.push(cum[i - 1] + Dkm(S[i - 1], S[i]));
+        const pins = [];
+        let from = 1;
+        for (const st of r.stopSeq.map((x) => stopsById.get(x.stopId)).filter(Boolean)) {
+          const p = [st.lat, st.lon];
+          let hit = -1;
+          for (let i = from; i < S.length; i++) if (segD(p, S[i - 1], S[i]) < 0.3) { hit = i; break; }
+          if (hit < 0) continue;
+          // the vertex of that segment nearer the stop
+          const v = Dkm(p, S[hit - 1]) < Dkm(p, S[hit]) && hit - 1 >= (pins.length ? pins[pins.length - 1] : 0) ? hit - 1 : hit;
+          pins.push(v); from = Math.max(hit, 1);
+        }
+        const drop = new Set();
+        for (let k = 1; k < pins.length; k++) {
+          const a = pins[k - 1], b2 = pins[k];
+          if (b2 - a < 2) continue;
+          const along = cum[b2] - cum[a], straight = Dkm(S[a], S[b2]);
+          if (along > 2.5 * straight + 3) {
+            for (let i = a + 1; i < b2; i++) drop.add(i);
+            fixedTotal++;
+            log(`detour in the feed shape: ${r.line}/${r.dir} runs ${along.toFixed(0)} km between two stops ${straight.toFixed(0)} km apart - dropped, the router takes over`);
+          }
+        }
+        if (drop.size) r.shapeLatLon = S.filter((_, i) => !drop.has(i));
+      }
+      if (fixedTotal) log(`detourFix: ${fixedTotal} stretches of feed shape replaced by the routed track`);
+    }
   } else {
     for (const r of reps) {
       r.pseudo = true;
@@ -680,7 +731,7 @@ async function processMode(cfg) {
   // interchanges) platform records into a single entry keyed by name — one disc,
   // one label (user report: Irini drawn twice, once off the tracks).
   if (cfg.mode === 'tram') {
-    const isMetroEntry = (e) => [...e.lines].every((l) => l.startsWith('M'));
+    const isMetroEntry = (e) => cfg.allMetro || [...e.lines].every((l) => l.startsWith('M'));
     const byStation = new Map();
     for (const [id, e] of stopAgg) {
       if (!isMetroEntry(e)) continue;
@@ -709,7 +760,7 @@ async function processMode(cfg) {
   const farNames = [];
   for (const e of stopAgg.values()) {
     const [sx, sy] = proj.toXY(e.lat, e.lon);
-    const isMetroStop = cfg.mode === 'tram' && [...e.lines].every((l) => l.startsWith('M'));
+    const isMetroStop = cfg.mode === 'tram' && (cfg.allMetro || [...e.lines].every((l) => l.startsWith('M')));
     let best = null, bestRun = null;
     // candidates are ONLY the runs that actually call at this pole: on a
     // double-track street the pole of one direction can lie nearer the
@@ -941,7 +992,7 @@ async function processMode(cfg) {
       if (n === arr.length) flags.trolley = 'all';
       else if (n > 0) flags.trolley = 'mix';
     }
-    if (cfg.mode === 'tram' && arr.every((l) => l.startsWith('M'))) flags.metro = 1;
+    if (cfg.mode === 'tram' && (cfg.allMetro || arr.every((l) => l.startsWith('M')))) flags.metro = 1;
     if (cfg.mlineSet && cfg.mlineSet.size) {
       const n = arr.filter((l) => cfg.mlineSet.has(l)).length;
       if (n === arr.length) flags.mline = 'all';
@@ -1381,9 +1432,12 @@ const metaLines = results.flatMap((r) => r.metaLines);
     // corridor needs nothing: colorOf already paints the whole row. Lists stay
     // UNCAPPED here, like `lines` itself — cutting them to "+N" would hide up
     // to 33 numbers on the busiest Katowice corridors.
+    // The metrolines M are navy buses since 17.09.2026: no amber group of their
+    // own any more (18.09 — the mLines group kept painting them amber in the
+    // rows), they ride at the head of the navy group.
     if (p.mode === 'bus') {
-      const groupsOf = { mLines: arr.filter((l) => /^M\d+$/.test(l)), tLines: arr.filter((l) => TSET.has(l)) };
-      groupsOf.nmLines = arr.filter((l) => !groupsOf.mLines.includes(l) && !groupsOf.tLines.includes(l));
+      const groupsOf = { tLines: arr.filter((l) => TSET.has(l)) };
+      groupsOf.nmLines = arr.filter((l) => !groupsOf.tLines.includes(l));
       const present = Object.entries(groupsOf).filter(([, g]) => g.length);
       if (present.length > 1) for (const [k, g] of present) baseProps[k] = g.join(', ');
     }
@@ -1742,6 +1796,13 @@ await (await import('./night.mjs')).nightPass(outDir, /\dN$/, { sort: true });
 // Stop names, headsigns and the few line keys the street prints otherwise
 // (audit, 11.09.2026): a post-pass over the written outputs, see names.mjs.
 (await import('./names.mjs')).namesPass(outDir, undefined, { log });
+// The railway on ONE clean axis per corridor - no track hopping, no hairpins
+// into sidings, parallel tracks folded together (user 18.09.2026): rewrites the
+// rail runs, routes, stations and number rows, see railaxis.mjs. Before the
+// row colours, which read what it writes.
+(await import('./railaxis.mjs')).railAxis(outDir, { log, fresh: true });
 // …and a liveried line keeps its own colour in the number rows, even where it
 // shares a corridor with another one (user rule, 9.09.2026): see railrows.mjs.
 await (await import('./railrows.mjs')).railRowPass(outDir, /\dN$/, { log });
+// (Koleje Śląskie are drawn Berlin S-Bahn style since 18.09.2026: one ribbon
+// per stretch of the axis, no stripes - railstripes.mjs is retired.)

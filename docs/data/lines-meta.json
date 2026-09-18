@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-17T10:45:38.576Z",
+  "generatedAt": "2026-09-18T13:15:15.671Z",
   "maxSeparate": 4,
   "pitchRatio": 0.5,
   "palette": 106,
@@ -313,8 +313,8 @@
     "M23": "#094f7a",
     "M3": "#1b5700",
     "M11": "#3a3daa",
-    "S70": "#0b554b",
     "M108": "#7e1b8b",
+    "S70": "#0b554b",
     "M1": "#935c03",
     "M105": "#9b030e",
     "M116": "#de7ae9",
@@ -401,12 +401,12 @@
     "Z-1": "#09489d"
   },
   "stats": {
-    "chains": 5149,
-    "bundles": 3267,
-    "strands": 76815,
-    "corridors": 1882,
-    "rows": 17860,
-    "kmColoured": 6080,
-    "kmGrey": 810
+    "chains": 4849,
+    "bundles": 3018,
+    "strands": 73137,
+    "corridors": 1831,
+    "rows": 12721,
+    "kmColoured": 5966,
+    "kmGrey": 786
   }
 }

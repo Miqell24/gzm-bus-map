@@ -7,7 +7,6 @@ const TROLLEY_GREEN = '#149a3f';
 // its stops and its street names are pure neutral ink — nothing else may spend
 // a hue there or it competes with a strand for the same meaning.
 const STOP_INK = '#464c55';
-const MLINE_YELLOW = '#e8a000';
 // Narrow label face. Arial Narrow itself cannot be used: MapLibre text comes from
 // pre-rendered glyph PBFs on a font server, and no server hosts that licensed
 // font — Roboto Condensed is the hosted narrow equivalent (with Greek coverage).
@@ -262,7 +261,7 @@ async function init() {
   // 'lines' redraws the same data line by line, up to four coloured strands
   // side by side, everything busier as one grey trunk. Both views are built from
   // the same files; the switch is layers and paint, never a reload.
-  const state = { bus: true, tram: true, rail: true, mline: true, selected: null, journey: null, view: 'corridors', bg: 'auto' };
+  const state = { bus: true, tram: true, rail: true, selected: null, journey: null, view: 'corridors', bg: 'auto' };
   paintChips(false);
 
   // Line layers go below the base style labels (street names stay readable).
@@ -298,6 +297,13 @@ async function init() {
       'line-opacity': ['case', metroC, 0.4, 1],
     },
   }, firstSymbol);
+  // Koleje Śląskie are drawn the way Berlin draws its S-Bahn (user 18.09.2026:
+  // "zrób to w tym samym stylu co S-Bahn w Berlinie — linie nie obok siebie,
+  // tylko wspólna"): ONE translucent ribbon per stretch of track, in the line's
+  // colour where a single livery runs and in the operator purple where several
+  // share the track; a picked line repaints its ribbon in its own colour. The
+  // geometry is the clean axis of pipeline/railaxis.mjs.
+  const RAIL_COLOR = Object.fromEntries(meta.lines.filter((l) => l.rail).map((l) => [l.line, l.color]));
   // Shared bus+trolleybus roadways: green dashes over the navy stroke, so the
   // alternation reads as "both ride here". Trolleybus-only roadways are simply
   // green via properties.color from the pipeline.
@@ -377,19 +383,6 @@ async function init() {
     }, firstSymbol);
   }
 
-  // Shared metroline+bus roadways: amber dashes over the navy stroke —
-  // same convention as the trolleybus overlay above.
-  map.addLayer({
-    id: 'route-mline-dash', type: 'line', source: 'streets',
-    filter: ['==', ['get', 'mline'], 'mix'],
-    layout: { 'line-join': 'round', 'line-cap': 'butt' },
-    paint: {
-      'line-color': MLINE_YELLOW,
-      'line-width': ['interpolate', ['linear'], ['zoom'], 10, 1.1, 14, 2.3, 17, 4.5],
-      'line-dasharray': [1.6, 2.2],
-    },
-  }, firstSymbol);
-
   // Line numbers: pipeline points carry the street bearing (angle) — the text is
   // rotated PARALLEL to the road and offset sideways in text space (anchor bottom
   // + offset), so it stands BESIDE the roadway along its course, never on the stroke.
@@ -398,18 +391,15 @@ async function init() {
   const TRAM_RED = '#d6212b';
   const railColor = ['coalesce', ['get', 'color'], TRAM_RED];
   // A corridor mixing colour categories prints every number in ITS OWN colour:
-  // amber metrolines, green trolleybuses (Tychy), navy buses. The pipeline
-  // emits only the groups a row actually carries, so the cases below cover
-  // every combination; a single-colour row has none of them and falls through
-  // to the plain list painted by the layer colour.
-  const GROUP_COLOR = { mLines: MLINE_YELLOW, tLines: TROLLEY_GREEN, nmLines: KMK };
+  // green trolleybuses (Tychy), navy buses — the metrolines M are navy buses
+  // since 17.09.2026 and ride in the navy group. The pipeline emits the groups
+  // only for a mixed row; a single-colour row has none of them and falls
+  // through to the plain list painted by the layer colour.
+  const GROUP_COLOR = { tLines: TROLLEY_GREEN, nmLines: KMK };
   const row = (...keys) => ['format', ...keys.flatMap((k, i) =>
     [...(i ? ['\n', {}] : []), ['get', k], { 'text-color': GROUP_COLOR[k] }])];
   const splitRow = ['case',
-    ['all', ['has', 'mLines'], ['has', 'tLines'], ['has', 'nmLines']], row('mLines', 'tLines', 'nmLines'),
-    ['all', ['has', 'mLines'], ['has', 'tLines']], row('mLines', 'tLines'),
-    ['has', 'mLines'], row('mLines', 'nmLines'),
-    ['has', 'tLines'], row('tLines', 'nmLines'),
+    ['all', ['has', 'tLines'], ['has', 'nmLines']], row('tLines', 'nmLines'),
     ['format', ['get', 'lines'], {}]];
   const corridorRow = ['case', ['has', 'busLines'],
     ['format',
@@ -452,7 +442,7 @@ async function init() {
     // both sides of the street are candidates: when a stop name (or another
     // row) holds the preferred side, the row flips instead of dying
     'text-variable-anchor': ['bottom', 'top'],
-    'text-radial-offset': 0.6,
+    'text-radial-offset': ['case', ['has', 'rail'], 0.75, 0.6],
     // Long rows WRAP into a stacked block (the printed-KMK convention). This
     // also matters for collisions: a symbol that rotates with the map is
     // reserved through the AXIS-ALIGNED ENVELOPE of its rotated box, so a wide
@@ -554,7 +544,7 @@ async function init() {
   // pole's side of the street (angle from the pipeline). Canvas-drawn icon per
   // color pair — regular: white fill + colored rim; terminus: filled + dark rim.
   const PALETTE = [
-    [KMK, KMK_DARK], [TROLLEY_GREEN, '#0a5121'], [MLINE_YELLOW, '#7d5600'],
+    [KMK, KMK_DARK], [TROLLEY_GREEN, '#0a5121'],
     ['#009550', '#00512b'], ['#e30613', '#7c060e'], ['#1e9cd7', '#0d567a'],
     ['#7d2b8b', '#45164e'], ['#d6212b', '#7c1116'],
   ];
@@ -948,44 +938,23 @@ async function init() {
     // drawn complete by the journey overlay: legs, via stops, numbers
     const selC = state.journey ? false
       : state.selected ? ['in', state.selected, ['get', 'arr']] : true;
-    // metrolines are an INDEPENDENT category: three bus sub-worlds — plain
-    // buses (no mline flag), pure metroline runs (mline=all) and shared
-    // corridors (mline=mix, part of BOTH networks, so either toggle keeps them)
-    const B = state.bus, M = state.mline;
-    const busRunC = ['any',
-      B ? ['!', ['has', 'mline']] : false,
-      M ? ['==', ['get', 'mline'], 'all'] : false,
-      (B || M) ? ['==', ['get', 'mline'], 'mix'] : false];
+    // the metrolines M are plain buses since 17.09.2026 (navy, one toggle) —
+    // the independent amber category of 4.08 left the map completely 18.09
+    const B = state.bus;
     const runModeC = ['any',
-      ['all', ['==', ['get', 'mode'], 'bus'], busRunC],
+      B ? ['==', ['get', 'mode'], 'bus'] : false,
       (T || R) ? ['all', ['==', ['get', 'mode'], 'tram'], tramC] : false];
-    const stopSubC = ['any',
-      B ? ['!', ['has', 'mstop']] : false,
-      M ? ['==', ['get', 'mstop'], 'all'] : false,
-      (B || M) ? ['==', ['get', 'mstop'], 'mix'] : false];
-    const stopModeC = ['any',
-      ['all', ['==', ['get', 'mode'], 'bus'], stopSubC],
-      (T || R) ? ['all', ['==', ['get', 'mode'], 'tram'], tramC] : false];
-    const boxSubC = ['any',
-      B ? ['!=', ['get', 'color'], MLINE_YELLOW] : false,
-      M ? ['==', ['get', 'color'], MLINE_YELLOW] : false];
-    const boxModeC = ['any',
-      ['all', ['==', ['get', 'mode'], 'bus'], boxSubC],
-      (T || R) ? ['all', ['==', ['get', 'mode'], 'tram'], tramC] : false];
-    const busLblC = ['any',
-      B ? ['!=', ['get', 'color'], MLINE_YELLOW] : false,
-      M ? ['any', ['==', ['get', 'color'], MLINE_YELLOW], ['has', 'mLines']] : false];
-    // metroline-only view paints shared corridors and their trimmed number
-    // rows amber, so the network reads as one continuous system
-    map.setPaintProperty('route-line', 'line-color', M && !B
-      ? ['case', ['==', ['get', 'mline'], 'mix'], MLINE_YELLOW, ['coalesce', ['get', 'color'], KMK]]
-      : ['coalesce', ['get', 'color'], KMK]);
+    const stopModeC = runModeC;
+    const boxModeC = runModeC;
     map.setFilter('route-casing', ['all', runModeC, selC]);
     map.setFilter('route-line', ['all', runModeC, selC]);
+    // a picked Koleje Śląskie line: its ribbon in its own colour, also where it
+    // shares the track (the shared purple is only the "several lines" colour)
+    const selRail = state.selected && RAIL_COLOR[state.selected];
+    map.setPaintProperty('route-line', 'line-color', selRail
+      ? ['case', ['has', 'rail'], selRail, ['coalesce', ['get', 'color'], KMK]]
+      : ['coalesce', ['get', 'color'], KMK]);
     map.setFilter('route-trolley-dash', ['all', ['==', ['get', 'trolley'], 'mix'], runModeC, selC]);
-    map.setFilter('route-mline-dash', M && B
-      ? ['all', ['==', ['get', 'mline'], 'mix'], selC]
-      : ['==', ['get', 'mline'], 'never']);
     map.setFilter('stops-dots', ['all', stopModeC, selC]);
     // with a line selected, names of ALL its stops (no label clustering)
     const lblC = state.selected || state.journey ? true : ['==', ['get', 'label'], 1];
@@ -1003,39 +972,24 @@ async function init() {
     // selected only complexes where that line terminates keep their name
     const nameModeC = ['any',
       (T || R) ? ['in', 'tram', ['get', 'modes']] : false,
-      ['all', ['in', 'bus', ['get', 'modes']], ['any',
-        B ? ['!', ['has', 'msome']] : false,
-        M ? ['==', ['get', 'mall'], 1] : false,
-        (B || M) ? ['all', ['==', ['get', 'msome'], 1], ['!=', ['get', 'mall'], 1]] : false]]];
+      B ? ['in', 'bus', ['get', 'modes']] : false];
     BADGE_NAME_LAYERS.forEach((id, b) => {
       map.setFilter(id, ['all', bandC(b), ['has', 'name'], nameModeC,
         state.journey ? false
           : state.selected ? ['in', state.selected, ['get', 'arr']] : true]);
     });
     let numC, numField;
-    const lblModeC = ['any',
-      ['all', ['==', ['get', 'mode'], 'bus'], busLblC],
-      (T || R) ? ['all', ['==', ['get', 'mode'], 'tram'], tramC] : false];
-    if ((B || M) && !(T || R)) {
+    const lblModeC = runModeC;
+    if (B && !(T || R)) {
       // trams hidden: shared corridor labels (mode=tram with busLines) must stay,
       // but they show only the bus part
-      numC = ['all', ['any', ['all', ['==', ['get', 'mode'], 'bus'], busLblC], ['has', 'busLines']], selC];
+      numC = ['all', ['any', ['==', ['get', 'mode'], 'bus'], ['has', 'busLines']], selC];
       numField = busOnlyNumbersN;
     } else {
       numC = ['all', lblModeC, selC];
-      numField = (T || R) && !(B || M) ? tramOnlyNumbersN : numberField;
+      numField = (T || R) && !B ? tramOnlyNumbersN : numberField;
     }
-    // with only one bus network on, mixed rows shrink to their relevant half
-    if (B && !M) numField = ['case', ['all', ['==', ['get', 'mode'], 'bus'], ['any', ['has', 'tLines'], ['has', 'nmLines']]],
-      // metrolines off: the row keeps its buses AND trolleybuses, each coloured
-      ['case', ['all', ['has', 'tLines'], ['has', 'nmLines']], row('tLines', 'nmLines'),
-        ['has', 'tLines'], row('tLines'),
-        row('nmLines')],
-      numField];
-    if (M && !B) numField = ['case', ['all', ['==', ['get', 'mode'], 'bus'], ['has', 'mLines']], ['format', ['get', 'mLines'], {}], numField];
-    const numPaint = M && !B
-      ? ['case', ['has', 'mLines'], MLINE_YELLOW, ['coalesce', ['get', 'color'], KMK]]
-      : ['coalesce', ['get', 'color'], KMK];
+    const numPaint = ['coalesce', ['get', 'color'], KMK];
     for (const d of NUM_LAYERS) {
       const thinC = d.id === 'street-numbers-extra' ? densityCond : densityMainCond;
       for (const v of SIDE_VARIANTS) {
@@ -1072,7 +1026,7 @@ async function init() {
   // Everything either view needs is already in the style; switching is paint and
   // visibility, never a reload — so the position, the zoom, the picked line and
   // the label-size settings all survive it.
-  const CORRIDOR_ONLY = ['route-casing', 'route-line', 'route-trolley-dash', 'route-mline-dash'];
+  const CORRIDOR_ONLY = ['route-casing', 'route-line', 'route-trolley-dash'];
   const LINES_ONLY = ['corridor-casing', 'corridor-line', 'strand-casing', 'strand-line'];
   // the stop discs as this map paints them in the corridor view — restored
   // verbatim when the reader comes back from the lines view
@@ -1142,8 +1096,7 @@ async function init() {
     document.querySelectorAll('#chips .chip').forEach((c) => c.classList.toggle('active', c.dataset.line === state.selected));
     applyFilters();
   });
-  for (const [id, key] of [['toggle-bus', 'bus'], ['toggle-tram', 'tram'], ['toggle-rail', 'rail'], ['toggle-mline', 'mline']]) {
-    if (!document.getElementById(id)) continue; // toggle-mline left the legend 17.09.2026
+  for (const [id, key] of [['toggle-bus', 'bus'], ['toggle-tram', 'tram'], ['toggle-rail', 'rail']]) {
     document.getElementById(id).addEventListener('change', (e) => { state[key] = e.target.checked; applyFilters(); });
   }
   applyFilters();

@@ -574,6 +574,29 @@
       if (n < 2 && !close) return '';
       return d + (close ? 'h' : '');
     };
+    // the same path shifted sideways by `off` page units: every vertex moves
+    // along the mean of its two segment normals (a mitre, capped at 3×)
+    const pathOfOffset = (coords, off) => {
+      const pts = [];
+      for (let i = 0; i < coords.length; i++) {
+        const [x, y] = px(coords[i][0], coords[i][1]);
+        const q = pts[pts.length - 1];
+        if (q && Math.abs(x - q[0]) < EPS && Math.abs(y - q[1]) < EPS) continue;
+        pts.push([x, y]);
+      }
+      if (pts.length < 2) return '';
+      const nrm = [];
+      for (let i = 0; i + 1 < pts.length; i++) { const dx = pts[i + 1][0] - pts[i][0], dy = pts[i + 1][1] - pts[i][1], L = Math.hypot(dx, dy) || 1; nrm.push([dy / L, -dx / L]); }
+      let d = '';
+      for (let i = 0; i < pts.length; i++) {
+        const a = nrm[Math.max(0, i - 1)], b = nrm[Math.min(nrm.length - 1, i)];
+        let mx = a[0] + b[0], my = a[1] + b[1];
+        const L = Math.hypot(mx, my) || 1; mx /= L; my /= L;
+        const k = Math.min(3, 1 / Math.max(0.2, mx * a[0] + my * a[1]));
+        d += f1(pts[i][0] + mx * off * k) + ' ' + f1(pts[i][1] + my * off * k) + (i ? ' l ' : ' m ');
+      }
+      return d;
+    };
     const inRect = (x, y) => !rect || (x >= rect[0] && x < rect[2] && y >= rect[1] && y < rect[3]);
     const cw = m.getContainer().clientWidth, ch = m.getContainer().clientHeight;
     const rectOnScreen = rect ? [PAD, PAD, cw - PAD, ch - PAD] : null;
@@ -708,10 +731,14 @@
           const dash = ev(paint('line-dasharray'), z, p);
           const cap = ev(layout('line-cap'), z, p);
           const pre = rgbS(c) + ' RG ' + f2(w) + ' w ' + (cap === 'round' ? '1 J 1 j' : cap === 'square' ? '2 J 0 j' : '0 J 0 j') + (Array.isArray(dash) ? ' [' + dash.map((d) => f2(Math.max(0.01, d * w))).join(' ') + '] 0 d' : ' [] 0 d');
+          // line-offset (18.09.2026 — the rail stripes and the lines view's
+          // strands): MapLibre shifts the stroke to the RIGHT of its direction;
+          // on the page y grows upwards, so the right-hand normal is (dy, −dx)
+          const off = num(ev(paint('line-offset'), z, p), 0) * S;
           withAlpha(c.a, () => {
             for (const line of asLines(g)) {
               if (line.length < 2) continue;
-              const d = pathOf(line, false);
+              const d = off ? pathOfOffset(line, off) : pathOf(line, false);
               if (d) { C.op(pre + ' ' + d + ' S'); counts.lines++; }
             }
           });
